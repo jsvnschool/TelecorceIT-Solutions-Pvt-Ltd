@@ -434,7 +434,7 @@
             <span style="margin-left: 15px;"><i class="fa fa-phone"></i> 9412874591, 9761805343</span>
         </div>
         <div>
-            <span>School Manager: <strong>Ajeet Ji</strong></span>
+            <span>School Manager: <strong>Ajeet yadav </strong></span>
             <a href="#admission">Online Admission Form</a>
         </div>
     </div>
