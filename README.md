@@ -614,7 +614,7 @@
             <span class="close-btn" onclick="closeAdmin()">&times;</span>
             
             <!-- Admin Login Step -->
-            <div id="admin-login-view" class="boss-login-card">
+            <div id="admin-login-view" class="Mr. Ajeet Yadav-login-card">
                 <!-- Child Standing Avatar requested by user -->
                 <div class="child-standing-avatar">
                     <i class="fa-solid fa-child-reaching"></i>
@@ -635,9 +635,9 @@
             <!-- Admin Control Dashboard -->
             <div id="admin-dashboard-view" style="display: none;">
                 
-                <!-- Welcome Mr. Boss Banner -->
-                <div id="bossBanner" class="boss-greeting-banner">
-                    <h2><i class="fa fa-crown"></i> Welcome Mr. Boss!</h2>
+                <!-- Welcome Mr. Ajeet Yadav Banner -->
+                <div id="Mr. Ajeet Yadav Banner" class="Mr. Ajeet Yadav-greeting-banner">
+                    <h2><i class="fa fa-crown"></i> Welcome Mr. Ajeet Yadav!</h2>
                     <p style="color: #fff; font-size: 1rem; margin-top: 4px;">J.S. Vidya Niketan कंट्रोल पैनल में आपका स्वागत है।</p>
                 </div>
 
