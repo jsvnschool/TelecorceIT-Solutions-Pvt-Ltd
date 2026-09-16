@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>J.S. Vidya Niketan - Residential School, Aliganj</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -16,7 +16,11 @@
             --white: #ffffff;
             --boss-gold: #ffd700;
             --neon-blue: #00f2fe;
-            --neon-glow: rgba(0, 242, 254, 0.45);
+            --whatsapp-green: #25D366;
+            --google-blue: #4285F4;
+            --google-red: #EA4335;
+            --google-yellow: #FBBC05;
+            --google-green: #34A853;
         }
 
         * {
@@ -73,14 +77,15 @@
         .school-crest {
             background: var(--primary);
             color: #ffeb3b;
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             border: 2px solid var(--secondary);
+            box-shadow: 0 0 10px rgba(255, 235, 59, 0.4);
         }
         .logo-box h1 {
             font-size: 1.35rem;
@@ -96,7 +101,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 18px;
+            gap: 16px;
             align-items: center;
         }
         nav a {
@@ -130,10 +135,10 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(rgba(139, 0, 0, 0.75), rgba(31, 36, 33, 0.88)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(139, 0, 0, 0.78), rgba(31, 36, 33, 0.88)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             color: white;
             text-align: center;
-            padding: 85px 20px;
+            padding: 80px 20px;
         }
         .hero h2 {
             font-size: 2.6rem;
@@ -232,16 +237,29 @@
             color: var(--dark);
         }
 
-        /* Admission Form Box */
+        /* Dual Forms */
+        .dual-forms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
         .admission-container {
             background: white;
-            max-width: 850px;
-            margin: 0 auto;
             border-radius: 12px;
-            padding: 35px;
+            padding: 30px;
             box-shadow: 0 5px 25px rgba(0,0,0,0.08);
             border: 2px solid #eee;
         }
+        .whatsapp-inquiry-box {
+            background: linear-gradient(145deg, #ffffff, #f0fdf4);
+            border: 2px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.15);
+        }
+
         .form-row {
             display: flex;
             gap: 15px;
@@ -250,7 +268,7 @@
         }
         .form-group {
             flex: 1;
-            min-width: 240px;
+            min-width: 220px;
         }
         .form-group label {
             display: block;
@@ -265,6 +283,25 @@
             border-radius: 6px;
             font-size: 0.95rem;
         }
+
+        .password-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .password-wrapper input {
+            padding-right: 45px;
+        }
+        .password-toggle-btn {
+            position: absolute;
+            right: 12px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+            font-size: 1.15rem;
+        }
+
         .btn-submit {
             background: var(--primary);
             color: white;
@@ -279,8 +316,199 @@
         .btn-submit:hover {
             background: #6d0000;
         }
+        .btn-whatsapp-send {
+            background: var(--whatsapp-green);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s;
+            text-decoration: none;
+        }
+        .btn-whatsapp-send:hover {
+            transform: scale(1.02);
+            background: #1eb855;
+        }
 
-        /* Admin Modal Base */
+        /* GOOGLE STYLE FLOATING AI ASSISTANT */
+        .ai-floating-helper {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1500;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+        .ai-robot-btn {
+            width: 70px;
+            height: 70px;
+            background: #ffffff;
+            border-radius: 50%;
+            border: 3px solid #ffd700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+            position: relative;
+            animation: pulseAssistant 2.5s infinite;
+        }
+        .google-dots-ring {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .g-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .g-blue { background: var(--google-blue); }
+        .g-red { background: var(--google-red); }
+        .g-yellow { background: var(--google-yellow); }
+        .g-green { background: var(--google-green); }
+
+        @keyframes pulseAssistant {
+            0% { transform: scale(1); box-shadow: 0 0 10px rgba(66, 133, 244, 0.4); }
+            50% { transform: scale(1.08); box-shadow: 0 0 25px rgba(234, 67, 53, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 0 10px rgba(66, 133, 244, 0.4); }
+        }
+        .ai-audio-callout {
+            background: #ffffff;
+            color: #111;
+            padding: 10px 18px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            font-size: 0.88rem;
+            font-weight: 700;
+            border-left: 4px solid var(--google-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        /* GOOGLE AI TEACHER MODAL */
+        .voice-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(8px);
+            z-index: 2500;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+        .voice-modal-content {
+            background: #fff;
+            border-radius: 24px;
+            max-width: 580px;
+            width: 100%;
+            padding: 30px 25px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.45);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+        }
+        .google-ai-header {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .google-ai-header .big-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            animation: bounceDots 1.4s infinite ease-in-out both;
+        }
+        .google-ai-header .big-dot:nth-child(1) { animation-delay: -0.32s; }
+        .google-ai-header .big-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounceDots {
+            0%, 80%, 100% { transform: scale(0.6); }
+            40% { transform: scale(1.2); }
+        }
+
+        .dialogue-box {
+            background: #f8fafc;
+            border-radius: 18px;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 20px 0;
+            color: #1e293b;
+            text-align: left;
+            position: relative;
+        }
+        .mic-listen-wrapper {
+            margin: 20px 0;
+        }
+        .btn-live-mic {
+            width: 80px;
+            height: 80px;
+            background: #ffffff;
+            border: 3px solid var(--google-blue);
+            border-radius: 50%;
+            font-size: 2rem;
+            color: var(--google-blue);
+            cursor: pointer;
+            box-shadow: 0 5px 25px rgba(66, 133, 244, 0.35);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-live-mic.listening {
+            border-color: var(--google-red);
+            color: var(--google-red);
+            animation: micGlow 1s infinite alternate;
+        }
+        @keyframes micGlow {
+            0% { transform: scale(1); box-shadow: 0 0 15px rgba(234, 67, 53, 0.4); }
+            100% { transform: scale(1.12); box-shadow: 0 0 35px rgba(234, 67, 53, 0.85); }
+        }
+
+        .ai-choice-btns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .choice-btn {
+            background: #ffffff;
+            border: 1.5px solid #d1d5db;
+            padding: 10px 8px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .choice-btn:hover {
+            border-color: var(--accent);
+            background: #fff7ed;
+            color: var(--accent);
+        }
+
+        /* 4D HOLOGRAM LOGIN */
         .modal {
             display: none;
             position: fixed;
@@ -295,7 +523,6 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-            perspective: 1200px;
         }
         .modal-content {
             background: #ffffff;
@@ -305,7 +532,6 @@
             padding: 30px;
             position: relative;
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            transition: all 0.4s ease;
         }
         .close-btn {
             position: absolute;
@@ -316,62 +542,56 @@
             color: #666;
             z-index: 10;
         }
-
-        /* 4D HOLOGRAM LOGIN STYLING */
         .boss-login-card {
             text-align: center;
             padding: 30px 15px;
-            position: relative;
         }
         .hologram-stage-4d {
-            width: 180px;
-            height: 180px;
+            width: 170px;
+            height: 170px;
             margin: 0 auto 20px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            transform-style: preserve-3d;
-            perspective: 800px;
         }
         .hologram-ring {
             position: absolute;
-            width: 170px;
-            height: 170px;
+            width: 165px;
+            height: 165px;
             border-radius: 50%;
             border: 2px dashed #00f2fe;
-            box-shadow: 0 0 25px #00f2fe, inset 0 0 25px #00f2fe;
+            box-shadow: 0 0 25px #00f2fe;
             animation: rotateHolo 8s linear infinite;
         }
-        .hologram-avatar {
-            width: 130px;
-            height: 130px;
+        .school-crest-4d {
+            width: 125px;
+            height: 125px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #111, #4a0000);
+            background: radial-gradient(circle, #8b0000 0%, #1f2421 100%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.4);
-            border: 3px solid #ffd700;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+            border: 4px solid #ffd700;
             z-index: 2;
-            animation: float4D 3.5s ease-in-out infinite;
+            color: #ffd700;
         }
-        .hologram-avatar img {
-            width: 105px;
-            height: 105px;
-            border-radius: 50%;
-            object-fit: cover;
+        .school-crest-4d i {
+            font-size: 45px;
+        }
+        .school-crest-4d span {
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-top: 4px;
         }
         @keyframes rotateHolo {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        @keyframes float4D {
-            0%, 100% { transform: translateY(0px) rotateY(0deg); }
-            50% { transform: translateY(-10px) rotateY(12deg); }
-        }
 
-        /* 4D WELCOME POPUP MODAL (LADKI AA KE BOLEGI) */
         #boss4DGreetingOverlay {
             display: none;
             position: fixed;
@@ -387,10 +607,9 @@
             text-align: center;
         }
         .box-4d-character {
-            position: relative;
             background: radial-gradient(circle, rgba(139, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.9) 80%);
             border: 2px solid #00f2fe;
-            box-shadow: 0 0 50px rgba(0, 242, 254, 0.6), inset 0 0 35px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 0 50px rgba(0, 242, 254, 0.6);
             border-radius: 25px;
             padding: 40px 30px;
             max-width: 550px;
@@ -398,29 +617,8 @@
             animation: zoom4D 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         @keyframes zoom4D {
-            0% { transform: scale(0.3) rotateX(45deg); opacity: 0; }
-            100% { transform: scale(1) rotateX(0deg); opacity: 1; }
-        }
-        .hostess-figure {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            padding: 5px;
-            background: linear-gradient(45deg, #00f2fe, #ffd700);
-            box-shadow: 0 0 35px #00f2fe;
-            animation: pulseWave 2s infinite;
-        }
-        .hostess-figure img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        @keyframes pulseWave {
-            0% { box-shadow: 0 0 15px #00f2fe; }
-            50% { box-shadow: 0 0 40px #ffd700, 0 0 20px #00f2fe; }
-            100% { box-shadow: 0 0 15px #00f2fe; }
+            0% { transform: scale(0.3); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
         .speech-bubble-4d {
             background: #ffffff;
@@ -428,14 +626,12 @@
             padding: 12px 24px;
             border-radius: 30px;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             display: inline-block;
             margin: 15px 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
             border: 2px solid #ffd700;
         }
 
-        /* Admin Tabs & UI */
         .boss-banner-dashboard {
             background: linear-gradient(135deg, #0b0c10, #8b0000);
             border: 2px solid #ffd700;
@@ -444,7 +640,6 @@
             border-radius: 12px;
             text-align: center;
             margin-bottom: 25px;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
         }
         .admin-nav-tabs {
             display: flex;
@@ -466,7 +661,6 @@
             color: white;
         }
 
-        /* Custom Table */
         .custom-table {
             width: 100%;
             border-collapse: collapse;
@@ -486,7 +680,6 @@
             background-color: #f9f9f9;
         }
 
-        /* Marksheet Styling */
         #marksheet-preview {
             display: none;
             background: #ffffff;
@@ -495,6 +688,20 @@
             border-radius: 8px;
             margin-top: 25px;
         }
+
+        .grade-pill {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .grade-a-plus { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+        .grade-a { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+        .grade-b { background: #fef9c3; color: #854d0e; border: 1px solid #fde047; }
+        .grade-c { background: #ffedd5; color: #9a3412; border: 1px solid #fdba74; }
+        .grade-d { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+        .grade-e { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
 
         footer {
             background: var(--dark);
@@ -515,25 +722,96 @@
 </head>
 <body>
 
-    <!-- 4D AUDIO GREETING OVERLAY (Voice Hostess) -->
+    <!-- 4D AUDIO GREETING OVERLAY (Admin Login Success) -->
     <div id="boss4DGreetingOverlay">
         <div class="box-4d-character">
-            <div class="hostess-figure">
-                <!-- AI Animated Hostess Assistant -->
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Virtual AI Hostess">
+            <div class="school-crest-4d" style="margin: 0 auto 15px; width: 130px; height: 130px;">
+                <i class="fa-solid fa-graduation-cap" style="font-size: 50px;"></i>
+                <span style="font-size: 0.8rem;">JSVN ALIGANJ</span>
             </div>
             <div style="color: #00f2fe; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase;">
-                <i class="fa fa-wave-square"></i> 4D Virtual Assistant Activated
+                <i class="fa fa-wave-square"></i> Voice Assistant Activated
             </div>
             <div class="speech-bubble-4d">
                 <i class="fa fa-volume-high" style="color: #e65100;"></i> "Welcome Mr. Boss!"
             </div>
             <p style="color: #eee; font-size: 0.95rem; margin-bottom: 20px;">
-                प्रबंधक श्री <strong>Ajeet Yadav</strong> जी, सिस्टम आपके स्वागत के लिए तैयार है।
+                प्रबंधक श्री <strong>Ajeet Yadav</strong> जी, सिस्टम में आपका स्वागत है।
             </p>
             <button onclick="enterDashboard()" class="btn-submit" style="background: linear-gradient(45deg, #ffd700, #ff8c00); color: #000; font-weight: 800; border-radius: 30px; padding: 12px 35px; box-shadow: 0 0 20px #ffd700;">
                 <i class="fa fa-door-open"></i> Proceed to Terminal
             </button>
+        </div>
+    </div>
+
+    <!-- FLOATING GOOGLE-STYLE AI TEACHER ASSISTANT BUTTON -->
+    <div class="ai-floating-helper">
+        <div class="ai-audio-callout" onclick="openGoogleAiTeacher()">
+            <div class="google-dots-ring">
+                <span class="g-dot g-blue"></span>
+                <span class="g-dot g-red"></span>
+                <span class="g-dot g-yellow"></span>
+                <span class="g-dot g-green"></span>
+            </div>
+            <span>बोलकर पूछें (AI Teacher)</span>
+        </div>
+        <div class="ai-robot-btn" onclick="openGoogleAiTeacher()" title="Google Style AI Teacher">
+            <i class="fa fa-microphone" style="color: var(--google-blue); font-size: 1.8rem;"></i>
+        </div>
+    </div>
+
+    <!-- GOOGLE STYLE VOICE AI ASSISTANT MODAL -->
+    <div id="googleAiModal" class="voice-modal">
+        <div class="voice-modal-content">
+            <span class="close-btn" onclick="closeGoogleAiTeacher()">&times;</span>
+            
+            <div class="google-ai-header">
+                <span class="big-dot g-blue"></span>
+                <span class="big-dot g-red"></span>
+                <span class="big-dot g-yellow"></span>
+                <span class="big-dot g-green"></span>
+            </div>
+            <h3 style="margin: 0; color: #1e293b; font-weight: 700;">J.S. स्कूल AI अध्यापिका</h3>
+            <small style="color: #64748b;">Google Assistant की तरह लाइव बात करें</small>
+
+            <!-- Dialogue Display Box -->
+            <div class="dialogue-box" id="aiTeacherLiveText">
+                नमस्ते! प्रणाम। मैं जे.एस. विद्या निकेतन रेजिडेंशियल स्कूल, अलीगंज की वर्चुअल ए.आई. अध्यापिका हूँ। हमारे विद्यालय परिवार में आपका और आपके प्यारे बच्चे का बहुत-बहुत स्वागत है। नर्सरी से आठवीं कक्षा में प्रवेश, सुरक्षित हॉस्टल और वाहन सुविधा से जुड़ा जो भी सवाल आपके मन में हो, आप मुझसे निसंकोच पूछ सकते हैं।
+            </div>
+
+            <!-- Live Speech Recognition Mic Button -->
+            <div class="mic-listen-wrapper">
+                <button id="liveMicBtn" class="btn-live-mic" onclick="toggleSpeechRecognition()" title="माइक दबाकर बोलें">
+                    <i class="fa fa-microphone"></i>
+                </button>
+                <p id="micStatusMsg" style="font-size: 0.88rem; color: #475569; margin-top: 8px; font-weight: 600;">
+                    माइक दबाएं और अपना सवाल बोलें
+                </p>
+            </div>
+
+            <!-- Choice Prompts -->
+            <p style="font-size: 0.82rem; font-weight: 700; color: #64748b; margin-bottom: 8px;">
+                या नीचे दिए गए किसी भी विषय पर क्लिक करें:
+            </p>
+            <div class="ai-choice-btns">
+                <button class="choice-btn" onclick="aiTeacherReply('admission')">
+                    <i class="fa fa-pencil-alt" style="color: #2563eb;"></i> प्रवेश प्रक्रिया
+                </button>
+                <button class="choice-btn" onclick="aiTeacherReply('hostel')">
+                    <i class="fa fa-bed" style="color: #d97706;"></i> हॉस्टल की सुविधा
+                </button>
+                <button class="choice-btn" onclick="aiTeacherReply('bus')">
+                    <i class="fa fa-bus" style="color: #16a34a;"></i> वैन व बस सेवा
+                </button>
+                <button class="choice-btn" onclick="aiTeacherReply('fees')">
+                    <i class="fa fa-percent" style="color: #9333ea;"></i> फीस में छूट
+                </button>
+            </div>
+
+            <!-- WhatsApp Direct Redirect -->
+            <a href="https://wa.me/919761805343?text=नमस्ते%20प्रबंधक%20अजीत%20यादव%20जी,%20मुझे%20स्कूल%20एडमिशन%20के%20बारे%20में%20बात%20करनी%20है।" target="_blank" class="btn-whatsapp-send" style="margin-top: 15px;">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> सीधे प्रबंधक अजीत यादव जी से WhatsApp पर बात करें
+            </a>
         </div>
     </div>
 
@@ -630,70 +908,99 @@
         </div>
     </section>
 
-    <!-- ONLINE ADMISSION FORM SECTION -->
+    <!-- DUAL SECTION: ONLINE ADMISSION & WHATSAPP INSTANT INQUIRY -->
     <section class="section" style="background: #eef2f5;" id="admission">
         <div class="section-title">
-            <h3>Online Admission Form (सत्र 2026-27)</h3>
-            <p>घर बैठे अपने बच्चे का एडमिशन फॉर्म भरें, विद्यालय द्वारा आपसे तुरंत संपर्क किया जाएगा।</p>
+            <h3>Online Admission & WhatsApp Inquiry</h3>
+            <p>एडमिशन फॉर्म भरें या सीधे प्रबंधक अजीत यादव जी के WhatsApp पर अपनी जानकारी भेजें</p>
         </div>
         
-        <div class="admission-container">
-            <form id="studentAdmissionForm" onsubmit="handleAdmissionSubmit(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Student Full Name (छात्र/छात्रा का पूरा नाम) *</label>
+        <div class="dual-forms-grid">
+            
+            <!-- Form 1: Full Online Admission -->
+            <div class="admission-container">
+                <h4 style="color: var(--primary); margin-bottom: 15px;"><i class="fa fa-file-lines"></i> 1. Online Admission Form</h4>
+                <form id="studentAdmissionForm" onsubmit="handleAdmissionSubmit(event)">
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label>Student Full Name (छात्र का नाम) *</label>
                         <input type="text" id="adm_name" placeholder="उदा. रोहन यादव" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 12px;">
                         <label>Father's Name (पिता का नाम) *</label>
                         <input type="text" id="adm_father" placeholder="उदा. श्री अमरपाल यादव" required>
                     </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
+                    <div class="form-group" style="margin-bottom: 12px;">
                         <label>Mobile Number (मोबाइल नंबर) *</label>
                         <input type="tel" id="adm_mobile" pattern="[0-9]{10}" placeholder="उदा. 9876543210" required>
                     </div>
-                    <div class="form-group">
-                        <label>Class for Admission (किस कक्षा में प्रवेश चाहिए) *</label>
-                        <select id="adm_class" required>
-                            <option value="">-- कक्षा चुनें --</option>
-                            <option value="Nursery">Nursery</option>
-                            <option value="LKG">LKG</option>
-                            <option value="UKG">UKG</option>
-                            <option value="Class 1">Class 1</option>
-                            <option value="Class 2">Class 2</option>
-                            <option value="Class 3">Class 3</option>
-                            <option value="Class 4">Class 4</option>
-                            <option value="Class 5">Class 5</option>
-                            <option value="Class 6">Class 6</option>
-                            <option value="Class 7">Class 7</option>
-                            <option value="Class 8">Class 8</option>
-                        </select>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>कक्षा (Class) *</label>
+                            <select id="adm_class" required>
+                                <option value="Nursery">Nursery</option>
+                                <option value="LKG">LKG</option>
+                                <option value="UKG">UKG</option>
+                                <option value="Class 1">Class 1</option>
+                                <option value="Class 2">Class 2</option>
+                                <option value="Class 3">Class 3</option>
+                                <option value="Class 4">Class 4</option>
+                                <option value="Class 5">Class 5</option>
+                                <option value="Class 6">Class 6</option>
+                                <option value="Class 7">Class 7</option>
+                                <option value="Class 8">Class 8</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>हॉस्टल (Hostel)? *</label>
+                            <select id="adm_hostel" required>
+                                <option value="No">No (डे-स्कॉलर)</option>
+                                <option value="Yes">Yes (हॉस्टल)</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Hostel Facility Required? (क्या हॉस्टल चाहिए?) *</label>
-                        <select id="adm_hostel" required>
-                            <option value="No">No (डे-स्कॉलर / Day Scholar)</option>
-                            <option value="Yes">Yes (हॉस्टल में रहना है / Residential)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Address / Village (गाँव / मोहल्ला / शहर) *</label>
+                    <div class="form-group" style="margin-bottom: 18px;">
+                        <label>Address / Village (पता / मोहल्ला) *</label>
                         <input type="text" id="adm_address" placeholder="उदा. राधा कृष्ण मोहल्ला, अलीगंज" required>
                     </div>
+                    <button type="submit" class="btn-submit" style="width: 100%; background: #2e7d32;">
+                        <i class="fa fa-paper-plane"></i> पोर्टल पर फॉर्म जमा करें
+                    </button>
+                </form>
+            </div>
+
+            <!-- Form 2: Direct WhatsApp Inquiry -->
+            <div class="whatsapp-inquiry-box">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 2.2rem; color: #25D366;"></i>
+                    <div>
+                        <h4 style="color: #128c7e; margin: 0;">2. सीधा WhatsApp पर भेजें</h4>
+                        <small style="color: #666;">प्रबंधक अजीत यादव जी (+91 9761805343) को तुरंत पहुँचेगा</small>
+                    </div>
                 </div>
 
-                <div style="text-align: center; margin-top: 20px;">
-                    <button type="submit" class="btn-submit" style="background: #2e7d32; font-size: 1.1rem; padding: 12px 35px;">
-                        <i class="fa fa-paper-plane"></i> Submit Admission Form
+                <form onsubmit="sendToWhatsApp(event)">
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label>आपका / अभिभावक का नाम (Name) *</label>
+                        <input type="text" id="wa_name" placeholder="अपना नाम लिखें..." required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label>गाँव / मोहल्ला / पता (Address) *</label>
+                        <input type="text" id="wa_address" placeholder="उदा. राधा कृष्ण मोहल्ला, अलीगंज" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 12px;">
+                        <label>मोबाइल नंबर (Mobile No.) *</label>
+                        <input type="tel" id="wa_mobile" placeholder="उदा. 9761xxxxxx" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 18px;">
+                        <label>बच्चे के लिए क्लास व सवाल (Class / Message)</label>
+                        <input type="text" id="wa_msg" placeholder="उदा. Class 5th में एडमिशन व फीस की जानकारी">
+                    </div>
+                    <button type="submit" class="btn-whatsapp-send">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> WhatsApp पर पूछताछ भेजें
                     </button>
-                </div>
-            </form>
+                </form>
+            </div>
+
         </div>
     </section>
 
@@ -723,13 +1030,12 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeAdmin()">&times;</span>
             
-            <!-- 4D Animated Hologram Login Step -->
             <div id="admin-login-view" class="boss-login-card">
-                
                 <div class="hologram-stage-4d">
                     <div class="hologram-ring"></div>
-                    <div class="hologram-avatar">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="4D Voice Hostess">
+                    <div class="school-crest-4d">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>JSVN ALIGANJ</span>
                     </div>
                 </div>
                 
@@ -740,32 +1046,35 @@
                     Secure Gateway ID: <strong style="color: #0088cc;">jsterminal admine.in</strong>
                 </p>
 
-                <div class="form-group" style="max-width: 400px; margin: 0 auto 15px; text-align: left;">
+                <div class="form-group" style="max-width: 420px; margin: 0 auto 15px; text-align: left;">
                     <label style="font-weight: bold;"><i class="fa fa-shield-halved"></i> Enter Master Admin Password:</label>
-                    <input type="password" id="adminPassword" placeholder="पासवर्ड यहाँ दर्ज करें..." style="box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                    <div class="password-wrapper">
+                        <input type="password" id="adminPassword" placeholder="पासवर्ड यहाँ दर्ज करें...">
+                        <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('adminPassword', 'pwIcon')">
+                            <i id="pwIcon" class="fa fa-eye"></i>
+                        </button>
+                    </div>
                 </div>
-                <button class="btn-submit" style="width: 100%; max-width: 400px; background: linear-gradient(135deg, #111, #8b0000); border: 1px solid #ffd700; color: #ffd700;" onclick="verifyAdmin()">
+
+                <button class="btn-submit" style="width: 100%; max-width: 420px; background: linear-gradient(135deg, #111, #8b0000); border: 1px solid #ffd700; color: #ffd700;" onclick="verifyAdmin()">
                     <i class="fa fa-key"></i> Authenticate & Login
                 </button>
             </div>
 
             <!-- Admin Control Dashboard -->
             <div id="admin-dashboard-view" style="display: none;">
-                
-                <!-- Welcome Mr. Boss Banner -->
                 <div class="boss-banner-dashboard">
                     <h2 style="font-family: 'Orbitron', sans-serif;"><i class="fa fa-crown" style="color: #ffd700;"></i> Welcome Mr. Boss!</h2>
                     <p style="color: #fff; font-size: 1rem; margin-top: 4px;">प्रबंधक श्री <strong>Ajeet Yadav</strong> जी, J.S. Vidya Niketan कंट्रोल टर्मिनल में आपका स्वागत है।</p>
                 </div>
 
-                <!-- Admin Tabs -->
                 <div class="admin-nav-tabs">
                     <button class="tab-btn active" onclick="switchTab('admissions')"><i class="fa fa-user-graduate"></i> नए एडमिशन आवेदन (<span id="adm-count">0</span>)</button>
                     <button class="tab-btn" onclick="switchTab('marksheet')"><i class="fa fa-calculator"></i> मार्कशीट जनरेटर</button>
                     <button class="tab-btn" onclick="switchTab('notice')"><i class="fa fa-bullhorn"></i> नोटिस बोर्ड सेटिंग</button>
                 </div>
 
-                <!-- TAB 1: Online Admissions List -->
+                <!-- TAB 1: Admissions List -->
                 <div id="tab-admissions">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                         <h4 style="color: var(--primary);"><i class="fa fa-list"></i> प्राप्त ऑनलाइन एडमिशन रिकॉर्ड्स</h4>
@@ -793,7 +1102,7 @@
                     <p id="no-admissions-msg" style="text-align: center; color: #888; margin-top: 20px;">अभी तक कोई नया ऑनलाइन एडमिशन फॉर्म नहीं आया है।</p>
                 </div>
 
-                <!-- TAB 2: Marksheet Generator (With Grade Column) -->
+                <!-- TAB 2: Marksheet Generator -->
                 <div id="tab-marksheet" style="display: none;">
                     <h4 style="color: var(--primary); margin-bottom: 15px;"><i class="fa fa-file-invoice"></i> मार्कशीट बनाएं और प्रिंट करें</h4>
                     
@@ -825,14 +1134,14 @@
                         <div class="form-group">
                             <label>Overall Grade (कस्टम ग्रेड यदि लागू हो):</label>
                             <select id="stGradeOption">
-                                <option value="AUTO">Auto (प्रतिशत से तय होगा)</option>
-                                <option value="A+">A+ (Outstanding)</option>
-                                <option value="A">A (Excellent)</option>
-                                <option value="B+">B+ (Very Good)</option>
-                                <option value="B">B (Good)</option>
-                                <option value="C">C (Fair)</option>
-                                <option value="D">D (Pass)</option>
-                                <option value="E">E (Needs Improvement)</option>
+                                <option value="AUTO">Auto (सटीक प्रतिशत से निर्धारित होगा)</option>
+                                <option value="A+ (Outstanding / सर्वोत्तम)">A+ (Outstanding / सर्वोत्तम - 90%+)</option>
+                                <option value="A (Excellence / अति उत्तम)">A (Excellence / अति उत्तम - 80%+)</option>
+                                <option value="B+ (Very Good / उत्तम)">B+ (Very Good / उत्तम - 70%+)</option>
+                                <option value="B (Good / अच्छा)">B (Good / अच्छा - 60%+)</option>
+                                <option value="C (Satisfactory / संतोषजनक)">C (Satisfactory / संतोषजनक - 50%+)</option>
+                                <option value="D (Passed / सामान्य)">D (Passed / सामान्य उत्तीर्ण - 33%+)</option>
+                                <option value="E (Needs Improvement / पुन: परीक्षा)">E (Needs Improvement / सुधार आवश्यक)</option>
                             </select>
                         </div>
                     </div>
@@ -862,50 +1171,53 @@
 
                     <button class="btn-submit" onclick="generateReportCard()"><i class="fa fa-calculator"></i> Calculate & Create Marksheet</button>
 
-                    <!-- Marksheet Document with Dedicated GRADE Column -->
+                    <!-- Professional Marksheet Document -->
                     <div id="marksheet-preview">
                         <div style="text-align: center; border-bottom: 2px solid #8b0000; padding-bottom: 10px; margin-bottom: 12px;">
-                            <h2 style="color: #8b0000; margin: 0;">J.S. VIDYA NIKETAN</h2>
-                            <p style="font-size: 0.9rem; font-weight: bold; margin: 0;">RESIDENTIAL SCHOOL, ALIGANJ (ETAH)</p>
-                            <p style="font-size: 0.8rem; margin: 0;">Affiliated Curriculum - Nursery to 8th | Contact: 9412874591, 9761805343</p>
-                            <h4 style="margin-top: 8px; text-decoration: underline;">ANNUAL STUDENT PROGRESS REPORT</h4>
+                            <h2 style="color: #8b0000; margin: 0; font-size: 1.8rem;">J.S. VIDYA NIKETAN</h2>
+                            <p style="font-size: 0.9rem; font-weight: bold; margin: 0; color: #333;">RESIDENTIAL SCHOOL, ALIGANJ (ETAH)</p>
+                            <p style="font-size: 0.8rem; margin: 0; color: #555;">Co-Educational Curriculum | Classes Nursery to 8th | Contact: 9412874591, 9761805343</p>
+                            <h4 style="margin-top: 8px; text-decoration: underline; color: #8b0000;">ANNUAL STUDENT EVALUATION & REPORT CARD</h4>
                         </div>
 
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.95rem;">
-                            <div><strong>Student Name:</strong> <span id="lbl-name"></span></div>
-                            <div><strong>Roll No:</strong> <span id="lbl-roll"></span></div>
-                            <div><strong>Class:</strong> <span id="lbl-class"></span></div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.95rem; background: #fdfaf6; padding: 8px 12px; border: 1px solid #fed7aa; border-radius: 6px;">
+                            <div><strong>Student Name:</strong> <span id="lbl-name" style="color: #1e293b; font-weight: 700;"></span></div>
+                            <div><strong>Roll No:</strong> <span id="lbl-roll" style="color: #1e293b; font-weight: 700;"></span></div>
+                            <div><strong>Class:</strong> <span id="lbl-class" style="color: #1e293b; font-weight: 700;"></span></div>
                         </div>
 
-                        <!-- Table with Grade Column Added -->
                         <table class="custom-table" style="margin-bottom: 15px;">
                             <thead>
                                 <tr>
                                     <th>Subject (विषय)</th>
                                     <th>Max Marks (पूर्णांक)</th>
                                     <th>Marks Obtained (प्राप्तांक)</th>
-                                    <th style="background: #e65100;">Grade (ग्रेड)</th>
+                                    <th style="background: #e65100;">Grade (विषयवार श्रेणी)</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td>Hindi</td><td>100</td><td id="res-hindi"></td><td id="grd-hindi" style="font-weight: bold;"></td></tr>
-                                <tr><td>English</td><td>100</td><td id="res-eng"></td><td id="grd-eng" style="font-weight: bold;"></td></tr>
-                                <tr><td>Mathematics</td><td>100</td><td id="res-math"></td><td id="grd-math" style="font-weight: bold;"></td></tr>
-                                <tr><td>Science</td><td>100</td><td id="res-sci"></td><td id="grd-sci" style="font-weight: bold;"></td></tr>
-                                <tr><td>Social Science</td><td>100</td><td id="res-sst"></td><td id="grd-sst" style="font-weight: bold;"></td></tr>
-                                <tr style="font-weight: bold; background: #fafafa;">
-                                    <td>Grand Total</td>
+                                <tr><td>Hindi</td><td>100</td><td id="res-hindi"></td><td id="grd-hindi"></td></tr>
+                                <tr><td>English</td><td>100</td><td id="res-eng"></td><td id="grd-eng"></td></tr>
+                                <tr><td>Mathematics</td><td>100</td><td id="res-math"></td><td id="grd-math"></td></tr>
+                                <tr><td>Science</td><td>100</td><td id="res-sci"></td><td id="grd-sci"></td></tr>
+                                <tr><td>Social Science</td><td>100</td><td id="res-sst"></td><td id="grd-sst"></td></tr>
+                                <tr style="font-weight: bold; background: #fdf2f2;">
+                                    <td>Grand Total (कुल प्राप्तांक)</td>
                                     <td>500</td>
-                                    <td id="res-total"></td>
-                                    <td id="lbl-grade-col" style="color: green; font-size: 1.05rem;"></td>
+                                    <td id="res-total" style="color: #8b0000; font-size: 1.05rem;"></td>
+                                    <td id="lbl-grade-col" style="font-size: 1rem;"></td>
                                 </tr>
                             </tbody>
                         </table>
 
-                        <div style="display: flex; justify-content: space-around; margin: 12px 0; font-size: 1.05rem; font-weight: bold;">
-                            <div>Percentage: <span id="lbl-percentage" style="color: var(--primary);"></span>%</div>
+                        <div style="display: flex; justify-content: space-around; margin: 15px 0; font-size: 1.05rem; font-weight: bold; background: #f8fafc; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                            <div>Total Percentage: <span id="lbl-percentage" style="color: var(--primary);"></span>%</div>
                             <div>Overall Grade: <span id="lbl-grade" style="color: green;"></span></div>
-                            <div>Result Status: <span id="lbl-status"></span></div>
+                            <div>Final Result: <span id="lbl-status"></span></div>
+                        </div>
+
+                        <div style="font-size: 0.76rem; color: #64748b; margin-top: 8px; border-top: 1px dashed #cbd5e1; padding-top: 6px; text-align: center;">
+                            <strong>Grading Scale:</strong> A+ (90-100% Out Standing) | A (80-89% Excellence) | B+ (70-79% Very Good) | B (60-69% Good) | C (50-59% Satisfactory) | D (33-49% Pass)
                         </div>
 
                         <div style="display: flex; justify-content: space-between; margin-top: 35px; padding: 0 15px;">
@@ -942,7 +1254,155 @@
     <!-- Script Logic -->
     <script>
         let admissionData = JSON.parse(localStorage.getItem('jsvn_admissions')) || [];
+        let naturalFemaleVoice = null;
+        let recognition = null;
+        let isListening = false;
 
+        // Clean text so that speech engines never pronounce dots, ellipses or weird punctuation marks
+        function cleanTextForSpeech(text) {
+            return text
+                .replace(/\.{2,}/g, ' ')   // removes "..."
+                .replace(/\./g, ' ')        // removes standalone dots
+                .replace(/[_~*^#`]/g, '')   // removes markdown characters
+                .replace(/\s+/g, ' ')       // collapses extra whitespace
+                .trim();
+        }
+
+        // Voice Engine Initialization with Natural Female Pitch
+        function loadVoices() {
+            if ('speechSynthesis' in window) {
+                const voices = window.speechSynthesis.getVoices();
+                if (voices.length > 0) {
+                    naturalFemaleVoice = voices.find(v => 
+                        (v.lang.includes('hi') || v.lang.includes('IN')) && 
+                        (v.name.includes('Swara') || v.name.includes('Heera') || v.name.includes('Google हिन्दी') || v.name.includes('Female'))
+                    ) || voices.find(v => 
+                        v.lang.includes('en-IN') && (v.name.includes('Neerja') || v.name.includes('Female'))
+                    ) || voices.find(v => 
+                        v.name.includes('Zira') || v.name.includes('Samantha') || v.name.includes('Female')
+                    );
+                }
+            }
+        }
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+            loadVoices();
+        }
+
+        function speakSmoothLadyVoice(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const cleaned = cleanTextForSpeech(text);
+                const utterance = new SpeechSynthesisUtterance(cleaned);
+                utterance.lang = 'hi-IN';
+                utterance.rate = 0.88;
+                utterance.pitch = 1.08;
+                if (naturalFemaleVoice) {
+                    utterance.voice = naturalFemaleVoice;
+                }
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        /* ---------------- GOOGLE AI ASSISTANT TWO-WAY ENGINE ---------------- */
+        function openGoogleAiTeacher() {
+            document.getElementById('googleAiModal').style.display = 'flex';
+            
+            // Proper, respectful teacher self-introduction without any dots or ellipses
+            const fullTeacherIntro = "नमस्ते! प्रणाम। मैं जे.एस. विद्या निकेतन रेजिडेंशियल स्कूल, अलीगंज की वर्चुअल ए.आई. अध्यापिका हूँ। हमारे विद्यालय परिवार में आपका और आपके प्यारे बच्चे का बहुत-बहुत स्वागत है। नर्सरी से आठवीं कक्षा में प्रवेश, सुरक्षित हॉस्टल और वाहन सुविधा से जुड़ा जो भी सवाल आपके मन में हो, आप मुझसे निसंकोच पूछ सकते हैं।";
+            
+            document.getElementById('aiTeacherLiveText').innerText = fullTeacherIntro;
+            speakSmoothLadyVoice(fullTeacherIntro);
+        }
+
+        function closeGoogleAiTeacher() {
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            if (recognition && isListening) recognition.stop();
+            document.getElementById('googleAiModal').style.display = 'none';
+        }
+
+        // Live Mic Speech Recognition (User speaks, AI listens)
+        function toggleSpeechRecognition() {
+            const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRec) {
+                alert("आपके ब्राउज़र में वॉइस रिकॉग्निशन सपोर्ट नहीं है। कृपया गूगल क्रोम (Google Chrome) का इस्तेमाल करें या नीचे दिए गए बटन्स दबाएं।");
+                return;
+            }
+
+            const micBtn = document.getElementById('liveMicBtn');
+            const statusMsg = document.getElementById('micStatusMsg');
+
+            if (isListening) {
+                recognition.stop();
+                return;
+            }
+
+            recognition = new SpeechRec();
+            recognition.lang = 'hi-IN';
+            recognition.interimResults = false;
+
+            recognition.onstart = function() {
+                isListening = true;
+                micBtn.classList.add('listening');
+                statusMsg.innerText = "सुन रही हूँ, कृपया बोलिए";
+                statusMsg.style.color = "#EA4335";
+            };
+
+            recognition.onresult = function(event) {
+                const userSpeech = event.results[0][0].transcript;
+                processUserQuery(userSpeech);
+            };
+
+            recognition.onerror = function() {
+                statusMsg.innerText = "आवाज़ स्पष्ट नहीं आई, कृपया दोबारा माइक दबाकर बोलें";
+                statusMsg.style.color = "#475569";
+                micBtn.classList.remove('listening');
+                isListening = false;
+            };
+
+            recognition.onend = function() {
+                micBtn.classList.remove('listening');
+                isListening = false;
+                statusMsg.innerText = "माइक दबाएं और अपना सवाल बोलें";
+                statusMsg.style.color = "#475569";
+            };
+
+            recognition.start();
+        }
+
+        // AI Teacher processes user query and gives personalized smooth answer
+        function processUserQuery(query) {
+            const q = query.toLowerCase();
+            let reply = "";
+
+            if (q.includes("फीस") || q.includes("fees") || q.includes("रुपए") || q.includes("पैसा")) {
+                reply = "अभिभावक जी, हमारे विद्यालय में फीस बहुत ही उचित और जनहित में रखी गई है। तीन या अधिक बच्चों के प्रवेश पर परिवार को विशेष छूट दी जाती है। आप सीधे प्रबंधक अजीत यादव जी से फोन पर बात कर सकते हैं।";
+            } else if (q.includes("हॉस्टल") || q.includes("hostel") || q.includes("रहना")) {
+                reply = "जी हाँ, बच्चों के लिए घर जैसा सुरक्षित और अनुशासित हॉस्टल उपलब्ध है, जहाँ सात्विक भोजन, स्वच्छ वातावरण और शाम को अध्यापकों की विशेष पढ़ाई की व्यवस्था है।";
+            } else if (q.includes("एडमिशन") || q.includes("admission") || q.includes("दाखिला")) {
+                reply = "नर्सरी से आठवीं कक्षा तक के एडमिशन प्रारंभ हैं। आप इसी पेज पर नीचे दिया गया ऑनलाइन फॉर्म भर सकते हैं या सीधे प्रबंधक अजीत यादव जी को व्हाट्सएप पर अपनी जानकारी भेज सकते हैं।";
+            } else if (q.includes("बस") || q.includes("bus") || q.includes("वैन") || q.includes("गाड़ी")) {
+                reply = "जी हाँ, बच्चों के सुरक्षित आवागमन के लिए अलीगंज नगर और आस-पास के सभी क्षेत्रों में आरामदायक वैन और बस सुविधा उपलब्ध है।";
+            } else if (q.includes("मैनेजर") || q.includes("अजीत") || q.includes("नंबर") || q.includes("फोन")) {
+                reply = "हमारे प्रबंधक श्री अजीत यादव जी का मोबाइल नंबर 9761805343 और 9412874591 है। आप नीचे दिए गए हरे बटन से उन्हें सीधे व्हाट्सएप भी कर सकते हैं।";
+            } else if (q.includes("कहाँ") || q.includes("address") || q.includes("पता")) {
+                reply = "हमारा विद्यालय राधा कृष्ण मोहल्ला, अलीगंज, जनपद एटा, उत्तर प्रदेश में स्थित है।";
+            } else {
+                reply = `अभिभावक जी, आपने पूछा है: "${query}"। इसके लिए आप नीचे दिए गए हरे बटन को दबाकर सीधे हमारे प्रबंधक श्री अजीत यादव जी से व्हाट्सएप पर बात कर सकते हैं। वे आपकी पूरी सहायता करेंगे।`;
+            }
+
+            document.getElementById('aiTeacherLiveText').innerText = reply;
+            speakSmoothLadyVoice(reply);
+        }
+
+        function aiTeacherReply(type) {
+            if (type === 'admission') processUserQuery("एडमिशन कैसे लें");
+            if (type === 'hostel') processUserQuery("हॉस्टल की सुविधा");
+            if (type === 'bus') processUserQuery("बस की सुविधा");
+            if (type === 'fees') processUserQuery("फीस में छूट");
+        }
+
+        /* ---------------- OTHER UTILITIES ---------------- */
         function renderAdmissions() {
             const tbody = document.getElementById('admissionTableBody');
             const noMsg = document.getElementById('no-admissions-msg');
@@ -972,6 +1432,19 @@
             });
         }
 
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('wa_name').value.trim();
+            const address = document.getElementById('wa_address').value.trim();
+            const mobile = document.getElementById('wa_mobile').value.trim();
+            const msg = document.getElementById('wa_msg').value.trim();
+
+            const managerPhone = "919761805343";
+            const textContent = `*नई एडमिशन पूछताछ (J.S. Vidya Niketan)*%0A%0A👤 *नाम:* ${encodeURIComponent(name)}%0A📍 *पता:* ${encodeURIComponent(address)}%0A📞 *मोबाइल:* ${encodeURIComponent(mobile)}%0A📝 *विवरण:* ${encodeURIComponent(msg || 'एडमिशन की जानकारी चाहिए')}%0A%0Aकृपया मार्गदर्शन दें।`;
+
+            window.open(`https://wa.me/${managerPhone}?text=${textContent}`, '_blank');
+        }
+
         function handleAdmissionSubmit(e) {
             e.preventDefault();
 
@@ -988,7 +1461,7 @@
             admissionData.push(newEntry);
             localStorage.setItem('jsvn_admissions', JSON.stringify(admissionData));
 
-            alert("बधाई हो! आपका ऑनलाइन एडमिशन फॉर्म सफलतापूर्वक स्कूल एडमिन के पास जमा हो गया है। विद्यालय प्रबंधक Ajeet Yadav जी आपसे शीघ्र ही संपर्क करेंगे।");
+            alert("बधाई हो! आपका ऑनलाइन एडमिशन फॉर्म सफलतापूर्वक स्कूल एडमिन के पास जमा हो गया है। प्रबंधक Ajeet Yadav जी आपसे शीघ्र ही संपर्क करेंगे।");
             document.getElementById('studentAdmissionForm').reset();
         }
 
@@ -1000,6 +1473,20 @@
             }
         }
 
+        function togglePasswordVisibility(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = "password";
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
         function openAdmin() {
             document.getElementById('adminModal').style.display = 'flex';
         }
@@ -1007,27 +1494,19 @@
             document.getElementById('adminModal').style.display = 'none';
         }
 
-        // Voice AI Function: Speaks "Welcome Mr. Boss"
         function speakWelcome() {
             if ('speechSynthesis' in window) {
                 const utterance = new SpeechSynthesisUtterance("Welcome Mr. Boss!");
-                utterance.pitch = 1.2;
-                utterance.rate = 0.95;
-                // Choose female voice if available
-                const voices = window.speechSynthesis.getVoices();
-                const femaleVoice = voices.find(v => v.name.includes('Female') || v.name.includes('Zira') || v.name.includes('Google UK English Female') || v.lang.includes('en'));
-                if (femaleVoice) {
-                    utterance.voice = femaleVoice;
-                }
+                utterance.pitch = 1.15;
+                utterance.rate = 0.9;
+                if (naturalFemaleVoice) utterance.voice = naturalFemaleVoice;
                 window.speechSynthesis.speak(utterance);
             }
         }
 
-        // 4D Login Verification: jsvnaliganj@123
         function verifyAdmin() {
             const pass = document.getElementById('adminPassword').value;
             if (pass === "jsvnaliganj@123") {
-                // Show 4D Hostess Modal
                 const overlay = document.getElementById('boss4DGreetingOverlay');
                 overlay.style.display = 'flex';
                 speakWelcome();
@@ -1036,7 +1515,6 @@
             }
         }
 
-        // Enter Terminal from 4D Greeting Screen
         function enterDashboard() {
             document.getElementById('boss4DGreetingOverlay').style.display = 'none';
             document.getElementById('admin-login-view').style.display = 'none';
@@ -1062,18 +1540,16 @@
             }
         }
 
-        // Subject Grade Helper Function
-        function getSubjectGrade(m) {
-            if (m >= 90) return 'A+';
-            if (m >= 80) return 'A';
-            if (m >= 70) return 'B+';
-            if (m >= 60) return 'B';
-            if (m >= 50) return 'C';
-            if (m >= 33) return 'D';
-            return 'E';
+        function getSubjectGradeBadge(m) {
+            if (m >= 90) return '<span class="grade-pill grade-a-plus">A+ (Out Standing)</span>';
+            if (m >= 80) return '<span class="grade-pill grade-a">A (Excellence)</span>';
+            if (m >= 70) return '<span class="grade-pill grade-b">B+ (Very Good)</span>';
+            if (m >= 60) return '<span class="grade-pill grade-b">B (Good)</span>';
+            if (m >= 50) return '<span class="grade-pill grade-c">C (Satisfactory)</span>';
+            if (m >= 33) return '<span class="grade-pill grade-d">D (Passed)</span>';
+            return '<span class="grade-pill grade-e">E (Needs Imp.)</span>';
         }
 
-        // Marksheet Calculator with Column Grade
         function generateReportCard() {
             const name = document.getElementById('stName').value.trim();
             const roll = document.getElementById('stRoll').value.trim();
@@ -1095,26 +1571,24 @@
             const percentage = (total / 500) * 100;
 
             let finalGrade = '';
-            let status = (percentage >= 33) ? 'Passed' : 'Failed / Re-exam';
+            let status = (percentage >= 33) ? 'Passed (सफल/उत्तीर्ण)' : 'Needs Improvement (सुधार आवश्यक)';
 
             if (chosenGradeOption === 'AUTO') {
-                if (percentage >= 90) finalGrade = 'A+ (Outstanding)';
-                else if (percentage >= 80) finalGrade = 'A (Excellent)';
-                else if (percentage >= 70) finalGrade = 'B+ (Very Good)';
-                else if (percentage >= 60) finalGrade = 'B (Good)';
-                else if (percentage >= 50) finalGrade = 'C (Fair)';
-                else if (percentage >= 33) finalGrade = 'D (Satisfactory)';
-                else finalGrade = 'E (Needs Improvement)';
+                if (percentage >= 90) finalGrade = 'A+ (Out Standing / सर्वोत्तम)';
+                else if (percentage >= 80) finalGrade = 'A (Excellence / अति उत्तम)';
+                else if (percentage >= 70) finalGrade = 'B+ (Very Good / उत्तम)';
+                else if (percentage >= 60) finalGrade = 'B (Good / अच्छा)';
+                else if (percentage >= 50) finalGrade = 'C (Satisfactory / संतोषजनक)';
+                else if (percentage >= 33) finalGrade = 'D (Passed / सामान्य उत्तीर्ण)';
+                else finalGrade = 'E (Needs Improvement / सुधार आवश्यक)';
             } else {
                 finalGrade = chosenGradeOption;
             }
 
-            // Fill Details
             document.getElementById('lbl-name').innerText = name;
             document.getElementById('lbl-roll').innerText = roll;
             document.getElementById('lbl-class').innerText = sClass;
 
-            // Fill Subject Marks
             document.getElementById('res-hindi').innerText = h;
             document.getElementById('res-eng').innerText = e;
             document.getElementById('res-math').innerText = m;
@@ -1122,19 +1596,17 @@
             document.getElementById('res-sst').innerText = ss;
             document.getElementById('res-total').innerText = total;
 
-            // Fill Dedicated Grade Column for each subject
-            document.getElementById('grd-hindi').innerText = getSubjectGrade(h);
-            document.getElementById('grd-eng').innerText = getSubjectGrade(e);
-            document.getElementById('grd-math').innerText = getSubjectGrade(m);
-            document.getElementById('grd-sci').innerText = getSubjectGrade(s);
-            document.getElementById('grd-sst').innerText = getSubjectGrade(ss);
-            document.getElementById('lbl-grade-col').innerText = finalGrade.split(' ')[0];
+            document.getElementById('grd-hindi').innerHTML = getSubjectGradeBadge(h);
+            document.getElementById('grd-eng').innerHTML = getSubjectGradeBadge(e);
+            document.getElementById('grd-math').innerHTML = getSubjectGradeBadge(m);
+            document.getElementById('grd-sci').innerHTML = getSubjectGradeBadge(s);
+            document.getElementById('grd-sst').innerHTML = getSubjectGradeBadge(ss);
+            document.getElementById('lbl-grade-col').innerHTML = `<strong>${finalGrade.split(' ')[0]}</strong>`;
 
-            // Summary Info
             document.getElementById('lbl-percentage').innerText = percentage.toFixed(2);
             document.getElementById('lbl-grade').innerText = finalGrade;
             document.getElementById('lbl-status').innerText = status;
-            document.getElementById('lbl-status').style.color = (status === 'Passed') ? '#15803d' : '#b91c1c';
+            document.getElementById('lbl-status').style.color = (percentage >= 33) ? '#15803d' : '#b91c1c';
 
             document.getElementById('marksheet-preview').style.display = 'block';
             document.getElementById('marksheet-preview').scrollIntoView({ behavior: 'smooth' });
