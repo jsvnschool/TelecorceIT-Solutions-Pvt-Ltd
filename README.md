@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telecorcel IT Solutions Pvt Ltd | Enterprise Messaging & Digital Engineering</title>
+    <title>Telecorcel IT Solutions Pvt Ltd | Global IT & Telecom Enterprise</title>
     
     <!-- Google Fonts & Font Awesome 6 Pro Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
             --brand-green: #56ba2a;
             --brand-green-dark: #378018;
-            --brand-green-light: #edf8e7;
-            --brand-glow: rgba(86, 186, 42, 0.35);
+            --brand-green-glow: rgba(86, 186, 42, 0.4);
+            --ienergizer-dark: #050b07;
+            --ienergizer-surface: #0a140d;
             --secondary: #0f172a;
-            --dark-surface: #09130d;
             --bg-light: #f8fafc;
             --border: #e2e8f0;
+            --border-dark: rgba(255, 255, 255, 0.12);
             --text-dark: #0f172a;
             --text-muted: #64748b;
             --white: #ffffff;
@@ -28,7 +29,6 @@
             --radius-lg: 20px;
         }
 
-        /* Anti-flicker hardware acceleration */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -51,7 +51,7 @@
 
         /* Top Announcement Header */
         .top-banner {
-            background: #060e09;
+            background: #020503;
             color: #d1e7dd;
             padding: 9px 5%;
             font-size: 0.82rem;
@@ -70,7 +70,7 @@
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 7px;
             transition: color 0.2s;
         }
 
@@ -78,24 +78,23 @@
             color: var(--brand-green);
         }
 
-        /* Header Navbar */
+        /* iEnergizer Signature Dark Glassmorphism Header */
         header {
             position: sticky;
             top: 0;
             z-index: 1100;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-            box-shadow: 0 4px 25px rgba(0,0,0,0.03);
+            background: rgba(4, 10, 6, 0.92);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border-dark);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 5%;
-            max-width: 1400px;
+            padding: 14px 5%;
+            max-width: 1440px;
             margin: 0 auto;
         }
 
@@ -108,18 +107,17 @@
 
         .logo-img-wrapper {
             background: #ffffff;
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 4px 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #edf2f7;
-            height: 52px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            height: 48px;
+            box-shadow: 0 0 15px rgba(86, 186, 42, 0.3);
         }
 
         .brand-logo-img {
-            height: 44px;
+            height: 40px;
             width: auto;
             display: block;
             object-fit: contain;
@@ -131,98 +129,116 @@
         }
 
         .company-name-bold {
-            font-size: 1.32rem;
-            font-weight: 900;
-            color: #0f172a;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ffffff;
             text-transform: uppercase;
             line-height: 1.15;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
         }
 
         .company-name-bold span {
-            color: var(--brand-green-dark);
-            background: linear-gradient(120deg, #56ba2a, #2f7a14);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--brand-green);
         }
 
         .brand-subtitle {
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             font-weight: 700;
             letter-spacing: 2px;
-            color: #475569;
+            color: #94a3b8;
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 22px;
+            gap: 24px;
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #334155;
+            color: #e2e8f0;
             font-weight: 600;
             font-size: 0.9rem;
             position: relative;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 7px;
             transition: color 0.25s;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--brand-green);
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
         .nav-links a:hover {
-            color: var(--brand-green-dark);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            color: var(--brand-green);
         }
 
         .btn-cta {
             background: var(--brand-green);
             color: var(--white) !important;
             padding: 10px 22px;
-            border-radius: 8px;
+            border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 14px var(--brand-glow);
+            box-shadow: 0 4px 14px var(--brand-green-glow);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn-cta:hover {
             background: var(--brand-green-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(86, 186, 42, 0.4);
+        }
+
+        /* Floating Right Social Bar (Exact iEnergizer Style) */
+        .ienergizer-social-floating {
+            position: fixed;
+            right: 25px;
+            top: 45%;
+            transform: translateY(-50%);
+            z-index: 1050;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-pill {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #991b1b; /* iEnergizer signature red badge */
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .social-pill:hover {
+            transform: scale(1.15);
+            background: var(--brand-green);
         }
 
         /* Marquee Ticker */
         .marquee-bar {
-            background: #08120b;
-            color: #a7f3d0;
+            background: #020704;
+            color: #86efac;
             padding: 10px 0;
             overflow: hidden;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             white-space: nowrap;
+            border-bottom: 1px solid rgba(86, 186, 42, 0.2);
         }
 
         .marquee-content {
@@ -237,23 +253,21 @@
         }
 
         /* ============================================================
-           iEnergizer 4D Interactive Canvas & Hero Section
+           iEnergizer Exact Earth Globe Stage
            ============================================================ */
-        .hero-4d-container {
+        .ienergizer-stage {
             position: relative;
-            background: radial-gradient(circle at 50% 30%, #0d2215 0%, #050e08 100%);
+            background: radial-gradient(circle at 50% 25%, #0d2615 0%, #030805 100%);
             color: var(--white);
-            padding: 110px 5% 95px;
-            text-align: center;
-            overflow: hidden;
-            min-height: 680px;
+            min-height: 820px;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            padding: 70px 5%;
         }
 
-        /* Interactive 4D HTML5 Canvas Layer */
-        #interactive-4d-canvas {
+        #ienergizer-globe-canvas {
             position: absolute;
             top: 0;
             left: 0;
@@ -263,56 +277,27 @@
             pointer-events: auto;
         }
 
-        /* Ambient 4D Geometric Glow Spheres */
-        .ambient-sphere {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(90px);
-            z-index: 2;
-            pointer-events: none;
-            opacity: 0.45;
-            animation: float4D 12s ease-in-out infinite alternate;
-        }
-
-        .ambient-sphere.one {
-            width: 450px;
-            height: 450px;
-            background: rgba(86, 186, 42, 0.28);
-            top: -100px;
-            right: 5%;
-        }
-
-        .ambient-sphere.two {
-            width: 380px;
-            height: 380px;
-            background: rgba(16, 185, 129, 0.22);
-            bottom: -50px;
-            left: 5%;
-            animation-delay: -6s;
-        }
-
-        @keyframes float4D {
-            0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
-            50% { transform: translate3d(30px, -40px, 50px) scale(1.15) rotate(180deg); }
-            100% { transform: translate3d(-30px, 30px, -50px) scale(0.9) rotate(360deg); }
-        }
-
-        .hero-content {
+        .hero-stage-content {
             position: relative;
             z-index: 5;
-            max-width: 1080px;
+            max-width: 1350px;
             margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 50px;
+            align-items: center;
             pointer-events: none;
         }
 
-        .hero-content a, .hero-content button {
+        .hero-stage-content a, .hero-stage-content button {
             pointer-events: auto;
         }
 
-        .name-banner-dark {
+        .coverage-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             background: rgba(86, 186, 42, 0.15);
             border: 1px solid rgba(86, 186, 42, 0.4);
             color: #86efac;
@@ -322,44 +307,59 @@
             font-weight: 800;
             letter-spacing: 1.2px;
             text-transform: uppercase;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
             backdrop-filter: blur(8px);
         }
 
-        .hero-4d-container h1 {
-            font-size: 3.5rem;
-            line-height: 1.15;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 24px;
-            letter-spacing: -0.03em;
+        .coverage-badge .pulse-dot {
+            width: 9px;
+            height: 9px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
+            animation: radarPing 1.8s infinite;
         }
 
-        .hero-4d-container h1 span {
-            background: linear-gradient(120deg, #56ba2a, #a3e635);
+        @keyframes radarPing {
+            0% { transform: scale(0.9); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.5; }
+            100% { transform: scale(0.9); opacity: 1; }
+        }
+
+        .hero-stage-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.6rem;
+            line-height: 1.15;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 22px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-stage-text h1 span {
+            background: linear-gradient(120deg, #56ba2a, #86efac);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero-4d-container p {
-            font-size: 1.2rem;
+        .hero-stage-text p {
+            font-size: 1.18rem;
             color: #cbd5e1;
-            max-width: 840px;
-            margin: 0 auto 38px;
+            max-width: 660px;
+            margin-bottom: 35px;
         }
 
         .hero-buttons {
             display: flex;
             gap: 16px;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .btn-outline-glow {
-            border: 2px solid rgba(255, 255, 255, 0.25);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             padding: 11px 26px;
-            border-radius: 8px;
+            border-radius: 6px;
             color: #ffffff;
             text-decoration: none;
             font-weight: 700;
@@ -377,43 +377,132 @@
             background: rgba(86, 186, 42, 0.15);
         }
 
-        /* Elevation Stats Matrix */
-        .stats-grid-4d {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 26px;
-            background: rgba(13, 27, 18, 0.75);
-            backdrop-filter: blur(14px);
+        /* People Thumbs Up Floating Success Widget */
+        .thumbs-up-visual-card {
+            background: rgba(8, 20, 13, 0.88);
+            border: 1px solid rgba(86, 186, 42, 0.45);
             border-radius: var(--radius-lg);
-            border: 1px solid rgba(86, 186, 42, 0.25);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+            padding: 35px 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(16px);
+            position: relative;
+            animation: cardFloat 6s ease-in-out infinite alternate;
+            pointer-events: auto;
         }
 
-        .stat-item-4d i {
-            color: var(--brand-green);
+        @keyframes cardFloat {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-15px); }
+        }
+
+        .thumbs-up-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .thumbs-avatar-bubble {
+            width: 76px;
+            height: 76px;
+            background: linear-gradient(135deg, #56ba2a, #22c55e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.3rem;
+            color: #ffffff;
+            box-shadow: 0 0 25px rgba(86, 186, 42, 0.6);
+            animation: pulseGlow 2.5s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .thumbs-up-header h3 {
+            font-size: 1.35rem;
+            color: #ffffff;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .thumbs-up-header p {
+            font-size: 0.88rem;
+            color: #a7f3d0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .success-metrics-pill {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .success-metrics-pill .pill-val {
             font-size: 1.4rem;
-            margin-bottom: 8px;
+            font-weight: 900;
+            color: #86efac;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .success-metrics-pill .pill-lbl {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stats-strip-global {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat-mini-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        .stat-mini-box i {
+            color: var(--brand-green);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
             display: block;
         }
 
-        .stat-item-4d h3 {
-            font-size: 2.1rem;
-            font-weight: 900;
+        .stat-mini-box strong {
+            display: block;
+            font-size: 1.22rem;
             color: #ffffff;
+            font-weight: 900;
         }
 
-        .stat-item-4d p {
-            font-size: 0.85rem;
+        .stat-mini-box span {
+            font-size: 0.72rem;
             color: #94a3b8;
-            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        /* Section Layouts */
+        /* Standard Section Elements */
         section {
             padding: 85px 5%;
             max-width: 1400px;
@@ -436,7 +525,7 @@
             margin-bottom: 8px;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .section-header h2 {
@@ -444,22 +533,30 @@
             color: var(--secondary);
             font-weight: 800;
             letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .section-header p {
             color: var(--text-muted);
             margin-top: 10px;
             font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
-        /* Grid Frameworks & 4D Interactive Tilt Cards */
+        /* Cards & Grid */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 28px;
         }
 
-        .card-4d {
+        .interactive-service-card {
             background: var(--white);
             padding: 34px 28px;
             border-radius: var(--radius-md);
@@ -471,7 +568,7 @@
             flex-direction: column;
         }
 
-        .card-4d::before {
+        .interactive-service-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -483,13 +580,13 @@
             transition: opacity 0.3s ease;
         }
 
-        .card-4d:hover {
+        .interactive-service-card:hover {
             transform: translateY(-8px);
             border-color: rgba(86, 186, 42, 0.4);
             box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
         }
 
-        .card-4d:hover::before {
+        .interactive-service-card:hover::before {
             opacity: 1;
         }
 
@@ -507,13 +604,13 @@
             transition: all 0.3s ease;
         }
 
-        .card-4d:hover .card-icon {
+        .interactive-service-card:hover .card-icon {
             transform: scale(1.08) rotate(3deg);
             background: var(--brand-green);
             color: var(--white);
         }
 
-        .card-4d h3 {
+        .interactive-service-card h3 {
             font-size: 1.3rem;
             margin-bottom: 12px;
             color: var(--secondary);
@@ -523,7 +620,7 @@
             gap: 8px;
         }
 
-        .card-4d p {
+        .interactive-service-card p {
             color: var(--text-muted);
             font-size: 0.94rem;
             margin-bottom: 16px;
@@ -615,6 +712,9 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         /* Live Workspace Section */
@@ -780,7 +880,7 @@
             text-transform: uppercase;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
         }
 
         /* Locations Block */
@@ -872,10 +972,10 @@
         .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
             outline: none;
             border-color: var(--brand-green);
-            box-shadow: 0 0 0 4px var(--brand-glow);
+            box-shadow: 0 0 0 4px var(--brand-green-glow);
         }
 
-        /* Scroll-Trigger Reveal Animation Classes */
+        /* Scroll Reveal */
         .reveal-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -890,7 +990,7 @@
 
         /* Footer */
         footer {
-            background: #08110a;
+            background: #040905;
             color: #94a3b8;
             padding: 70px 5% 25px;
             border-top: 2px solid var(--brand-green);
@@ -947,9 +1047,11 @@
             align-items: center;
         }
 
-        @media (max-width: 900px) {
-            .hero-4d-container h1 { font-size: 2.3rem; }
-            .stats-grid-4d { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 950px) {
+            .hero-stage-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-stage-text h1 { font-size: 2.5rem; }
+            .hero-stage-text p { margin: 0 auto 30px; }
+            .hero-buttons { justify-content: center; }
             .workspace-section { grid-template-columns: 1fr; }
             .workspace-img-box { height: 260px; }
             .contact-layout { grid-template-columns: 1fr; padding: 25px; }
@@ -957,15 +1059,16 @@
             .footer-grid { grid-template-columns: 1fr; }
             .top-banner { flex-direction: column; gap: 6px; text-align: center; }
             .top-banner .contact-links a { margin: 0 6px; }
+            .ienergizer-social-floating { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Announcement Bar -->
+    <!-- Top Announcement Bar (With Verified Original Numbers) -->
     <div class="top-banner">
         <div>
-            <i class="fa-solid fa-shield-halved" style="color:var(--brand-green);"></i> Enterprise Telecom & Full-Stack IT Solutions Provider
+            <i class="fa-solid fa-earth-asia" style="color:var(--brand-green);"></i> Enterprise Telecom & Multi-Sector Coverage Infrastructure
         </div>
         <div class="contact-links">
             <a href="tel:9012574505"><i class="fa-solid fa-phone"></i> +91 9012574505</a>
@@ -974,11 +1077,10 @@
         </div>
     </div>
 
-    <!-- Sticky Header with Logo -->
+    <!-- Sticky Header with Official Logo -->
     <header>
         <nav>
             <a href="#home" class="brand-container">
-                <!-- LOGO IMAGE (With Inline Vector Fallback) -->
                 <div class="logo-img-wrapper">
                     <img src="logo.png" alt="Telecorcel Logo" class="brand-logo-img" onerror="this.style.display='none'; document.getElementById('svg-fallback').style.display='block';">
                     
@@ -1006,6 +1108,13 @@
         </nav>
     </header>
 
+    <!-- Floating Social Actions (iEnergizer Exact Style) -->
+    <div class="ienergizer-social-floating">
+        <a href="#contact" class="social-pill" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#contact" class="social-pill" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#contact" class="social-pill" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+
     <!-- Marquee Ticker -->
     <div class="marquee-bar">
         <div class="marquee-content">
@@ -1015,48 +1124,82 @@
     </div>
 
     <!-- ============================================================
-         iEnergizer-Style 4D Interactive Kinetic Mesh Hero Canvas
+         iEnergizer Exact Earth Globe Stage with Glowing Cyber Arcs
          ============================================================ -->
-    <div class="hero-4d-container" id="home">
-        <!-- Interactive 4D WebGL/Canvas Layer -->
-        <canvas id="interactive-4d-canvas"></canvas>
-        
-        <!-- Ambient Depth Spheres -->
-        <div class="ambient-sphere one"></div>
-        <div class="ambient-sphere two"></div>
+    <div class="ienergizer-stage" id="home">
+        <!-- Interactive 3D Earth Mesh Canvas -->
+        <canvas id="ienergizer-globe-canvas"></canvas>
 
-        <div class="hero-content reveal-on-scroll">
-            <div class="name-banner-dark">
-                <i class="fa-solid fa-atom"></i> Officially Registered: Telecorcel IT Solutions Pvt Ltd
-            </div>
-            <h1>Empowering Brands with <span>Bulk SMS, Cloud Telephony</span> & Enterprise IT</h1>
-            <p>Direct operator connectivity for Transactional SMS, Promotional broadcasts, official WhatsApp API, Cloud IVR, and bespoke mobile application & web engineering.</p>
-            
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-cta" style="padding: 13px 34px; font-size: 1.05rem;"><i class="fa-solid fa-bolt"></i> Connect With Sales</a>
-                <a href="#pricing" class="btn-outline-glow"><i class="fa-solid fa-table-list"></i> Explore Wholesale Plans</a>
+        <div class="hero-stage-content">
+            <!-- Left: Hero Statements -->
+            <div class="hero-stage-text reveal-on-scroll">
+                <div class="coverage-badge">
+                    <span class="pulse-dot"></span>
+                    <span><i class="fa-solid fa-tower-broadcast"></i> Global Telecom & Business Process Excellence</span>
+                </div>
+                <h1>Leveraging Telecom & IT Excellence for Enterprises <span>Across the Globe</span></h1>
+                <p><i class="fa-solid fa-network-wired" style="color:var(--brand-green); margin-right:6px;"></i> High-throughput telecom routing connecting businesses across all sectors. Real-time carrier balancing, instant OTP pipelines, WhatsApp Business API, and scalable web & software engineering.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-cta" style="padding: 13px 34px; font-size: 1.05rem;"><i class="fa-solid fa-satellite-dish"></i> Connect With Sales</a>
+                    <a href="#pricing" class="btn-outline-glow"><i class="fa-solid fa-table-list"></i> Explore Wholesale Plans</a>
+                </div>
+
+                <div class="stats-strip-global">
+                    <div class="stat-mini-box">
+                        <i class="fa-solid fa-globe"></i>
+                        <strong>100%</strong>
+                        <span>Area Coverage</span>
+                    </div>
+                    <div class="stat-mini-box">
+                        <i class="fa-solid fa-stopwatch"></i>
+                        <strong>&lt; 5s</strong>
+                        <span>Fast OTP</span>
+                    </div>
+                    <div class="stat-mini-box">
+                        <i class="fa-solid fa-stamp"></i>
+                        <strong>TRAI</strong>
+                        <span>DLT Verified</span>
+                    </div>
+                    <div class="stat-mini-box">
+                        <i class="fa-solid fa-headset"></i>
+                        <strong>24/7</strong>
+                        <span>Live NOC</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="stats-grid-4d">
-                <div class="stat-item-4d">
-                    <i class="fa-solid fa-server"></i>
-                    <h3>99.98%</h3>
-                    <p>Gateway Uptime</p>
+            <!-- Right: People Thumbs Up Floating Success Widget -->
+            <div class="thumbs-up-visual-card reveal-on-scroll">
+                <div class="thumbs-up-header">
+                    <div class="thumbs-avatar-bubble">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </div>
+                    <div>
+                        <h3><i class="fa-solid fa-star" style="color:#facc15; font-size:1.1rem;"></i> Client Satisfaction</h3>
+                        <p><i class="fa-solid fa-circle-check" style="color:#22c55e;"></i> Verified Happy Customers</p>
+                    </div>
                 </div>
-                <div class="stat-item-4d">
-                    <i class="fa-solid fa-stopwatch-20"></i>
-                    <h3>&lt; 5 Sec</h3>
-                    <p>Priority OTP Latency</p>
+
+                <div class="success-metrics-pill">
+                    <div>
+                        <div class="pill-lbl"><i class="fa-solid fa-bolt" style="color:var(--brand-green);"></i> Delivery Success Rate</div>
+                        <div class="pill-val"><i class="fa-solid fa-arrow-up-right-dots"></i> 99.98%</div>
+                    </div>
+                    <i class="fa-solid fa-chart-line" style="font-size: 1.8rem; color: #86efac;"></i>
                 </div>
-                <div class="stat-item-4d">
-                    <i class="fa-solid fa-certificate"></i>
-                    <h3>100%</h3>
-                    <p>TRAI DLT Verified</p>
+
+                <div class="success-metrics-pill">
+                    <div>
+                        <div class="pill-lbl"><i class="fa-solid fa-users-gear" style="color:var(--brand-green);"></i> Enterprise Support Team</div>
+                        <div class="pill-val"><i class="fa-solid fa-clock-rotate-left"></i> 24*7 Ready</div>
+                    </div>
+                    <i class="fa-solid fa-headset" style="font-size: 1.8rem; color: #86efac;"></i>
                 </div>
-                <div class="stat-item-4d">
-                    <i class="fa-solid fa-network-wired"></i>
-                    <h3>24/7</h3>
-                    <p>Live Monitoring</p>
+
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
+                    <span style="font-size:0.85rem; color:#cbd5e1;"><i class="fa-solid fa-location-dot" style="color:var(--brand-green);"></i> Noida Central NOC Station</span>
+                    <span style="background:rgba(86,186,42,0.2); color:#86efac; padding:4px 12px; border-radius:50px; font-size:0.75rem; font-weight:800; display:flex; align-items:center; gap:5px;"><i class="fa-solid fa-signal"></i> ACTIVE NOW</span>
                 </div>
             </div>
         </div>
@@ -1068,14 +1211,15 @@
             <img src="telecorcel9.jpeg" alt="Telecorcel Operations Floor">
         </div>
         <div class="workspace-content">
-            <span class="name-banner-dark" style="background: var(--brand-green-light); color: var(--brand-green-dark); border-color: rgba(86,186,42,0.3); max-width: fit-content;">
-                <i class="fa-solid fa-building-circle-check"></i> Live Operations Hub
+            <span class="coverage-badge" style="background: var(--brand-green-light); color: var(--brand-green-dark); border-color: rgba(86,186,42,0.3); max-width: fit-content;">
+                <span class="pulse-dot" style="background:var(--brand-green-dark); box-shadow:none;"></span>
+                <span><i class="fa-solid fa-building-circle-check"></i> Live Technical NOC Desk</span>
             </span>
-            <h2 style="font-size: 2.1rem; color: var(--secondary); margin-bottom: 16px;">Dedicated Floor Support & Technical Desk</h2>
-            <p style="color: var(--text-muted); margin-bottom: 22px;">Hamara technical operations floor 24/7 high-volume routes, delivery reports, aur customer technical support ko actively manage karta hai.</p>
+            <h2 style="font-size: 2.1rem; color: var(--secondary); margin-bottom: 16px; display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-people-roof" style="color:var(--brand-green-dark);"></i> Dedicated Floor Support & Operations</h2>
+            <p style="color: var(--text-muted); margin-bottom: 22px;"><i class="fa-solid fa-circle-info" style="color:var(--brand-green); margin-right:6px;"></i> Hamara central operations hub Noida Sector 62 se pure regional client accounts, active delivery logs, aur operator latency ko 24/7 monitor karta hai.</p>
             <ul class="bullet-list" style="border:none; padding:0; margin-bottom:24px;">
-                <li><i class="fa-solid fa-check-double"></i> Real-time carrier route balancing and failover</li>
-                <li><i class="fa-solid fa-check-double"></i> Dedicated client onboarding support</li>
+                <li><i class="fa-solid fa-check-double"></i> Real-time carrier route balancing and automatic failover</li>
+                <li><i class="fa-solid fa-check-double"></i> Multi-sector regional field support across NCR</li>
                 <li><i class="fa-solid fa-check-double"></i> Corporate Office: Block A, Industrial Area, Sector 62, Noida</li>
             </ul>
             <div>
@@ -1088,8 +1232,8 @@
     <section id="gallery" style="background: var(--bg-light); border-radius: var(--radius-lg);">
         <div class="section-header reveal-on-scroll">
             <h4><i class="fa-solid fa-photo-film"></i> Campaign Media & Operations</h4>
-            <h2>Our Verified Campaign Portals & Formats</h2>
-            <p>Explore our active campaign creatives, operator routing artworks, and promotional graphics.</p>
+            <h2><i class="fa-solid fa-panorama" style="color:var(--brand-green-dark);"></i> Verified Campaign Portals & Formats</h2>
+            <p><i class="fa-solid fa-sparkles" style="color:var(--brand-green);"></i> Explore our active campaign creatives, operator routing artworks, and promotional graphics.</p>
         </div>
 
         <div class="gallery-grid">
@@ -1100,7 +1244,7 @@
                 </div>
                 <div class="gallery-caption">
                     <h4><i class="fa-solid fa-layer-group" style="color:var(--brand-green);"></i> Multi-Traffic Campaign Portal</h4>
-                    <p>High delivery rates supporting Gaming, Casino, Spa, and Clinic messaging.</p>
+                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> High delivery rates supporting Gaming, Casino, Spa, and Clinic messaging.</p>
                 </div>
             </div>
 
@@ -1111,7 +1255,7 @@
                 </div>
                 <div class="gallery-caption">
                     <h4><i class="fa-solid fa-sliders" style="color:var(--brand-green);"></i> Versatile Traffic Solutions</h4>
-                    <p>Clean OTP, gaming, and local business promotional broadcasts.</p>
+                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> Clean OTP, gaming, and local business promotional broadcasts.</p>
                 </div>
             </div>
 
@@ -1122,7 +1266,7 @@
                 </div>
                 <div class="gallery-caption">
                     <h4><i class="fa-solid fa-route" style="color:var(--brand-green);"></i> India Stable SMS Route</h4>
-                    <p>MKT/OTP routes with high delivery rates and click analytics.</p>
+                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> MKT/OTP routes with high delivery rates and click analytics[cite: 1].</p>
                 </div>
             </div>
 
@@ -1133,7 +1277,7 @@
                 </div>
                 <div class="gallery-caption">
                     <h4><i class="fa-solid fa-mobile-screen-button" style="color:var(--brand-green);"></i> Instant Smartphone Reach</h4>
-                    <p>Direct inbox message delivery with zero screen distortion.</p>
+                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> Direct inbox message delivery with zero screen distortion.</p>
                 </div>
             </div>
 
@@ -1144,7 +1288,7 @@
                 </div>
                 <div class="gallery-caption">
                     <h4><i class="fa-solid fa-network-wired" style="color:var(--brand-green);"></i> Operator-Grade Gateway</h4>
-                    <p>High-concurrency carrier connectivity for fast delivery.</p>
+                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> High-concurrency carrier connectivity for fast delivery.</p>
                 </div>
             </div>
 
@@ -1155,7 +1299,7 @@
                 </div>
                 <div class="gallery-caption">
                     <h4><i class="fa-solid fa-chart-line" style="color:var(--brand-green);"></i> SMS Marketing Made Easy</h4>
-                    <p>Instant delivery with DND and Non-DND sender ID support.</p>
+                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> Instant delivery with DND and Non-DND sender ID support.</p>
                 </div>
             </div>
 
@@ -1166,7 +1310,7 @@
                 </div>
                 <div class="gallery-caption">
                     <h4><i class="fa-solid fa-key" style="color:var(--brand-green);"></i> India OTP Clean Route</h4>
-                    <p>Stable dynamic 2FA authentication for apps and banking portals.</p>
+                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> Stable dynamic 2FA authentication for apps and banking portals.</p>
                 </div>
             </div>
 
@@ -1177,7 +1321,7 @@
                 </div>
                 <div class="gallery-caption">
                     <h4><i class="fa-solid fa-arrow-trend-up" style="color:var(--brand-green);"></i> Sales Conversion Engine</h4>
-                    <p>Direct SMS routes designed to accelerate customer response rates.</p>
+                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> Direct SMS routes designed to accelerate customer response rates[cite: 1].</p>
                 </div>
             </div>
 
@@ -1188,7 +1332,7 @@
                 </div>
                 <div class="gallery-caption">
                     <h4><i class="fa-solid fa-cloud" style="color:var(--brand-green);"></i> Enterprise Gateway Network</h4>
-                    <p>High-throughput architecture for scalable enterprise communications.</p>
+                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> High-throughput architecture for scalable enterprise communications.</p>
                 </div>
             </div>
         </div>
@@ -1198,12 +1342,12 @@
     <section id="sms-services">
         <div class="section-header reveal-on-scroll">
             <h4><i class="fa-solid fa-tower-broadcast"></i> Direct Telecom Gateway</h4>
-            <h2>Enterprise Bulk SMS & DLT Solutions</h2>
-            <p>Engineered for high-volume deliverability across transactional, promotional, and automated notifications.</p>
+            <h2><i class="fa-solid fa-envelopes-bulk" style="color:var(--brand-green-dark);"></i> Enterprise Bulk SMS & DLT Solutions</h2>
+            <p><i class="fa-solid fa-circle-check" style="color:var(--brand-green);"></i> Engineered for high-volume deliverability across transactional, promotional, and automated notifications.</p>
         </div>
 
         <div class="grid-3">
-            <div class="card-4d reveal-on-scroll">
+            <div class="interactive-service-card reveal-on-scroll">
                 <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
                 <h3><i class="fa-solid fa-lock" style="font-size:1rem; color:var(--brand-green);"></i> Transactional & OTP SMS</h3>
                 <p>Prioritized carrier band for critical OTPs, two-factor authentication, security alerts, and order updates.</p>
@@ -1214,7 +1358,7 @@
                 </ul>
             </div>
 
-            <div class="card-4d reveal-on-scroll">
+            <div class="interactive-service-card reveal-on-scroll">
                 <div class="card-icon"><i class="fa-solid fa-bullhorn"></i></div>
                 <h3><i class="fa-solid fa-bullseye" style="font-size:1rem; color:var(--brand-green);"></i> Promotional & Flash SMS</h3>
                 <p>Scalable customer outreach for sales offers, announcements, and immediate pop-up Flash SMS alerts on phone screens.</p>
@@ -1225,7 +1369,7 @@
                 </ul>
             </div>
 
-            <div class="card-4d reveal-on-scroll">
+            <div class="interactive-service-card reveal-on-scroll">
                 <div class="card-icon"><i class="fa-solid fa-file-signature"></i></div>
                 <h3><i class="fa-solid fa-stamp" style="font-size:1rem; color:var(--brand-green);"></i> DLT Registration Support</h3>
                 <p>Complete entity registration, header whitelisting, and content template approvals across Jio, Airtel, VI, and BSNL.</p>
@@ -1242,12 +1386,12 @@
     <section id="omnichannel" style="background: var(--bg-light); border-radius: var(--radius-lg);">
         <div class="section-header reveal-on-scroll">
             <h4><i class="fa-solid fa-arrows-split-up-and-left"></i> Omnichannel Communication</h4>
-            <h2>WhatsApp Business, Cloud Voice IVR & Email</h2>
-            <p>Reach your customers on high-engagement touchpoints with automated workflows.</p>
+            <h2><i class="fa-solid fa-comments" style="color:var(--brand-green-dark);"></i> WhatsApp Business, Cloud Voice IVR & Email</h2>
+            <p><i class="fa-solid fa-share-nodes" style="color:var(--brand-green);"></i> Reach your customers on high-engagement touchpoints with automated workflows.</p>
         </div>
 
         <div class="grid-3">
-            <div class="card-4d reveal-on-scroll">
+            <div class="interactive-service-card reveal-on-scroll">
                 <div class="card-icon" style="color: #25d366; background: #e8fbee;"><i class="fa-brands fa-whatsapp"></i></div>
                 <h3><i class="fa-solid fa-message" style="font-size:1rem; color:#25d366;"></i> WhatsApp Business API</h3>
                 <p>Official Meta Cloud API integration, verified badge assistance, chatbot flows, and broadcast marketing.</p>
@@ -1258,7 +1402,7 @@
                 </ul>
             </div>
 
-            <div class="card-4d reveal-on-scroll">
+            <div class="interactive-service-card reveal-on-scroll">
                 <div class="card-icon" style="color: #8b5cf6; background: #f3f0ff;"><i class="fa-solid fa-headset"></i></div>
                 <h3><i class="fa-solid fa-phone-volume" style="font-size:1rem; color:#8b5cf6;"></i> Voice Calls & IVR</h3>
                 <p>Automate outbound voice broadcasts (OBD), customer reminders, and intelligent multi-level IVR inbound calling trees.</p>
@@ -1269,7 +1413,7 @@
                 </ul>
             </div>
 
-            <div class="card-4d reveal-on-scroll">
+            <div class="interactive-service-card reveal-on-scroll">
                 <div class="card-icon" style="color: #ea4335; background: #fdf2f2;"><i class="fa-solid fa-envelope-open-text"></i></div>
                 <h3><i class="fa-solid fa-envelope" style="font-size:1rem; color:#ea4335;"></i> Bulk Email Marketing</h3>
                 <p>High inbox placement rates through dedicated IP pools, drip automations, and transactional email gateways.</p>
@@ -1286,12 +1430,12 @@
     <section id="it-solutions">
         <div class="section-header reveal-on-scroll">
             <h4><i class="fa-solid fa-microchip"></i> Full-Stack Software Architecture</h4>
-            <h2>Custom Web, Mobile App & SaaS Engineering</h2>
-            <p>Engineered with modern cloud frameworks to deliver fast, secure, and conversion-optimized digital platforms.</p>
+            <h2><i class="fa-solid fa-code" style="color:var(--brand-green-dark);"></i> Custom Web, Mobile App & SaaS Engineering</h2>
+            <p><i class="fa-solid fa-shield-halved" style="color:var(--brand-green);"></i> Engineered with modern cloud frameworks to deliver fast, secure, and conversion-optimized digital platforms.</p>
         </div>
 
         <div class="grid-3">
-            <div class="card-4d reveal-on-scroll">
+            <div class="interactive-service-card reveal-on-scroll">
                 <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
                 <h3><i class="fa-solid fa-globe" style="font-size:1rem; color:var(--brand-green);"></i> Corporate Web & Portals</h3>
                 <p>Performance-driven, responsive, and SEO-optimized business websites, landing pages, and e-commerce web applications.</p>
@@ -1302,7 +1446,7 @@
                 </ul>
             </div>
 
-            <div class="card-4d reveal-on-scroll">
+            <div class="interactive-service-card reveal-on-scroll">
                 <div class="card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
                 <h3><i class="fa-brands fa-android" style="font-size:1rem; color:var(--brand-green);"></i> Mobile App Development</h3>
                 <p>High-speed, feature-packed mobile applications developed for Android and iOS devices using native and cross-platform frameworks.</p>
@@ -1313,7 +1457,7 @@
                 </ul>
             </div>
 
-            <div class="card-4d reveal-on-scroll">
+            <div class="interactive-service-card reveal-on-scroll">
                 <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
                 <h3><i class="fa-solid fa-gears" style="font-size:1rem; color:var(--brand-green);"></i> Custom CRM, ERP & SaaS</h3>
                 <p>Automate internal administration with custom dashboards, CRM pipelines, inventory managers, and billing systems.</p>
@@ -1330,8 +1474,8 @@
     <section id="pricing" style="background: var(--bg-light); border-radius: var(--radius-lg);">
         <div class="section-header reveal-on-scroll">
             <h4><i class="fa-solid fa-circle-dollar-to-slot"></i> Transparent Wholesale Rates</h4>
-            <h2>Competitive Pricing Cards</h2>
-            <p>Wholesale volume pricing with zero hidden maintenance charges. Contact sales for custom slab discounts.</p>
+            <h2><i class="fa-solid fa-tags" style="color:var(--brand-green-dark);"></i> Competitive Pricing Cards</h2>
+            <p><i class="fa-solid fa-badge-percent" style="color:var(--brand-green);"></i> Wholesale volume pricing with zero hidden maintenance charges. Contact sales for custom slab discounts.</p>
         </div>
 
         <div class="pricing-grid">
@@ -1353,9 +1497,9 @@
                 <div class="price">₹0.18<span> / SMS</span></div>
                 <p style="color: var(--text-muted); font-size: 0.85rem;"><i class="fa-solid fa-cubes-stacked"></i> Volume: Min 25k Credits</p>
                 <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Direct Carrier Priority Band</li>
+                    <li><i class="fa-solid fa-check"></i> Direct Carrier Priority Band[cite: 1]</li>
                     <li><i class="fa-solid fa-check"></i> 24/7 Delivery Under 5 Sec</li>
-                    <li><i class="fa-solid fa-check"></i> 99.9% Delivery Guarantee</li>
+                    <li><i class="fa-solid fa-check"></i> 99.9% Delivery Guarantee[cite: 1]</li>
                 </ul>
                 <a href="#contact" class="btn-cta" style="display:inline-flex; justify-content:center; width:100%; margin-top:20px;"><i class="fa-solid fa-bolt"></i> Get Started</a>
             </div>
@@ -1390,8 +1534,8 @@
     <section id="leadership">
         <div class="section-header reveal-on-scroll">
             <h4><i class="fa-solid fa-user-shield"></i> Corporate Leadership</h4>
-            <h2>Meet The Executive Management</h2>
-            <p>Guiding operations, enterprise sales, and technical excellence at Telecorcel IT Solutions Pvt Ltd.</p>
+            <h2><i class="fa-solid fa-users" style="color:var(--brand-green-dark);"></i> Executive Leadership Team</h2>
+            <p><i class="fa-solid fa-handshake" style="color:var(--brand-green);"></i> Guiding operations, enterprise sales, and technical excellence at Telecorcel IT Solutions Pvt Ltd[cite: 1].</p>
         </div>
 
         <div class="leadership-wrapper">
@@ -1400,7 +1544,7 @@
                 <div>
                     <div class="tag"><i class="fa-solid fa-award"></i> Chief Executive Officer</div>
                     <h3>Satyam Sharma</h3>
-                    <p style="font-size: 0.88rem; color: var(--text-muted);">Spearheading company strategy, carrier partnerships, and technical innovation at Telecorcel IT Solutions Pvt Ltd.</p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);"><i class="fa-solid fa-compass"></i> Spearheading company strategy, carrier partnerships, and technical innovation at Telecorcel IT Solutions Pvt Ltd[cite: 1].</p>
                 </div>
             </div>
 
@@ -1409,7 +1553,7 @@
                 <div>
                     <div class="tag"><i class="fa-solid fa-briefcase"></i> Sales Manager</div>
                     <h3>Shivam Sharma</h3>
-                    <p style="font-size: 0.88rem; color: var(--text-muted);">Overseeing bulk messaging volume contracts, enterprise client onboarding, and software proposals.</p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);"><i class="fa-solid fa-chart-pie"></i> Overseeing bulk messaging volume contracts, enterprise client onboarding, and software proposals.</p>
                 </div>
             </div>
         </div>
@@ -1419,16 +1563,16 @@
     <section style="padding-top: 0;">
         <div class="section-header reveal-on-scroll">
             <h4><i class="fa-solid fa-location-dot"></i> Infrastructure & Locations</h4>
-            <h2>Registered Office & Regional Support</h2>
-            <p>Headquartered in Noida's central IT corridor with localized support coverage.</p>
+            <h2><i class="fa-solid fa-city" style="color:var(--brand-green-dark);"></i> Registered Office & Regional Support</h2>
+            <p><i class="fa-solid fa-map"></i> Headquartered in Noida's central IT corridor with localized support coverage.</p>
         </div>
 
         <div class="locations-box">
             <div class="loc-card reveal-on-scroll">
                 <h4><i class="fa-solid fa-building" style="color: var(--brand-green-dark);"></i> Registered Corporate Office</h4>
-                <p><strong>Telecorcel IT Solutions Pvt Ltd</strong></p>
+                <p><strong>Telecorcel IT Solutions Pvt Ltd[cite: 1]</strong></p>
                 <p><i class="fa-solid fa-map-pin" style="color:var(--brand-green);"></i> Block A, Industrial Area, Sector 62</p>
-                <p>Noida, Uttar Pradesh – 201309, India</p>
+                <p><i class="fa-solid fa-location-arrow" style="color:var(--brand-green);"></i> Noida, Uttar Pradesh – 201309, India</p>
             </div>
 
             <div class="loc-card reveal-on-scroll">
@@ -1445,33 +1589,33 @@
         </div>
     </section>
 
-    <!-- Contact & Consultation Form -->
+    <!-- Contact & Consultation Form (With Exact Original Verified Numbers) -->
     <section id="contact" style="padding-top: 0;">
         <div class="contact-layout reveal-on-scroll">
             <div>
                 <h4 style="color: var(--brand-green-dark); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;"><i class="fa-solid fa-address-book"></i> Direct Access</h4>
-                <h2 style="font-size: 2.1rem; color: var(--secondary); margin-bottom: 20px;">Get in Touch With Telecorcel Sales</h2>
-                <p style="color: var(--text-muted); margin-bottom: 30px;">Reach out directly to our sales leadership to discuss volume rate cards, custom software proposals, or DLT template compliance.</p>
+                <h2 style="font-size: 2.1rem; color: var(--secondary); margin-bottom: 20px; display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-envelope-circle-check" style="color:var(--brand-green-dark);"></i> Connect With Sales</h2>
+                <p style="color: var(--text-muted); margin-bottom: 30px;"><i class="fa-solid fa-circle-question" style="color:var(--brand-green); margin-right:6px;"></i> Reach out directly to our sales leadership to discuss volume rate cards, custom software proposals, or DLT template compliance.</p>
 
                 <div class="contact-item">
                     <strong><i class="fa-solid fa-phone" style="color:var(--brand-green);"></i> Direct Helplines:</strong>
-                    <a href="tel:9012574505">+91 9012574505</a> &nbsp;|&nbsp; 
-                    <a href="tel:7678519164">+91 7678519164</a>
+                    <a href="tel:9012574505"><i class="fa-solid fa-phone-flip"></i> +91 9012574505[cite: 1]</a> &nbsp;|&nbsp; 
+                    <a href="tel:7678519164"><i class="fa-solid fa-phone-volume"></i> +91 7678519164</a>
                 </div>
 
                 <div class="contact-item">
                     <strong><i class="fa-solid fa-map-location" style="color:var(--brand-green);"></i> Corporate Registered Address:</strong>
-                    <p style="color: var(--text-dark); font-weight: 600;">Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309</p>
+                    <p style="color: var(--text-dark); font-weight: 600;"><i class="fa-solid fa-building-flag" style="color:var(--brand-green); margin-right:6px;"></i> Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309</p>
                 </div>
 
                 <div class="contact-item">
-                    <strong><i class="fa-solid fa-compass" style="color:var(--brand-green);"></i> Local Presence & Regional Coverage:</strong>
-                    <p style="color: var(--text-muted);">Serving businesses across Sector 44, Wazidpur, Noida and NCR Region.</p>
+                    <strong><i class="fa-solid fa-compass" style="color:var(--brand-green);"></i> Regional Coverage Network:</strong>
+                    <p style="color: var(--text-muted);"><i class="fa-solid fa-location-crosshairs" style="color:var(--brand-green); margin-right:6px;"></i> Active field service units serving Sector 44, Wazidpur, Noida and NCR Region.</p>
                 </div>
 
                 <div class="contact-item">
                     <strong><i class="fa-solid fa-clock" style="color:var(--brand-green);"></i> Operating Hours:</strong>
-                    <p style="color: var(--text-muted);">Monday – Saturday: 9:30 AM to 6:30 PM (Telecom Gateway: 24/7)</p>
+                    <p style="color: var(--text-muted);"><i class="fa-solid fa-calendar-check" style="color:var(--brand-green); margin-right:6px;"></i> Monday – Saturday: 9:30 AM to 6:30 PM (Telecom Gateway: 24/7)</p>
                 </div>
             </div>
 
@@ -1521,10 +1665,10 @@
                     <div style="background:#fff; padding:4px 8px; border-radius:6px; display:flex; align-items:center;">
                         <img src="logo.png" alt="Telecorcel Logo" style="height:32px;">
                     </div>
-                    <h3 style="color: var(--white); font-size: 1.15rem; font-weight:800;">TELECORCEL IT SOLUTIONS</h3>
+                    <h3 style="color: var(--white); font-size: 1.15rem; font-weight:800; display:flex; align-items:center; gap:6px;"><i class="fa-solid fa-shield-halved" style="color:var(--brand-green);"></i> TELECORCEL IT SOLUTIONS[cite: 1]</h3>
                 </div>
-                <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 15px;">Official enterprise provider of Bulk SMS, WhatsApp Business API, Cloud IVR, and custom full-stack software development.</p>
-                <p style="font-size: 0.85rem;"><i class="fa-solid fa-phone" style="color:var(--brand-green);"></i> +91 9012574505 / +91 7678519164</p>
+                <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 15px;"><i class="fa-solid fa-circle-check" style="color:var(--brand-green); margin-right:6px;"></i> Official enterprise provider of Bulk SMS, WhatsApp Business API, Cloud IVR, and custom full-stack software development.</p>
+                <p style="font-size: 0.85rem;"><i class="fa-solid fa-phone" style="color:var(--brand-green);"></i> +91 9012574505 / +91 7678519164[cite: 1]</p>
             </div>
 
             <div>
@@ -1558,138 +1702,187 @@
         </div>
 
         <div class="copyright">
-            <div>&copy; 2026 <strong>Telecorcel IT Solutions Pvt Ltd</strong>. All rights reserved.</div>
+            <div>&copy; 2026 <strong>Telecorcel IT Solutions Pvt Ltd</strong>. All rights reserved.[cite: 1]</div>
             <div style="color: var(--brand-green); font-weight: 600;"><i class="fa-solid fa-circle-check"></i> Sector 62, Noida, Uttar Pradesh 201309</div>
         </div>
     </footer>
 
     <!-- ============================================================
-         iEnergizer-Style 4D Interactive Particle Engine (Zero Lag)
+         iEnergizer Realistic Earth Sphere + Constellation Network Engine
          ============================================================ -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const canvas = document.getElementById('interactive-4d-canvas');
+            const canvas = document.getElementById('ienergizer-globe-canvas');
+            if (!canvas) return;
             const ctx = canvas.getContext('2d');
             let width, height;
-            let particles = [];
 
-            // Mouse tracking coordinates for 4D dynamic depth interaction
-            const mouse = {
-                x: null,
-                y: null,
-                radius: 160
-            };
-
-            window.addEventListener('mousemove', (e) => {
-                const rect = canvas.getBoundingClientRect();
-                mouse.x = e.clientX - rect.left;
-                mouse.y = e.clientY - rect.top;
-            });
-
-            window.addEventListener('mouseleave', () => {
-                mouse.x = null;
-                mouse.y = null;
-            });
+            let globeRadius = 310;
+            let rotationY = 0;
+            let rotationX = 0.28;
+            let targetRotY = 0;
+            let targetRotX = 0.28;
 
             function resize() {
                 width = canvas.width = canvas.parentElement.offsetWidth;
                 height = canvas.height = canvas.parentElement.offsetHeight;
-                initParticles();
+                globeRadius = Math.min(width * 0.38, 330);
             }
 
-            class Particle4D {
-                constructor() {
-                    this.x = Math.random() * width;
-                    this.y = Math.random() * height;
-                    this.z = Math.random() * 2 + 0.5; // 3D/4D depth layer
-                    this.vx = (Math.random() - 0.5) * 0.9 * this.z;
-                    this.vy = (Math.random() - 0.5) * 0.9 * this.z;
-                    this.baseRadius = (Math.random() * 2 + 1) * this.z;
-                    this.radius = this.baseRadius;
-                    this.color = this.z > 1.5 ? 'rgba(134, 239, 172, ' : 'rgba(86, 186, 42, ';
-                }
+            const dotCount = 280;
+            let sphereDots = [];
+            for (let i = 0; i < dotCount; i++) {
+                const phi = Math.acos(-1 + (2 * i) / dotCount);
+                const theta = Math.sqrt(dotCount * Math.PI) * phi;
+                sphereDots.push({
+                    x: Math.cos(theta) * Math.sin(phi),
+                    y: Math.sin(theta) * Math.sin(phi),
+                    z: Math.cos(phi),
+                    isContinent: Math.sin(theta * 2.5) * Math.cos(phi * 2.5) > -0.15
+                });
+            }
 
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
+            const arcBeams = [
+                { angleOffset: 0, speed: 0.012, radiusScale: 1.05 },
+                { angleOffset: 2.1, speed: 0.016, radiusScale: 1.12 },
+                { angleOffset: 4.2, speed: 0.009, radiusScale: 1.08 }
+            ];
 
-                    // Screen boundary reflection
-                    if (this.x < 0 || this.x > width) this.vx *= -1;
-                    if (this.y < 0 || this.y > height) this.vy *= -1;
+            window.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left - width / 2;
+                const mouseY = e.clientY - rect.top - height / 2;
+                targetRotY = (mouseX / width) * 1.2;
+                targetRotX = 0.28 - (mouseY / height) * 0.4;
+            });
 
-                    // Dynamic 4D Mouse Gravitational Wave
-                    if (mouse.x !== null && mouse.y !== null) {
-                        const dx = mouse.x - this.x;
-                        const dy = mouse.y - this.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
+            function render() {
+                ctx.clearRect(0, 0, width, height);
 
-                        if (dist < mouse.radius) {
-                            const force = (mouse.radius - dist) / mouse.radius;
-                            const angle = Math.atan2(dy, dx);
-                            this.x -= Math.cos(angle) * force * 4.5 * this.z;
-                            this.y -= Math.sin(angle) * force * 4.5 * this.z;
-                            this.radius = this.baseRadius * (1 + force * 1.2);
-                        } else {
-                            this.radius = this.baseRadius;
-                        }
+                const centerX = width > 950 ? width * 0.72 : width * 0.5;
+                const centerY = height * 0.52;
+
+                rotationX += (targetRotX - rotationX) * 0.04;
+                rotationY += 0.0018;
+
+                // 1. Atmosphere Rim Light (Video Style Glow)
+                const glowGrad = ctx.createRadialGradient(
+                    centerX - globeRadius * 0.2, centerY - globeRadius * 0.2, globeRadius * 0.2,
+                    centerX, centerY, globeRadius * 1.3
+                );
+                glowGrad.addColorStop(0, 'rgba(16, 185, 129, 0.22)');
+                glowGrad.addColorStop(0.65, 'rgba(86, 186, 42, 0.12)');
+                glowGrad.addColorStop(0.85, 'rgba(86, 186, 42, 0.04)');
+                glowGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, globeRadius * 1.3, 0, Math.PI * 2);
+                ctx.fillStyle = glowGrad;
+                ctx.fill();
+
+                // 2. Earth Globe Disc
+                const planetGrad = ctx.createRadialGradient(
+                    centerX - globeRadius * 0.4, centerY - globeRadius * 0.4, globeRadius * 0.1,
+                    centerX, centerY, globeRadius
+                );
+                planetGrad.addColorStop(0, '#102e1b');
+                planetGrad.addColorStop(0.55, '#07150c');
+                planetGrad.addColorStop(0.92, '#030805');
+                planetGrad.addColorStop(1, 'rgba(86, 186, 42, 0.5)');
+
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, globeRadius, 0, Math.PI * 2);
+                ctx.fillStyle = planetGrad;
+                ctx.fill();
+                ctx.strokeStyle = 'rgba(86, 186, 42, 0.35)';
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+
+                // 3. Project 3D Nodes
+                let projectedNodes = [];
+                for (let i = 0; i < sphereDots.length; i++) {
+                    const dot = sphereDots[i];
+
+                    let x1 = dot.x * Math.cos(rotationY) - dot.z * Math.sin(rotationY);
+                    let z1 = dot.z * Math.cos(rotationY) + dot.x * Math.sin(rotationY);
+
+                    let y2 = dot.y * Math.cos(rotationX) - z1 * Math.sin(rotationX);
+                    let z2 = z1 * Math.cos(rotationX) + dot.y * Math.sin(rotationX);
+
+                    if (z2 < 0) {
+                        const screenX = centerX + x1 * globeRadius;
+                        const screenY = centerY + y2 * globeRadius;
+                        const depthAlpha = Math.max(0.1, Math.min(1, -z2));
+
+                        projectedNodes.push({
+                            x: screenX,
+                            y: screenY,
+                            z: z2,
+                            alpha: depthAlpha,
+                            isContinent: dot.isContinent
+                        });
                     }
                 }
 
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = this.color + (0.35 * this.z) + ')';
-                    ctx.shadowBlur = 10;
-                    ctx.shadowColor = '#56ba2a';
-                    ctx.fill();
-                    ctx.shadowBlur = 0;
-                }
-            }
-
-            function initParticles() {
-                particles = [];
-                // Density calculation based on screen width
-                const count = Math.floor((width * height) / 10000);
-                for (let i = 0; i < count; i++) {
-                    particles.push(new Particle4D());
-                }
-            }
-
-            function renderLines() {
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
+                // 4. Mesh Triangulation Arcs
+                for (let i = 0; i < projectedNodes.length; i++) {
+                    for (let j = i + 1; j < projectedNodes.length; j++) {
+                        const n1 = projectedNodes[i];
+                        const n2 = projectedNodes[j];
+                        const dx = n1.x - n2.x;
+                        const dy = n1.y - n2.y;
                         const dist = Math.sqrt(dx * dx + dy * dy);
 
-                        if (dist < 115) {
-                            const alpha = (1 - dist / 115) * 0.22;
+                        if (dist < 46) {
+                            const lineAlpha = (1 - dist / 46) * 0.35 * Math.min(n1.alpha, n2.alpha);
                             ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.strokeStyle = `rgba(86, 186, 42, ${alpha})`;
-                            ctx.lineWidth = 0.8;
+                            ctx.moveTo(n1.x, n1.y);
+                            ctx.lineTo(n2.x, n2.y);
+                            ctx.strokeStyle = `rgba(134, 239, 172, ${lineAlpha})`;
+                            ctx.lineWidth = 0.85;
                             ctx.stroke();
                         }
                     }
                 }
-            }
 
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-                for (let i = 0; i < particles.length; i++) {
-                    particles[i].update();
-                    particles[i].draw();
-                }
-                renderLines();
-                requestAnimationFrame(animate);
+                // 5. Glowing City Lights / Nodes
+                projectedNodes.forEach(node => {
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, node.isContinent ? 1.8 : 1.2, 0, Math.PI * 2);
+                    ctx.fillStyle = node.isContinent ? `rgba(163, 230, 53, ${node.alpha * 0.95})` : `rgba(86, 186, 42, ${node.alpha * 0.6})`;
+                    ctx.fill();
+                });
+
+                // 6. Orbital Space Beams (Exact Video Style)
+                arcBeams.forEach((arc) => {
+                    arc.angleOffset += arc.speed;
+                    const r = globeRadius * arc.radiusScale;
+                    const pulseX = centerX + r * Math.cos(arc.angleOffset);
+                    const pulseY = centerY + (r * 0.5) * Math.sin(arc.angleOffset);
+
+                    ctx.beginPath();
+                    ctx.ellipse(centerX, centerY, r, r * 0.5, -0.2, 0, Math.PI * 2);
+                    ctx.strokeStyle = 'rgba(86, 186, 42, 0.14)';
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.arc(pulseX, pulseY, 3.5, 0, Math.PI * 2);
+                    ctx.fillStyle = '#86efac';
+                    ctx.shadowColor = '#56ba2a';
+                    ctx.shadowBlur = 12;
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                });
+
+                requestAnimationFrame(render);
             }
 
             window.addEventListener('resize', resize);
             resize();
-            animate();
+            render();
 
-            // Scroll Reveal Activation
+            // Scroll Reveal Handler
             const revealElements = document.querySelectorAll('.reveal-on-scroll');
             const revealObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
@@ -1698,10 +1891,8 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.12,
-                rootMargin: "0px 0px -40px 0px"
-            });
+            }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+
             revealElements.forEach(el => revealObserver.observe(el));
         });
     </script>
