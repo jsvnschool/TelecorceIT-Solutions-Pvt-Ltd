@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telecorcel IT Solutions Pvt Ltd | India Direct Bulk SMS, High Delivery Routes & IT Engineering</title>
+    <title>Telecorcel IT Solutions Pvt Ltd | Bulk SMS & IT Solutions</title>
     
-    <!-- Google Fonts & Font Awesome 6 Icons -->
+    <!-- Google Fonts & Font Awesome 6 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,15 +13,10 @@
 
     <style>
         :root {
-            /* Brand Identity Derived from Logo & Marketing Posters */
             --brand-green: #56ba2a;
             --brand-green-dark: #378018;
             --brand-green-light: #edf8e7;
-            --brand-dark: #0b150e;
-            --brand-slate: #1e293b;
             --secondary: #0f172a;
-            --accent-orange: #f97316;
-            --accent-cyan: #06b6d4;
             --bg-light: #f8fafc;
             --border: #e2e8f0;
             --text-dark: #0f172a;
@@ -49,12 +44,12 @@
             overflow-x: hidden;
         }
 
-        /* Top Bar */
+        /* Top Announcement Header */
         .top-banner {
             background: linear-gradient(90deg, #09130d, #14281c);
             color: #d1e7dd;
-            padding: 9px 5%;
-            font-size: 0.82rem;
+            padding: 10px 5%;
+            font-size: 0.84rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -64,7 +59,7 @@
         .top-banner .contact-links a {
             color: #ffffff;
             text-decoration: none;
-            margin-left: 14px;
+            margin-left: 18px;
             font-weight: 600;
             transition: color 0.2s;
         }
@@ -93,43 +88,57 @@
             margin: 0 auto;
         }
 
-        .brand-wrapper {
+        /* Logo Brand Container */
+        .brand-container {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
         }
 
+        .logo-img-wrapper {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 2px 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            border: 1px solid #edf2f7;
+        }
+
         .brand-logo-img {
-            height: 50px;
+            height: 54px;
             width: auto;
+            display: block;
             object-fit: contain;
         }
 
-        .brand-highlight-box {
+        .brand-text-block {
             display: flex;
             flex-direction: column;
         }
 
-        .company-name-highlight {
+        .company-name-bold {
             font-size: 1.35rem;
             font-weight: 900;
             letter-spacing: -0.02em;
             color: #0f172a;
             text-transform: uppercase;
+            line-height: 1.15;
         }
 
-        .company-name-highlight span {
+        .company-name-bold span {
             color: var(--brand-green-dark);
             background: linear-gradient(120deg, #56ba2a, #2f7a14);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .brand-subtext {
+        .brand-subtitle {
             font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 2.2px;
+            letter-spacing: 2px;
             color: #475569;
             text-transform: uppercase;
         }
@@ -137,7 +146,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 18px;
+            gap: 22px;
             align-items: center;
         }
 
@@ -145,7 +154,7 @@
             text-decoration: none;
             color: #334155;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             transition: color 0.2s;
         }
 
@@ -156,11 +165,13 @@
         .btn-cta {
             background: var(--brand-green);
             color: var(--white) !important;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 8px;
             font-weight: 700;
             box-shadow: 0 4px 14px rgba(86, 186, 42, 0.35);
             transition: all 0.25s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .btn-cta:hover {
@@ -183,7 +194,7 @@
 
         .marquee-content {
             display: inline-block;
-            animation: marquee 42s linear infinite;
+            animation: marquee 40s linear infinite;
         }
 
         @keyframes marquee {
@@ -226,7 +237,7 @@
             line-height: 1.15;
             font-weight: 900;
             color: var(--secondary);
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             letter-spacing: -0.03em;
         }
 
@@ -238,10 +249,10 @@
         }
 
         .hero p {
-            font-size: 1.18rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            max-width: 870px;
-            margin: 0 auto 32px;
+            max-width: 860px;
+            margin: 0 auto 34px;
         }
 
         .hero-buttons {
@@ -254,7 +265,7 @@
 
         .btn-outline {
             border: 2px solid #cbd5e1;
-            padding: 11px 24px;
+            padding: 11px 26px;
             border-radius: 8px;
             color: var(--secondary);
             text-decoration: none;
@@ -269,23 +280,6 @@
             background: var(--brand-green-light);
         }
 
-        .btn-whatsapp {
-            background: #25d366;
-            color: #fff !important;
-            padding: 11px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
-        }
-
-        .btn-whatsapp:hover {
-            background: #1da851;
-        }
-
         /* Stats Strip */
         .stats-grid {
             display: grid;
@@ -293,7 +287,7 @@
             gap: 20px;
             max-width: 1000px;
             margin: 0 auto;
-            padding: 26px;
+            padding: 28px;
             background: var(--white);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-md);
@@ -307,12 +301,12 @@
         }
 
         .stat-item p {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             font-weight: 600;
         }
 
-        /* Section Layouts */
+        /* Standard Section Elements */
         section {
             padding: 85px 5%;
             max-width: 1400px;
@@ -321,8 +315,8 @@
 
         .section-header {
             text-align: center;
-            max-width: 820px;
-            margin: 0 auto 50px;
+            max-width: 800px;
+            margin: 0 auto 55px;
         }
 
         .section-header h4 {
@@ -335,7 +329,7 @@
         }
 
         .section-header h2 {
-            font-size: 2.25rem;
+            font-size: 2.3rem;
             color: var(--secondary);
             font-weight: 800;
             letter-spacing: -0.02em;
@@ -347,64 +341,16 @@
             font-size: 1.05rem;
         }
 
-        /* Traffic Matrix Cards (From Flyer) */
-        .traffic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .traffic-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 24px 18px;
-            text-align: center;
-            transition: all 0.25s;
-        }
-
-        .traffic-card:hover {
-            border-color: var(--brand-green);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(86,186,42,0.12);
-        }
-
-        .traffic-card i {
-            font-size: 2.2rem;
-            color: var(--brand-green-dark);
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-
-        .traffic-card h4 {
-            font-size: 1.1rem;
-            color: var(--secondary);
-            margin-bottom: 6px;
-        }
-
-        .traffic-card span {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            display: block;
-        }
-
-        /* Grid Frameworks */
+        /* Grids & Cards */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 28px;
         }
 
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-        }
-
         .feature-card {
             background: var(--white);
-            padding: 32px 26px;
+            padding: 32px 28px;
             border-radius: var(--radius-md);
             border: 1px solid var(--border);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -418,8 +364,8 @@
         }
 
         .card-icon {
-            width: 56px;
-            height: 56px;
+            width: 58px;
+            height: 58px;
             background: var(--brand-green-light);
             color: var(--brand-green-dark);
             display: flex;
@@ -431,7 +377,7 @@
         }
 
         .feature-card h3 {
-            font-size: 1.28rem;
+            font-size: 1.3rem;
             margin-bottom: 12px;
             color: var(--secondary);
             font-weight: 700;
@@ -439,7 +385,7 @@
 
         .feature-card p {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.94rem;
             margin-bottom: 16px;
         }
 
@@ -463,6 +409,65 @@
         .bullet-list li i {
             color: var(--brand-green);
             font-size: 0.82rem;
+        }
+
+        /* Visual Media & Campaign Showcase Section */
+        .showcase-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .showcase-item {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-green);
+        }
+
+        .showcase-img-wrap {
+            height: 250px;
+            background: #f1f5f9;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .showcase-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .showcase-item:hover .showcase-img-wrap img {
+            transform: scale(1.04);
+        }
+
+        .showcase-info {
+            padding: 20px;
+        }
+
+        .showcase-info h4 {
+            font-size: 1.15rem;
+            color: var(--secondary);
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .showcase-info p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
         }
 
         /* Office Showcase Block */
@@ -498,40 +503,7 @@
             justify-content: center;
         }
 
-        /* Developer API Section */
-        .api-section {
-            background: #0d1a11;
-            color: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 55px;
-            margin: 40px auto;
-            max-width: 1400px;
-            border: 1px solid #1e3825;
-        }
-
-        .api-container {
-            display: grid;
-            grid-template-columns: 1fr 1.15fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .api-codebox {
-            background: #060c08;
-            border: 1px solid #23472f;
-            border-radius: 12px;
-            padding: 22px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: #86efac;
-            overflow-x: auto;
-        }
-
-        .api-codebox pre {
-            font-family: inherit;
-        }
-
-        /* Pricing Cards */
+        /* Pricing Matrix */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -593,7 +565,7 @@
             font-weight: 500;
         }
 
-        /* Leadership Block */
+        /* Leadership Cards */
         .leadership-wrapper {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -639,7 +611,7 @@
             text-transform: uppercase;
         }
 
-        /* Locations & Physical Presence */
+        /* Presence Block */
         .locations-box {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -666,42 +638,37 @@
         /* Contact Section */
         .contact-layout {
             display: grid;
-            grid-template-columns: 1.05fr 1fr;
-            gap: 45px;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 50px;
             background: #f8fafc;
             border-radius: var(--radius-lg);
             padding: 50px;
             border: 1px solid var(--border);
         }
 
-        .contact-matrix {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin: 24px 0;
+        .contact-item {
+            margin-bottom: 22px;
         }
 
-        .matrix-item {
-            background: #fff;
-            padding: 16px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-
-        .matrix-item strong {
-            font-size: 0.82rem;
-            color: var(--brand-green-dark);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .contact-item strong {
             display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--brand-green-dark);
             margin-bottom: 4px;
+            letter-spacing: 0.5px;
         }
 
-        .matrix-item a {
+        .contact-item a {
             color: var(--secondary);
-            font-weight: 700;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 1.15rem;
+            font-weight: 800;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: var(--brand-green-dark);
         }
 
         .form-row {
@@ -789,8 +756,6 @@
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .workspace-section { grid-template-columns: 1fr; }
             .contact-layout { grid-template-columns: 1fr; padding: 25px; }
-            .contact-matrix { grid-template-columns: 1fr; }
-            .api-container { grid-template-columns: 1fr; }
             .nav-links { display: none; }
             .footer-grid { grid-template-columns: 1fr; }
             .top-banner { flex-direction: column; gap: 6px; text-align: center; }
@@ -803,50 +768,53 @@
     <!-- Top Announcement Bar -->
     <div class="top-banner">
         <div>
-            <i class="fa-solid fa-award"></i> India Direct Route &bull; 20,000+ Happy Customers Since 2013 &bull; 24/7 Support
+            <i class="fa-solid fa-shield-check"></i> Enterprise Telecom & Full-Stack IT Solutions Provider
         </div>
         <div class="contact-links">
-            <a href="https://wa.me/919962201476" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp: 9962201476</a>
             <a href="tel:9012574505"><i class="fa-solid fa-phone"></i> +91 9012574505</a>
-            <a href="tel:12099493419"><i class="fa-solid fa-globe"></i> +1 (209) 949-3419</a>
-            <a href="#contact"><i class="fa-solid fa-envelope"></i> Raj@telecorcelitsolutions.com[cite: 1]</a>
+            <a href="tel:7678519164"><i class="fa-solid fa-phone"></i> +91 7678519164</a>
+            <a href="#contact"><i class="fa-solid fa-envelope"></i> Sales Desk</a>
         </div>
     </div>
 
     <!-- Main Navigation Bar -->
     <header>
         <nav>
-            <a href="#home" class="brand-wrapper">
-                <img src="logo.png" alt="Telecorcel Logo" class="brand-logo-img" onerror="this.style.display='none'; document.getElementById('svg-fallback').style.display='block';">
-                
-                <svg id="svg-fallback" style="display:none; height:46px; width:62px;" viewBox="0 0 100 80">
-                    <path d="M 40,12 C 75,12 90,26 80,48" stroke="#56ba2a" stroke-width="8" stroke-linecap="round" fill="none" />
-                    <path d="M 78,48 C 65,72 10,72 10,48 C 10,30 25,18 40,14" stroke="#378018" stroke-width="8" stroke-linecap="round" fill="none" />
-                </svg>
+            <a href="#home" class="brand-container">
+                <!-- LOGO IMAGE (Aapki file 'logo.png' yahan load hogi) -->
+                <div class="logo-img-wrapper">
+                    <img src="logo.png" alt="Telecorcel IT Solutions Logo" class="brand-logo-img" onerror="this.style.display='none'; document.getElementById('svg-fallback').style.display='block';">
+                    
+                    <!-- Fallback SVG agar logo image na mile -->
+                    <svg id="svg-fallback" style="display:none; height:48px; width:65px;" viewBox="0 0 100 80">
+                        <path d="M 40,12 C 75,12 90,26 80,48" stroke="#56ba2a" stroke-width="8" stroke-linecap="round" fill="none" />
+                        <path d="M 78,48 C 65,72 10,72 10,48 C 10,30 25,18 40,14" stroke="#378018" stroke-width="8" stroke-linecap="round" fill="none" />
+                    </svg>
+                </div>
 
-                <div class="brand-highlight-box">
-                    <span class="company-name-highlight">TELECORCEL <span>IT SOLUTIONS</span>[cite: 1]</span>
-                    <span class="brand-subtext">BULK SMS & IT SERVICES PVT LTD[cite: 1]</span>
+                <div class="brand-text-block">
+                    <span class="company-name-bold">TELECORCEL <span>IT SOLUTIONS</span></span>
+                    <span class="brand-subtitle">PVT LTD &bull; NOIDA</span>
                 </div>
             </a>
 
             <ul class="nav-links">
-                <li><a href="#traffic-types">Traffic Supported</a></li>
-                <li><a href="#sms-services">Direct SMS Routes[cite: 1]</a></li>
+                <li><a href="#sms-services">Bulk SMS</a></li>
                 <li><a href="#omnichannel">WhatsApp & Voice</a></li>
+                <li><a href="#gallery">Campaign Solutions</a></li>
                 <li><a href="#it-solutions">Software & Web</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#workspace">Our Team</a></li>
+                <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#contact" class="btn-cta">Enquire Now</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Services Announcement Ticker -->
+    <!-- Marquee Ticker -->
     <div class="marquee-bar">
         <div class="marquee-content">
-            &bull; TELECORCEL IT SOLUTIONS PVT LTD[cite: 1] &bull; Providing India High Quality Stable Routes &bull; OTP Route &bull; Marketing SMS &bull; Gaming SMS &bull; Casino &bull; Spa & Clinic &bull; Job SMS &bull; High Delivery Rates[cite: 1] &bull; All Types SMS Passed At Our Portal &bull; WhatsApp API &bull; 24*7 Customer Support[cite: 1] &bull; DND & Non-DND with Sender ID &bull; 20,000+ Happy Customers Since 2013[cite: 1] &bull; Skype: live:.cid.dfb339cefed95295[cite: 1] &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
-            &bull; TELECORCEL IT SOLUTIONS PVT LTD[cite: 1] &bull; Providing India High Quality Stable Routes &bull; OTP Route &bull; Marketing SMS &bull; Gaming SMS &bull; Casino &bull; Spa & Clinic &bull; Job SMS &bull; High Delivery Rates[cite: 1] &bull; All Types SMS Passed At Our Portal &bull; WhatsApp API &bull; 24*7 Customer Support[cite: 1] &bull; DND & Non-DND with Sender ID &bull; 20,000+ Happy Customers Since 2013[cite: 1]
+            &bull; TELECORCEL IT SOLUTIONS PVT LTD &bull; Bulk SMS &bull; OTP SMS &bull; Transactional SMS &bull; Promotional SMS &bull; Flash SMS &bull; WhatsApp API &bull; Voice SMS &bull; IVR Solutions &bull; Website Development &bull; Android & iOS Apps &bull; ERP & CRM Software &bull; DLT Support &bull; Sector 62 Noida &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
+            &bull; TELECORCEL IT SOLUTIONS PVT LTD &bull; Bulk SMS &bull; OTP SMS &bull; Transactional SMS &bull; Promotional SMS &bull; Flash SMS &bull; WhatsApp API &bull; Voice SMS &bull; IVR Solutions &bull; Website Development &bull; Android & iOS Apps &bull; ERP & CRM Software &bull; DLT Support &bull; Sector 62 Noida
         </div>
     </div>
 
@@ -854,88 +822,89 @@
     <div class="hero" id="home">
         <div class="hero-inner">
             <div class="name-banner">
-                <span><i class="fa-solid fa-circle-check"></i> High Delivery Rates &bull; All Types of Messages Accepted</span>
+                <span><i class="fa-solid fa-circle-check"></i> Officially Registered: Telecorcel IT Solutions Pvt Ltd</span>
             </div>
-            <h1>Boost Your Business With Our <span class="highlight-text">India Direct SMS Routes</span> & Digital Portals</h1>
-            <p>Providing India high-quality stable routes for Marketing, Clean OTPs, Gaming, Spas, and Clinics. Lowest cost, high delivery guarantee with dynamic clicks and 24*7 support[cite: 1].</p>
+            <h1>Empowering Brands with <span class="highlight-text">Bulk SMS, Cloud Telephony</span> & Enterprise IT</h1>
+            <p>Direct operator connectivity for Transactional SMS, Promotional broadcasts, official WhatsApp API, Cloud IVR, and bespoke mobile application & web engineering.</p>
             
             <div class="hero-buttons">
-                <a href="https://wa.me/919962201476" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp: 9962201476</a>
-                <a href="#contact" class="btn-cta">Get Best SMS Offer</a>
-                <a href="#pricing" class="btn-outline">Wholesale Rate Card</a>
+                <a href="#contact" class="btn-cta" style="padding: 14px 34px; font-size: 1.05rem;">Get Started With Us</a>
+                <a href="#pricing" class="btn-outline">Explore Wholesale Plans</a>
             </div>
 
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>20,000+</h3>
-                    <p>Happy Customers Since 2013[cite: 1]</p>
-                </div>
-                <div class="stat-item">
-                    <h3>99.9%</h3>
-                    <p>High Delivery Ratio[cite: 1]</p>
+                    <h3>99.98%</h3>
+                    <p>Telecom Gateway Uptime</p>
                 </div>
                 <div class="stat-item">
                     <h3>&lt; 5 Sec</h3>
-                    <p>Stable OTP Latency</p>
+                    <p>Priority OTP Latency</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>TRAI DLT Verified</p>
                 </div>
                 <div class="stat-item">
                     <h3>24/7</h3>
-                    <p>Live Operator Support[cite: 1]</p>
+                    <p>Server Monitoring</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- NEW SECTION: All Traffic Types Accepted (Direct From Poster) -->
-    <section id="traffic-types" style="background: var(--bg-light); border-radius: var(--radius-lg);">
+    <!-- PHOTO SHOWCASE: Campaign & Operational Graphics -->
+    <section id="gallery" style="background: var(--bg-light); border-radius: var(--radius-lg);">
         <div class="section-header">
-            <h4>Versatile Routing Solutions</h4>
-            <h2>We Accept All Traffic Types On Our Portal</h2>
-            <p>From high-volume gaming and entertainment broadcasts to verified clinic appointments and ultra-clean transactional OTPs.</p>
+            <h4>Commercial Solutions & Operations</h4>
+            <h2>Our Verified Campaign Formats & Floor Operations</h2>
+            <p>Proven multi-industry messaging capabilities backed by dedicated technical monitoring.</p>
         </div>
 
-        <div class="traffic-grid">
-            <div class="traffic-card">
-                <i class="fa-solid fa-gamepad"></i>
-                <h4>Gaming Traffic</h4>
-                <span>High delivery gaming alerts, bonuses & rewards</span>
+        <div class="showcase-gallery">
+            <!-- Image 1: Bulk SMS Poster -->
+            <div class="showcase-item">
+                <div class="showcase-img-wrap">
+                    <img src="telecorcel11.jpeg" alt="Affordable Bulk SMS Services" onerror="this.src='telecorcel0.jpeg'">
+                </div>
+                <div class="showcase-info">
+                    <h4>Multi-Industry Traffic Routing</h4>
+                    <p>Accepting Gaming, Casino, Spa, Clinic, and Clean OTP traffic on high-volume routes.</p>
+                </div>
             </div>
 
-            <div class="traffic-card">
-                <i class="fa-solid fa-dice"></i>
-                <h4>Casino Campaigns</h4>
-                <span>Direct stable routes with maximum inbox reach</span>
+            <!-- Image 2: India Direct SMS Route -->
+            <div class="showcase-item">
+                <div class="showcase-img-wrap">
+                    <img src="telecorcel8.jpeg" alt="India Direct SMS Routes" onerror="this.src='telecorcel3.jpeg'">
+                </div>
+                <div class="showcase-info">
+                    <h4>India Direct MKT & OTP Routes</h4>
+                    <p>Providing high delivery, dynamic click analytics, and stable telecom routing.</p>
+                </div>
             </div>
 
-            <div class="traffic-card">
-                <i class="fa-solid fa-spa"></i>
-                <h4>Spa & Salons</h4>
-                <span>Local promotional offers & appointment bookings</span>
+            <!-- Image 3: India Clean OTP Route -->
+            <div class="showcase-item">
+                <div class="showcase-img-wrap">
+                    <img src="telecorcel4.jpeg" alt="India OTP Clean Route">
+                </div>
+                <div class="showcase-info">
+                    <h4>Clean OTP Authentication</h4>
+                    <p>Sub-5 second latency with carrier fallbacks for maximum banking & login security.</p>
+                </div>
             </div>
 
-            <div class="traffic-card">
-                <i class="fa-solid fa-hospital-user"></i>
-                <h4>Clinic & Healthcare</h4>
-                <span>Patient alerts, test report links & doctor reminders</span>
+            <!-- Image 4: SMS Marketing Made Easy -->
+            <div class="showcase-item">
+                <div class="showcase-img-wrap">
+                    <img src="telecorcel5.jpeg" alt="SMS Marketing Made Easy">
+                </div>
+                <div class="showcase-info">
+                    <h4>DND & Non-DND Sender IDs</h4>
+                    <p>Instant delivery with verified TRAI-approved headers and compliant templates.</p>
+                </div>
             </div>
-
-            <div class="traffic-card">
-                <i class="fa-solid fa-key"></i>
-                <h4>India Clean OTP</h4>
-                <span>Stable, sub-5 second authentication delivery</span>
-            </div>
-
-            <div class="traffic-card">
-                <i class="fa-solid fa-briefcase"></i>
-                <h4>Job & Hiring SMS</h4>
-                <span>Recruitment drives & candidate interview alerts</span>
-            </div>
-        </div>
-
-        <div style="margin-top: 35px; background: #fff; border: 1px dashed var(--brand-green); padding: 18px; border-radius: var(--radius-md); text-align: center;">
-            <p style="color: var(--secondary); font-weight: 700; margin: 0;">
-                <i class="fa-solid fa-bolt" style="color: var(--brand-green);"></i> All types SMS passed at our portal with DND & Non-DND Sender ID configurations!
-            </p>
         </div>
     </section>
 
@@ -943,195 +912,173 @@
     <section id="sms-services">
         <div class="section-header">
             <h4>Direct Telecom Gateway</h4>
-            <h2>Enterprise Bulk SMS & High-Quality Routes</h2>
-            <p>Providing India direct SMS routes with high delivery and clicks both dynamic and stable[cite: 1].</p>
+            <h2>Enterprise Bulk SMS & DLT Solutions</h2>
+            <p>Engineered for high-volume enterprise deliverability across transactional, promotional, and automated notifications.</p>
         </div>
 
         <div class="grid-3">
             <div class="feature-card">
-                <div class="card-icon"><i class="fa-solid fa-paper-plane"></i></div>
-                <h3>India MKT / Marketing Route[cite: 1]</h3>
-                <p>Engineered for maximum CTR, promotional campaigns, seasonal sales, announcements, and immediate customer responses[cite: 1].</p>
+                <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Transactional & OTP SMS</h3>
+                <p>Prioritized carrier band for critical OTPs, two-factor authentication, security alerts, and order updates.</p>
                 <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> High Delivery & Real Dynamic Clicks[cite: 1]</li>
-                    <li><i class="fa-solid fa-check"></i> Non-DND & DND Dual Filtering Support</li>
-                    <li><i class="fa-solid fa-check"></i> Custom Approved Sender ID Allocation</li>
+                    <li><i class="fa-solid fa-check"></i> Round-the-clock 24/7/365 Open Bandwidth</li>
+                    <li><i class="fa-solid fa-check"></i> Automated Carrier Failover & Retries</li>
+                    <li><i class="fa-solid fa-check"></i> Sub-5 Second Delivery Latency</li>
                 </ul>
             </div>
 
             <div class="feature-card">
-                <div class="card-icon"><i class="fa-solid fa-shield-check"></i></div>
-                <h3>India OTP Clean Route Available[cite: 1]</h3>
-                <p>Direct operator pipe for banking, app logins, and user onboarding with high-priority failover buffers.</p>
+                <div class="card-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                <h3>Promotional & Flash SMS</h3>
+                <p>Scalable customer outreach for sales offers, announcements, and immediate pop-up Flash SMS alerts on phone screens.</p>
                 <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> 100% Stable Route Bandwidth[cite: 1]</li>
-                    <li><i class="fa-solid fa-check"></i> Instant &lt; 5s Guaranteed Delivery</li>
-                    <li><i class="fa-solid fa-check"></i> 24/7/365 Open Carrier Gateway</li>
+                    <li><i class="fa-solid fa-check"></i> Standard Delivery Window (10 AM - 9 PM)</li>
+                    <li><i class="fa-solid fa-check"></i> Direct Screen Popup Flash SMS</li>
+                    <li><i class="fa-solid fa-check"></i> Smart DND Scrubbing & Reporting</li>
                 </ul>
             </div>
 
             <div class="feature-card">
-                <div class="card-icon"><i class="fa-solid fa-message-dots"></i></div>
-                <h3>RCS & Flash Messaging</h3>
-                <p>Deliver rich carousels, action buttons, and direct screen pop-up Flash SMS to maximize user engagement.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Verified Brand Checkmark Profile</li>
-                    <li><i class="fa-solid fa-check"></i> Interactive Buttons & Deep Links</li>
-                    <li><i class="fa-solid fa-check"></i> Automatic Fallback to Clean SMS</li>
-                </ul>
-            </div>
-
-            <div class="feature-card">
-                <div class="card-icon"><i class="fa-brands fa-whatsapp"></i></div>
-                <h3>WhatsApp Business API</h3>
-                <p>Official Meta Cloud API integration, verified Green Tick guidance, interactive chatbots, and broadcast notifications.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Automated Chatbot Workflows</li>
-                    <li><i class="fa-solid fa-check"></i> Dynamic PDF Invoices & Catalogs</li>
-                    <li><i class="fa-solid fa-check"></i> Quick Reply Click Buttons</li>
-                </ul>
-            </div>
-
-            <div class="feature-card">
-                <div class="card-icon"><i class="fa-solid fa-phone-volume"></i></div>
-                <h3>Voice Calls, IVR & Missed Call</h3>
-                <p>Automate voice broadcasts (OBD), appointment reminders, interactive multi-level IVRs, and missed call lead capture.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> High Concurrency Voice Channels</li>
-                    <li><i class="fa-solid fa-check"></i> DTMF Keypad Input Capture</li>
-                    <li><i class="fa-solid fa-check"></i> Instant Missed-Call CRM Forwarding</li>
-                </ul>
-            </div>
-
-            <div class="feature-card">
-                <div class="card-icon"><i class="fa-solid fa-file-contract"></i></div>
+                <div class="card-icon"><i class="fa-solid fa-file-signature"></i></div>
                 <h3>DLT Registration & Template Support</h3>
                 <p>Complete entity registration, header whitelisting, and content template approvals across Jio, Airtel, VI, and BSNL.</p>
                 <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Entity & Header (Sender ID) Setup</li>
-                    <li><i class="fa-solid fa-check"></i> Template Approval Assistance</li>
-                    <li><i class="fa-solid fa-check"></i> 100% TRAI Compliance Auditing</li>
+                    <li><i class="fa-solid fa-check"></i> Entity & Sender ID (Header) Approval</li>
+                    <li><i class="fa-solid fa-check"></i> Content Template Submissions</li>
+                    <li><i class="fa-solid fa-check"></i> TRAI Regulatory Compliance</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- NEW SECTION: Real Office & Team Operations Showcase (From Uploaded Photo) -->
+    <!-- Real Technical Floor Operations Photo Showcase -->
     <div class="workspace-section" id="workspace">
         <div class="workspace-img-box">
+            <!-- PHOTO: telecorcel9.jpeg (Workspace Floor) -->
             <img src="telecorcel9.jpeg" alt="Telecorcel IT Solutions Office Operations" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80'">
         </div>
         <div class="workspace-content">
             <span class="name-banner" style="display:inline-block; max-width:fit-content;">
-                <span><i class="fa-solid fa-building"></i> Live Technical Hub</span>
+                <span><i class="fa-solid fa-building"></i> Operations Hub</span>
             </span>
-            <h2 style="font-size: 2.1rem; color: var(--secondary); margin-bottom: 16px;">Dedicated Floor Support & Active NOC Center</h2>
-            <p style="color: var(--text-muted); margin-bottom: 22px;">Hamara dedicated technical operations floor 24/7 high-volume routes, live campaign monitoring, aur API delivery logs ko actively manage karta hai. Direct human support for your business needs.</p>
-            <ul class="bullet-list" style="border:none; padding:0; margin-bottom:20px;">
-                <li><i class="fa-solid fa-check-double"></i> 20,000+ Happy Customers Served Since 2013[cite: 1]</li>
-                <li><i class="fa-solid fa-check-double"></i> 24*7 Direct Customer Helpdesk & NOC Desk[cite: 1]</li>
-                <li><i class="fa-solid fa-check-double"></i> Head Office: Block A, Industrial Area, Sector 62, Noida (UP 201309)</li>
+            <h2 style="font-size: 2.1rem; color: var(--secondary); margin-bottom: 16px;">Dedicated Floor Support & Technical Desk</h2>
+            <p style="color: var(--text-muted); margin-bottom: 22px;">Hamara dedicated technical operations floor 24/7 high-volume telecom routes, live campaign deliverability, aur developer API status ko actively monitor aur optimize karta hai.</p>
+            <ul class="bullet-list" style="border:none; padding:0; margin-bottom:24px;">
+                <li><i class="fa-solid fa-check-double"></i> Real-time carrier route balancing and failover</li>
+                <li><i class="fa-solid fa-check-double"></i> Direct telephonic support for enterprise clients</li>
+                <li><i class="fa-solid fa-check-double"></i> Head Office: Block A, Industrial Area, Sector 62, Noida</li>
             </ul>
             <div>
-                <a href="#contact" class="btn-cta">Schedule Office Consultation</a>
+                <a href="#contact" class="btn-cta">Connect With Us</a>
             </div>
         </div>
     </div>
 
-    <!-- IT Engineering, Web & Mobile App Development -->
-    <section id="it-solutions" style="background: var(--bg-light); border-radius: var(--radius-lg);">
+    <!-- Omnichannel: WhatsApp, Voice IVR & Email -->
+    <section id="omnichannel" style="background: var(--bg-light); border-radius: var(--radius-lg);">
         <div class="section-header">
-            <h4>Technology & Development</h4>
+            <h4>Omnichannel Communication</h4>
+            <h2>WhatsApp Business, Cloud Voice IVR & Email</h2>
+            <p>Reach your customers on high-engagement touchpoints with automated workflows.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="feature-card">
+                <div class="card-icon" style="color: #25d366; background: #e8fbee;"><i class="fa-brands fa-whatsapp"></i></div>
+                <h3>WhatsApp Business API</h3>
+                <p>Official Meta Cloud API integration, verified badge assistance, chatbot flows, and broadcast marketing.</p>
+                <ul class="bullet-list">
+                    <li><i class="fa-solid fa-check"></i> Automated Chatbot Workflows</li>
+                    <li><i class="fa-solid fa-check"></i> Interactive Quick Reply Buttons</li>
+                    <li><i class="fa-solid fa-check"></i> Dynamic PDF Invoice Alerts</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon" style="color: #8b5cf6; background: #f3f0ff;"><i class="fa-solid fa-headset"></i></div>
+                <h3>Voice Calls, Voice SMS & IVR</h3>
+                <p>Automate outbound voice broadcasts (OBD), customer reminders, and intelligent multi-level IVR inbound calling trees.</p>
+                <ul class="bullet-list">
+                    <li><i class="fa-solid fa-check"></i> High Concurrency Voice Channels</li>
+                    <li><i class="fa-solid fa-check"></i> User Keypad (DTMF) Capture</li>
+                    <li><i class="fa-solid fa-check"></i> Exact Duration Analytics</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon" style="color: #ea4335; background: #fdf2f2;"><i class="fa-solid fa-envelope-open-text"></i></div>
+                <h3>Bulk Email Marketing & SMTP</h3>
+                <p>High inbox placement rates through dedicated IP pools, drip automations, and transactional email gateways.</p>
+                <ul class="bullet-list">
+                    <li><i class="fa-solid fa-check"></i> Real-time Open & Click Tracking</li>
+                    <li><i class="fa-solid fa-check"></i> Automated Drip Schedules</li>
+                    <li><i class="fa-solid fa-check"></i> SPF, DKIM & DMARC Setup</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- IT Engineering, Web & Mobile App Development -->
+    <section id="it-solutions">
+        <div class="section-header">
+            <h4>Full-Stack Software Architecture</h4>
             <h2>Custom Web, Mobile App & SaaS Product Engineering</h2>
-            <p>Scalable, responsive, and secure custom platforms designed for your growing brand.</p>
+            <p>Engineered with modern cloud frameworks to deliver fast, secure, and conversion-optimized digital platforms.</p>
         </div>
 
         <div class="grid-3">
             <div class="feature-card">
                 <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
                 <h3>Corporate Web & Portals</h3>
-                <p>Responsive corporate websites, high-converting landing funnels, and e-commerce shopping platforms.</p>
+                <p>Performance-driven, responsive, and SEO-optimized business websites, landing pages, and e-commerce web applications.</p>
                 <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> E-commerce Portals & Payment Gateways</li>
-                    <li><i class="fa-solid fa-check"></i> Responsive Mobile-Friendly Layouts</li>
+                    <li><i class="fa-solid fa-check"></i> Corporate Websites & Landing Pages</li>
+                    <li><i class="fa-solid fa-check"></i> E-commerce Gateways & Shopping Carts</li>
                     <li><i class="fa-solid fa-check"></i> SSL Security & Cloud Hosting</li>
                 </ul>
             </div>
 
             <div class="feature-card">
                 <div class="card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-                <h3>Mobile Application Development</h3>
-                <p>Native Android and iOS applications built for fast performance, custom workflows, and clean UI.</p>
+                <h3>Custom Mobile App Development</h3>
+                <p>High-speed, feature-packed mobile applications developed for Android and iOS devices using native and cross-platform frameworks.</p>
                 <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Android & iOS Applications</li>
-                    <li><i class="fa-solid fa-check"></i> Delivery, Booking & Service Apps</li>
+                    <li><i class="fa-solid fa-check"></i> Android & iOS Mobile Applications</li>
+                    <li><i class="fa-solid fa-check"></i> Service Booking & Delivery Apps</li>
                     <li><i class="fa-solid fa-check"></i> Play Store & App Store Deployment</li>
                 </ul>
             </div>
 
             <div class="feature-card">
-                <div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div>
-                <h3>Custom ERP, CRM & SaaS</h3>
-                <p>Tailor-made internal business software, billing management, and client dashboards.</p>
+                <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
+                <h3>Custom CRM, ERP & SaaS</h3>
+                <p>Automate internal administration with custom dashboards, CRM pipelines, inventory managers, and billing systems.</p>
                 <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Custom Admin Panels & CRM Pipelines</li>
-                    <li><i class="fa-solid fa-check"></i> Automated Invoicing & Billing Systems</li>
+                    <li><i class="fa-solid fa-check"></i> Custom Admin Panels & CRM Suites</li>
+                    <li><i class="fa-solid fa-check"></i> Automated Billing & Invoicing Systems</li>
                     <li><i class="fa-solid fa-check"></i> REST API Engineering & Integrations</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Developer Messaging APIs Block -->
-    <div class="api-section" id="apis">
-        <div class="api-container">
-            <div>
-                <span class="name-banner" style="background: rgba(86,186,42,0.2); border-color: var(--brand-green);">
-                    <span style="color: #86efac;"><i class="fa-solid fa-code"></i> Developer First APIs</span>
-                </span>
-                <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Ultra-Fast India Direct Messaging APIs</h2>
-                <p style="color: #cbd5e1; margin-bottom: 25px;">Integrate Bulk SMS, Clean OTPs, WhatsApp, and Voice IVR with standard REST JSON payloads and real-time webhook callbacks[cite: 1].</p>
-                <ul class="bullet-list" style="border-top-color: #1e3825;">
-                    <li style="color: #e2e8f0;"><i class="fa-solid fa-check" style="color: var(--brand-green);"></i> Ready SDKs for PHP, Python, Node.js & Java</li>
-                    <li style="color: #e2e8f0;"><i class="fa-solid fa-check" style="color: var(--brand-green);"></i> High Concurrency Operator Routing</li>
-                    <li style="color: #e2e8f0;"><i class="fa-solid fa-check" style="color: var(--brand-green);"></i> 99.98% Gateway SLA Availability</li>
-                </ul>
-            </div>
-            <div class="api-codebox">
-<pre>
-<span style="color: #64748b;">// Telecorcel India Direct SMS/OTP API Request</span>
-curl -X POST https://api.telecorcelitsolutions.com/v1/sms/send \
-  -H <span style="color: #fde047;">"Authorization: Bearer YOUR_API_TOKEN"</span> \
-  -H <span style="color: #fde047;">"Content-Type: application/json"</span> \
-  -d '{
-    <span style="color: #4ade80;">"company"</span>: <span style="color: #fde047;">"Telecorcel IT Solutions Pvt Ltd"</span>,
-    <span style="color: #4ade80;">"sender_id"</span>: <span style="color: #fde047;">"TLCRCL"</span>,
-    <span style="color: #4ade80;">"route_type"</span>: <span style="color: #fde047;">"INDIA_DIRECT_STABLE"</span>,
-    <span style="color: #4ade80;">"recipients"</span>: [<span style="color: #fde047;">"+919012574505"</span>],
-    <span style="color: #4ade80;">"message"</span>: <span style="color: #fde047;">"Your verification code is 849201. Telecorcel IT Solutions."</span>,
-    <span style="color: #4ade80;">"webhook_url"</span>: <span style="color: #fde047;">"https://yourdomain.com/callbacks"</span>
-  }'
-</pre>
-            </div>
-        </div>
-    </div>
-
-    <!-- Wholesale Pricing Cards -->
-    <section id="pricing">
+    <!-- Pricing Section -->
+    <section id="pricing" style="background: var(--bg-light); border-radius: var(--radius-lg);">
         <div class="section-header">
-            <h4>Very Low Pricing &bull; High Delivery Guaranteed</h4>
-            <h2>Transparent Wholesale Pricing Matrix</h2>
-            <p>Competitive rates with zero setup fees. Contact us directly on WhatsApp for volume slab discounts.</p>
+            <h4>Transparent Wholesale Rates</h4>
+            <h2>Competitive Pricing Cards</h2>
+            <p>Wholesale volume pricing with zero hidden maintenance charges. Contact sales for custom slab discounts.</p>
         </div>
 
         <div class="pricing-grid">
             <div class="pricing-card">
-                <h3>India MKT / Marketing SMS[cite: 1]</h3>
-                <div class="price">₹0.14<span> / SMS</span></div>
+                <h3>Promotional SMS</h3>
+                <div class="price">₹0.15<span> / SMS</span></div>
                 <p style="color: var(--text-muted); font-size: 0.85rem;">Volume: Min 50k Credits</p>
                 <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> High Dynamic Clicks & Stable[cite: 1]</li>
-                    <li><i class="fa-solid fa-check"></i> DND & Non-DND Supported</li>
+                    <li><i class="fa-solid fa-check"></i> Standard Hours (10 AM - 9 PM)</li>
+                    <li><i class="fa-solid fa-check"></i> 100% Delivery Reports</li>
                     <li><i class="fa-solid fa-check"></i> Free DLT Template Setup</li>
                 </ul>
                 <a href="#contact" class="btn-outline" style="display:block; margin-top:20px;">Book Plan</a>
@@ -1139,27 +1086,15 @@ curl -X POST https://api.telecorcelitsolutions.com/v1/sms/send \
 
             <div class="pricing-card featured">
                 <span class="badge-popular">Highest Demand</span>
-                <h3>India OTP Clean Route[cite: 1]</h3>
+                <h3>Transactional / OTP</h3>
                 <div class="price">₹0.18<span> / SMS</span></div>
                 <p style="color: var(--text-muted); font-size: 0.85rem;">Volume: Min 25k Credits</p>
                 <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Direct Carrier Priority Band[cite: 1]</li>
+                    <li><i class="fa-solid fa-check"></i> Direct Carrier Priority Band</li>
                     <li><i class="fa-solid fa-check"></i> 24/7 Delivery Under 5 Sec</li>
-                    <li><i class="fa-solid fa-check"></i> 99.9% Delivery Guarantee[cite: 1]</li>
+                    <li><i class="fa-solid fa-check"></i> 99.9% Delivery Guarantee</li>
                 </ul>
                 <a href="#contact" class="btn-cta" style="display:block; margin-top:20px;">Get Started</a>
-            </div>
-
-            <div class="pricing-card">
-                <h3>Gaming & Casino Traffic</h3>
-                <div class="price">Best Offer<span> / Slab</span></div>
-                <p style="color: var(--text-muted); font-size: 0.85rem;">Dedicated High-Volume Route</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> All Types SMS Passed At Portal</li>
-                    <li><i class="fa-solid fa-check"></i> Unrestricted Traffic Handling</li>
-                    <li><i class="fa-solid fa-check"></i> High Delivery Delivery Ratio[cite: 1]</li>
-                </ul>
-                <a href="https://wa.me/919962201476" target="_blank" class="btn-whatsapp" style="display:inline-block; margin-top:20px; width:100%; text-align:center;">WhatsApp Offer</a>
             </div>
 
             <div class="pricing-card">
@@ -1169,7 +1104,19 @@ curl -X POST https://api.telecorcelitsolutions.com/v1/sms/send \
                 <ul class="bullet-list">
                     <li><i class="fa-solid fa-check"></i> Official Meta Cloud API</li>
                     <li><i class="fa-solid fa-check"></i> Verified Blue/Green Tick Help</li>
-                    <li><i class="fa-solid fa-check"></i> Multimedia & Quick Action Buttons</li>
+                    <li><i class="fa-solid fa-check"></i> Multimedia & Buttons</li>
+                </ul>
+                <a href="#contact" class="btn-outline" style="display:block; margin-top:20px;">Book Plan</a>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Voice Calls & IVR</h3>
+                <div class="price">₹0.28<span> / 30 Sec</span></div>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">High Concurrency Channels</p>
+                <ul class="bullet-list">
+                    <li><i class="fa-solid fa-check"></i> Automatic Dialing Engine</li>
+                    <li><i class="fa-solid fa-check"></i> Keypad (DTMF) Response</li>
+                    <li><i class="fa-solid fa-check"></i> Exact Duration Stats</li>
                 </ul>
                 <a href="#contact" class="btn-outline" style="display:block; margin-top:20px;">Book Plan</a>
             </div>
@@ -1177,11 +1124,11 @@ curl -X POST https://api.telecorcelitsolutions.com/v1/sms/send \
     </section>
 
     <!-- Leadership Section -->
-    <section id="leadership" style="background: var(--bg-light); border-radius: var(--radius-lg);">
+    <section id="leadership">
         <div class="section-header">
             <h4>Corporate Leadership</h4>
-            <h2>Meet Our Executive Management</h2>
-            <p>Guiding strategy, wholesale telecom contracts, and client success at Telecorcel IT Solutions Pvt Ltd[cite: 1].</p>
+            <h2>Meet The Executive Management</h2>
+            <p>Guiding operations, enterprise sales, and technical excellence at Telecorcel IT Solutions Pvt Ltd.</p>
         </div>
 
         <div class="leadership-wrapper">
@@ -1190,7 +1137,7 @@ curl -X POST https://api.telecorcelitsolutions.com/v1/sms/send \
                 <div>
                     <div class="tag">Chief Executive Officer</div>
                     <h3>Satyam Sharma</h3>
-                    <p style="font-size: 0.88rem; color: var(--text-muted);">Spearheading company strategy, carrier relationships, and technology innovation at Telecorcel IT Solutions Pvt Ltd[cite: 1].</p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">Spearheading company strategy, carrier partnerships, and technical innovation at Telecorcel IT Solutions Pvt Ltd.</p>
                 </div>
             </div>
 
@@ -1199,24 +1146,24 @@ curl -X POST https://api.telecorcelitsolutions.com/v1/sms/send \
                 <div>
                     <div class="tag">Sales Manager</div>
                     <h3>Shivam Sharma</h3>
-                    <p style="font-size: 0.88rem; color: var(--text-muted);">Overseeing bulk wholesale route agreements, enterprise accounts, and custom software proposals.</p>
+                    <p style="font-size: 0.88rem; color: var(--text-muted);">Overseeing bulk messaging volume contracts, enterprise client onboarding, and software proposals.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Locations & Physical Presence -->
-    <section style="padding-top: 40px;">
+    <!-- Physical Presence & Local Listings -->
+    <section style="padding-top: 0;">
         <div class="section-header">
-            <h4>Corporate Infrastructure</h4>
+            <h4>Infrastructure & Locations</h4>
             <h2>Registered Office & Regional Support</h2>
-            <p>Positioned across Noida's prominent industrial nodes to provide proactive support.</p>
+            <p>Headquartered in Noida's central IT corridor with localized support coverage.</p>
         </div>
 
         <div class="locations-box">
             <div class="loc-card">
                 <h4><i class="fa-solid fa-building" style="color: var(--brand-green-dark);"></i> Registered Corporate Office</h4>
-                <p><strong>Telecorcel IT Solutions Pvt Ltd[cite: 1]</strong></p>
+                <p><strong>Telecorcel IT Solutions Pvt Ltd</strong></p>
                 <p>Block A, Industrial Area, Sector 62</p>
                 <p>Noida, Uttar Pradesh – 201309, India</p>
             </div>
@@ -1235,81 +1182,70 @@ curl -X POST https://api.telecorcelitsolutions.com/v1/sms/send \
         </div>
     </section>
 
-    <!-- Contact & Consultation Form (With All Poster Details) -->
+    <!-- Contact & Consultation Form (Restored to exact user details) -->
     <section id="contact" style="padding-top: 0;">
         <div class="contact-layout">
             <div>
-                <h4 style="color: var(--brand-green-dark); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Direct Communication</h4>
-                <h2 style="font-size: 2.1rem; color: var(--secondary); margin-bottom: 15px;">Connect With Telecorcel Support Desk</h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">Contact us for best SMS offers, instant route testing accounts, and custom IT software proposals[cite: 1].</p>
+                <h4 style="color: var(--brand-green-dark); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Direct Access</h4>
+                <h2 style="font-size: 2.1rem; color: var(--secondary); margin-bottom: 20px;">Get in Touch With Telecorcel Sales</h2>
+                <p style="color: var(--text-muted); margin-bottom: 30px;">Reach out directly to our sales leadership to discuss volume rate cards, custom software proposals, or DLT template compliance.</p>
 
-                <div class="contact-matrix">
-                    <div class="matrix-item">
-                        <strong>WhatsApp Support:</strong>
-                        <a href="https://wa.me/919962201476" target="_blank" style="color:#25d366;"><i class="fa-brands fa-whatsapp"></i> +91 9962201476</a>
-                    </div>
-                    <div class="matrix-item">
-                        <strong>Direct Sales India:</strong>
-                        <a href="tel:9012574505"><i class="fa-solid fa-phone"></i> +91 9012574505[cite: 1]</a><br>
-                        <a href="tel:7678519164" style="font-size:0.85rem; color:var(--text-muted);">+91 7678519164</a>
-                    </div>
-                    <div class="matrix-item">
-                        <strong>International Desk:</strong>
-                        <a href="tel:12099493419"><i class="fa-solid fa-phone"></i> +1 (209) 949-3419</a>
-                    </div>
-                    <div class="matrix-item">
-                        <strong>Corporate Skype:</strong>
-                        <a href="skype:live:.cid.dfb339cefed95295?chat"><i class="fa-brands fa-skype"></i> live:.cid.dfb339cefed95295[cite: 1]</a>
-                    </div>
+                <div class="contact-item">
+                    <strong>Direct Helplines:</strong>
+                    <a href="tel:9012574505">+91 9012574505</a> &nbsp;|&nbsp; 
+                    <a href="tel:7678519164">+91 7678519164</a>
                 </div>
 
-                <div style="margin-top: 15px;">
-                    <strong style="color: var(--secondary);"><i class="fa-solid fa-envelope" style="color: var(--brand-green-dark); margin-right: 8px;"></i> Official Sales Email:[cite: 1]</strong>
-                    <p style="color: var(--text-muted); margin-top: 4px;"><a href="mailto:Raj@telecorcelitsolutions.com" style="color:var(--brand-green-dark); font-weight:700; text-decoration:none;">Raj@telecorcelitsolutions.com[cite: 1]</a></p>
+                <div class="contact-item">
+                    <strong>Corporate Registered Address:</strong>
+                    <p style="color: var(--text-dark); font-weight: 600;">Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309</p>
                 </div>
 
-                <div style="margin-top: 15px;">
-                    <strong style="color: var(--secondary);"><i class="fa-solid fa-location-dot" style="color: var(--brand-green-dark); margin-right: 8px;"></i> Corporate Address:</strong>
-                    <p style="color: var(--text-muted); margin-top: 4px;">Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309</p>
+                <div class="contact-item">
+                    <strong>Local Presence & Regional Coverage:</strong>
+                    <p style="color: var(--text-muted);">Serving businesses across Sector 44, Wazidpur, Noida and NCR Region.</p>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Operating Hours:</strong>
+                    <p style="color: var(--text-muted);">Monday – Saturday: 9:30 AM to 6:30 PM (Telecom Gateway: 24/7)</p>
                 </div>
             </div>
 
-            <!-- Form -->
+            <!-- Interactive Form -->
             <div>
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Dhanyawad! Telecorcel team will connect on your number shortly.');">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Dhanyawad! Telecorcel team will connect with you shortly.');">
                     <div class="form-row">
-                        <label>Your Name / Firm Name *</label>
-                        <input type="text" required placeholder="e.g. Rahul Sharma / ABC Corp">
+                        <label>Your Name / Company Name *</label>
+                        <input type="text" required placeholder="Enter full name or firm name">
                     </div>
 
                     <div class="form-row">
-                        <label>WhatsApp / Mobile Number *</label>
+                        <label>Phone Number *</label>
                         <input type="tel" required placeholder="+91 XXXXXXXXXX">
                     </div>
 
                     <div class="form-row">
-                        <label>Traffic / Service Type Needed *</label>
+                        <label>Service Needed *</label>
                         <select required>
-                            <option value="">-- Choose Traffic / Service --</option>
-                            <option value="india-mkt">India Marketing / MKT Route[cite: 1]</option>
-                            <option value="india-otp">India OTP Clean Route[cite: 1]</option>
-                            <option value="gaming-casino">Gaming / Casino Traffic Route</option>
-                            <option value="spa-clinic">Spa, Salons & Clinic SMS</option>
-                            <option value="job-sms">Job / Recruitment Alerts</option>
-                            <option value="whatsapp-api">WhatsApp Business API</option>
-                            <option value="voice-ivr">Voice Calls & Cloud IVR</option>
+                            <option value="">-- Choose Solution --</option>
+                            <option value="bulk-sms">Bulk SMS (Transactional / Promotional / OTP)</option>
                             <option value="dlt">DLT Registration & Templates</option>
-                            <option value="web-app">Website / Web App Development</option>
-                            <option value="mobile-app">Mobile App (Android / iOS)</option>
+                            <option value="whatsapp">WhatsApp Business API</option>
+                            <option value="voice">Voice Calls & Cloud IVR</option>
+                            <option value="website">Website / Web App Development</option>
+                            <option value="app">Mobile App (Android & iOS)</option>
+                            <option value="software">Custom ERP / CRM Software</option>
+                            <option value="digital-marketing">Digital Advertising & SEO</option>
                         </select>
                     </div>
 
                     <div class="form-row">
                         <label>Requirements or Estimated Volume</label>
-                        <textarea rows="3" placeholder="Expected volume (e.g. 50k, 1 Lakh), route requirement, or software project details..."></textarea>
+                        <textarea rows="3" placeholder="Tell us your monthly message volume or project details..."></textarea>
                     </div>
 
-                    <button type="submit" class="btn-cta" style="width: 100%; border: none; cursor: pointer; padding: 14px; font-size: 1rem;">Send Request to Support Desk</button>
+                    <button type="submit" class="btn-cta" style="width: 100%; border: none; cursor: pointer; padding: 14px; font-size: 1rem;">Submit Request to Sales Desk</button>
                 </form>
             </div>
         </div>
@@ -1320,22 +1256,24 @@ curl -X POST https://api.telecorcelitsolutions.com/v1/sms/send \
         <div class="footer-grid">
             <div>
                 <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
-                    <img src="logo.png" alt="Telecorcel Logo" style="height:36px; background:#fff; padding:3px; border-radius:6px;" onerror="this.style.display='none'">
-                    <h3 style="color: var(--white); font-size: 1.2rem; font-weight:800;">TELECORCEL IT SOLUTIONS[cite: 1]</h3>
+                    <div style="background:#fff; padding:3px 6px; border-radius:6px; display:flex; align-items:center;">
+                        <img src="logo.png" alt="Telecorcel Logo" style="height:32px;" onerror="this.style.display='none'">
+                    </div>
+                    <h3 style="color: var(--white); font-size: 1.15rem; font-weight:800;">TELECORCEL IT SOLUTIONS</h3>
                 </div>
-                <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 15px;">Providing India high quality stable direct SMS routes, all traffic types accepted, verified WhatsApp API, and enterprise software engineering[cite: 1].</p>
-                <p style="font-size: 0.85rem;"><i class="fa-solid fa-envelope" style="color:var(--brand-green);"></i> Raj@telecorcelitsolutions.com[cite: 1]</p>
+                <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 15px;">Official enterprise provider of Bulk SMS, WhatsApp Business API, Cloud IVR, and custom full-stack software development.</p>
+                <p style="font-size: 0.85rem;"><i class="fa-solid fa-phone" style="color:var(--brand-green);"></i> +91 9012574505 / +91 7678519164</p>
             </div>
 
             <div>
-                <h4>Direct Routes & Traffic[cite: 1]</h4>
+                <h4>Telecom Solutions</h4>
                 <ul>
-                    <li><a href="#traffic-types">India MKT Route[cite: 1]</a></li>
-                    <li><a href="#traffic-types">India Clean OTP Route[cite: 1]</a></li>
-                    <li><a href="#traffic-types">Gaming & Casino Traffic</a></li>
-                    <li><a href="#traffic-types">Spa & Clinic Campaigns</a></li>
-                    <li><a href="#traffic-types">Job Alerts & Recruitment</a></li>
-                    <li><a href="#sms-services">WhatsApp Business API</a></li>
+                    <li><a href="#sms-services">Transactional SMS</a></li>
+                    <li><a href="#sms-services">Promotional SMS</a></li>
+                    <li><a href="#sms-services">OTP & Flash SMS</a></li>
+                    <li><a href="#sms-services">DLT Registration</a></li>
+                    <li><a href="#omnichannel">WhatsApp API</a></li>
+                    <li><a href="#omnichannel">Voice & IVR</a></li>
                 </ul>
             </div>
 
@@ -1343,24 +1281,23 @@ curl -X POST https://api.telecorcelitsolutions.com/v1/sms/send \
                 <h4>IT Engineering</h4>
                 <ul>
                     <li><a href="#it-solutions">Corporate Websites</a></li>
-                    <li><a href="#it-solutions">Mobile Applications</a></li>
+                    <li><a href="#it-solutions">Android & iOS Apps</a></li>
                     <li><a href="#it-solutions">Custom CRM & ERP</a></li>
-                    <li><a href="#apis">Messaging REST APIs</a></li>
-                    <li><a href="#sms-services">DLT Support</a></li>
+                    <li><a href="#it-solutions">Landing Pages</a></li>
+                    <li><a href="#it-solutions">Billing Software</a></li>
                 </ul>
             </div>
 
             <div>
-                <h4>Head Office & Presence</h4>
-                <p style="font-size: 0.85rem; margin-bottom: 8px;"><strong>Corporate Head Office:</strong><br>Block A, Industrial Area, Sector 62, Noida, UP 201309</p>
-                <p style="font-size: 0.85rem;"><strong>Support Units:</strong><br>Sector 44 & Wazidpur, Noida</p>
-                <p style="font-size: 0.85rem; margin-top:8px;"><strong>Skype:</strong> live:.cid.dfb339cefed95295[cite: 1]</p>
+                <h4>Corporate Presence</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 8px;"><strong>Head Office:</strong><br>Block A, Industrial Area, Sector 62, Noida, UP 201309</p>
+                <p style="font-size: 0.85rem;"><strong>Regional Presence:</strong><br>Sector 44 & Wazidpur, Noida</p>
             </div>
         </div>
 
         <div class="copyright">
-            <div>&copy; 2026 <strong>Telecorcel IT Solutions Pvt Ltd</strong>. All rights reserved.[cite: 1]</div>
-            <div style="color: var(--brand-green); font-weight: 600;">20,000+ Happy Customers Since 2013[cite: 1]</div>
+            <div>&copy; 2026 <strong>Telecorcel IT Solutions Pvt Ltd</strong>. All rights reserved.</div>
+            <div style="color: var(--brand-green); font-weight: 600;">Sector 62, Noida, Uttar Pradesh 201309</div>
         </div>
     </footer>
 
