@@ -6,7 +6,7 @@
   <title>Telecorcel IT Solutions Pvt Ltd | Enterprise Telecom & IT</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Three.js Library for 3D Globe -->
+  <!-- Three.js Library 3D Global Canvas -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <style>
     @keyframes floatSlow {
@@ -78,16 +78,17 @@
     </button>
   </aside>
 
-  <!-- Clean Corporate Header -->
+  <!-- Clean Corporate Header with New Logo -->
   <header class="bg-[#070e1a]/90 backdrop-blur-md sticky top-0 z-40 border-b border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
       <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
-        <div class="bg-white p-1 rounded-lg shadow-md flex items-center justify-center border border-slate-700 h-12 w-12 overflow-hidden">
+        <!-- New Logo Implemented -->
+        <div class="bg-white p-1 rounded-lg shadow-md flex items-center justify-center border border-slate-700 h-11 w-11 overflow-hidden">
           <img 
-            src="telecorcel logo.jpeg" 
+            src="telecorcel logo_2.jpeg" 
             alt="Telecorcel Logo" 
             class="h-full w-full object-contain"
-            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-emerald-600 font-extrabold text-sm text-center leading-none\'>TC<br/><span class=\'text-[8px]\'>SMS</span></div>';"
+            onerror="this.onerror=null; this.src='telecorcel logo.jpeg';"
           />
         </div>
         <div class="flex flex-col">
@@ -153,7 +154,7 @@
           </div>
         </div>
 
-        <!-- 4 Grid Images with Smart Fallbacks -->
+        <!-- 4 Grid Showcase Images -->
         <div class="md:col-span-5 grid grid-cols-2 gap-4">
           <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur overflow-hidden">
             <img 
