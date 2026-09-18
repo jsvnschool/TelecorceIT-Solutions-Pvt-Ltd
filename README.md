@@ -78,19 +78,22 @@
     </button>
   </aside>
 
-  <!-- Clean Corporate Header with New Logo -->
+  <!-- Clean Corporate Header with Selected Logo -->
   <header class="bg-[#070e1a]/90 backdrop-blur-md sticky top-0 z-40 border-b border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
-      <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
-        <!-- New Logo Implemented -->
-        <div class="bg-white p-1 rounded-lg shadow-md flex items-center justify-center border border-slate-700 h-11 w-11 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-3.5 cursor-pointer" onclick="showPage('home')">
+        
+        <!-- Naya Logo Container -->
+        <div class="bg-white p-1 rounded-xl shadow-md flex items-center justify-center border border-emerald-500/30 h-13 w-13 sm:h-14 sm:w-14 overflow-hidden">
           <img 
-            src="telecorcel logo_2.jpeg" 
-            alt="Telecorcel Logo" 
+            src="Gemini_Generated_Image_wr9725wr9725wr97.jpg" 
+            alt="Telecorcel IT Solutions Logo" 
             class="h-full w-full object-contain"
-            onerror="this.onerror=null; this.src='telecorcel logo.jpeg';"
+            onerror="this.onerror=null; this.src='telecorcel logo_2.jpeg';"
           />
         </div>
+
+        <!-- Highlighted Typography Beside Logo -->
         <div class="flex flex-col">
           <span class="text-xl sm:text-2xl font-black tracking-tight text-white leading-none brand-glow">
             TELECORCEL
@@ -117,7 +120,7 @@
 
   <!-- PAGE 1: HOME -->
   <main id="home" class="page-section active flex-grow">
-    <!-- Hero Banner with Canvas Network Background -->
+    <!-- Hero Banner with Network Canvas Background -->
     <section class="relative min-h-[580px] sm:min-h-[660px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#050b14] via-[#071120] to-[#040810] text-white">
       <canvas id="networkCanvas"></canvas>
       <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-500/15 rounded-full blur-3xl hero-glow pointer-events-none"></div>
@@ -154,7 +157,6 @@
           </div>
         </div>
 
-        <!-- 4 Grid Showcase Images -->
         <div class="md:col-span-5 grid grid-cols-2 gap-4">
           <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur overflow-hidden">
             <img 
@@ -524,7 +526,7 @@
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- Clean Minimalist Footer -->
   <footer class="bg-[#02050a] text-slate-400 py-8 border-t border-slate-900 text-xs mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
       <div>
