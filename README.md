@@ -6,7 +6,7 @@
   <title>Telecorcel IT Solutions Pvt Ltd | Enterprise Telecom & IT</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Three.js Library 3D Global Canvas ke liye -->
+  <!-- Three.js Library for 3D Globe -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <style>
     @keyframes floatSlow {
@@ -82,8 +82,13 @@
   <header class="bg-[#070e1a]/90 backdrop-blur-md sticky top-0 z-40 border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
       <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
-        <div class="bg-white p-1 rounded-lg shadow-md flex items-center justify-center border border-slate-700">
-          <img src="telecorcel logo.jpeg" alt="Telecorcel Logo" class="h-10 w-auto object-contain" />
+        <div class="bg-white p-1 rounded-lg shadow-md flex items-center justify-center border border-slate-700 h-12 w-12 overflow-hidden">
+          <img 
+            src="telecorcel logo.jpeg" 
+            alt="Telecorcel Logo" 
+            class="h-full w-full object-contain"
+            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'text-emerald-600 font-extrabold text-sm text-center leading-none\'>TC<br/><span class=\'text-[8px]\'>SMS</span></div>';"
+          />
         </div>
         <div class="flex flex-col">
           <span class="text-xl sm:text-2xl font-black tracking-tight text-white leading-none brand-glow">
@@ -111,7 +116,7 @@
 
   <!-- PAGE 1: HOME -->
   <main id="home" class="page-section active flex-grow">
-    <!-- Hero Banner with Canvas Background -->
+    <!-- Hero Banner with Canvas Network Background -->
     <section class="relative min-h-[580px] sm:min-h-[660px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#050b14] via-[#071120] to-[#040810] text-white">
       <canvas id="networkCanvas"></canvas>
       <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-500/15 rounded-full blur-3xl hero-glow pointer-events-none"></div>
@@ -148,18 +153,39 @@
           </div>
         </div>
 
+        <!-- 4 Grid Images with Smart Fallbacks -->
         <div class="md:col-span-5 grid grid-cols-2 gap-4">
-          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur">
-            <img src="telecorcel8.jpeg" alt="Bulk SMS Service" class="rounded-lg h-36 sm:h-44 w-full object-cover" />
+          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur overflow-hidden">
+            <img 
+              src="telecorcel8.jpeg" 
+              alt="Bulk SMS Service" 
+              class="rounded-lg h-36 sm:h-44 w-full object-cover"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&auto=format&fit=crop&q=80';"
+            />
           </div>
-          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur" style="animation-delay: 1.2s;">
-            <img src="telecorcel9.jpeg" alt="Telecorcel Team" class="rounded-lg h-36 sm:h-44 w-full object-cover" />
+          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur overflow-hidden" style="animation-delay: 1.2s;">
+            <img 
+              src="telecorcel9.jpeg" 
+              alt="Telecorcel Team" 
+              class="rounded-lg h-36 sm:h-44 w-full object-cover"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=80';"
+            />
           </div>
-          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur" style="animation-delay: 0.6s;">
-            <img src="telecorcel4.jpeg" alt="OTP Route" class="rounded-lg h-36 sm:h-44 w-full object-cover" />
+          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur overflow-hidden" style="animation-delay: 0.6s;">
+            <img 
+              src="telecorcel4.jpeg" 
+              alt="OTP Route" 
+              class="rounded-lg h-36 sm:h-44 w-full object-cover"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80';"
+            />
           </div>
-          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur" style="animation-delay: 1.8s;">
-            <img src="telecorcel11.jpeg" alt="SMS Campaign" class="rounded-lg h-36 sm:h-44 w-full object-cover" />
+          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur overflow-hidden" style="animation-delay: 1.8s;">
+            <img 
+              src="telecorcel11.jpeg" 
+              alt="SMS Campaign" 
+              class="rounded-lg h-36 sm:h-44 w-full object-cover"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80';"
+            />
           </div>
         </div>
       </div>
@@ -437,7 +463,12 @@
       </div>
 
       <div class="border border-slate-800 rounded-xl overflow-hidden p-2 bg-slate-900/60 shadow-2xl">
-        <img src="telecorcel9.jpeg" alt="Team at Work" class="rounded-lg w-full object-cover" />
+        <img 
+          src="telecorcel9.jpeg" 
+          alt="Team at Work" 
+          class="rounded-lg w-full object-cover"
+          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&auto=format&fit=crop&q=80';"
+        />
       </div>
     </div>
   </main>
@@ -492,7 +523,7 @@
     </div>
   </main>
 
-  <!-- Clean Minimalist Footer -->
+  <!-- Footer -->
   <footer class="bg-[#02050a] text-slate-400 py-8 border-t border-slate-900 text-xs mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
       <div>
@@ -578,7 +609,7 @@
     animateNetwork();
 
     // -------------------------------------------------------------
-    // THREE.JS 3D INTERACTIVE GLOBE (iEnergizer 3D Style)
+    // THREE.JS 3D INTERACTIVE GLOBE
     // -------------------------------------------------------------
     const globeContainer = document.getElementById('globeCanvasContainer');
     const globeCanvas = document.getElementById('globeCanvas');
@@ -595,7 +626,6 @@
     const globeGroup = new THREE.Group();
     scene.add(globeGroup);
 
-    // Wireframe Outer Sphere
     const sphereGeo = new THREE.SphereGeometry(globeRadius, 36, 36);
     const sphereMat = new THREE.MeshBasicMaterial({
       color: 0x064e3b,
@@ -606,7 +636,6 @@
     const globeMesh = new THREE.Mesh(sphereGeo, sphereMat);
     globeGroup.add(globeMesh);
 
-    // Inner Glow Core Sphere
     const innerGeo = new THREE.SphereGeometry(globeRadius - 0.8, 32, 32);
     const innerMat = new THREE.MeshBasicMaterial({
       color: 0x02161e,
@@ -615,7 +644,6 @@
     });
     globeGroup.add(new THREE.Mesh(innerGeo, innerMat));
 
-    // Convert Lat/Lon to 3D Vector
     function latLonToVector3(lat, lon, radius) {
       const phi = (90 - lat) * (Math.PI / 180);
       const theta = (lon + 180) * (Math.PI / 180);
@@ -625,7 +653,6 @@
       return new THREE.Vector3(x, y, z);
     }
 
-    // Customer Hubs
     const locations = {
       noida: { lat: 28.62, lon: 77.36, name: "India HQ" },
       usEast: { lat: 40.71, lon: -74.00, name: "US East" },
@@ -635,7 +662,6 @@
       sydney: { lat: -33.86, lon: 151.20, name: "Australia" }
     };
 
-    // Add Marker Dots
     Object.keys(locations).forEach(key => {
       const loc = locations[key];
       const pos = latLonToVector3(loc.lat, loc.lon, globeRadius + 0.5);
@@ -648,7 +674,6 @@
       globeGroup.add(marker);
     });
 
-    // Add 3D Curved Telecom Routing Arcs from Noida to Global Hubs
     function createArc(p1, p2) {
       const distance = p1.distanceTo(p2);
       const mid = p1.clone().lerp(p2, 0.5);
@@ -673,7 +698,6 @@
       globeGroup.add(createArc(noidaPos, destPos));
     });
 
-    // Mouse Drag Rotation
     let isDragging = false;
     let previousMousePosition = { x: 0, y: 0 };
 
@@ -690,7 +714,6 @@
       previousMousePosition = { x: e.clientX, y: e.clientY };
     });
 
-    // Touch support for mobile
     globeCanvas.addEventListener('touchstart', (e) => {
       isDragging = true;
       previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
@@ -713,7 +736,6 @@
       renderer.setSize(globeContainer.offsetWidth, globeContainer.offsetHeight);
     });
 
-    // Animate Continuous Slow Rotation
     function renderGlobe() {
       requestAnimationFrame(renderGlobe);
       if (!isDragging) {
