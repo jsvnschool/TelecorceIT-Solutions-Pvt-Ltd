@@ -3,109 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Telecorcel IT Solutions Pvt Ltd | Enterprise Telecom, Software & Digital Stack</title>
+  <title>Telecorcel IT Solutions Pvt Ltd | Bulk SMS, WhatsApp API & Software Solutions</title>
+  <meta name="description" content="Telecorcel IT Solutions Pvt Ltd provides enterprise Bulk SMS, Transactional OTP routes, WhatsApp Business API, Voice IVR, Web & Mobile App Development, CRM & ERP software in Sector 62 Noida." />
+  <meta name="keywords" content="Telecorcel IT Solutions Pvt Ltd, Bulk SMS Provider Noida, Transactional SMS, OTP Route, WhatsApp Cloud API, DLT Registration, Software Development Noida Sector 62, Satyam Sharma, Shivam Sharma" />
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Telecorcel IT Solutions Pvt Ltd",
+    "telephone": ["+91-9012574505", "+91-7678519164"],
+    "email": "telecorcelitsolutionshelp@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Block A, Industrial Area, Sector 62",
+      "addressLocality": "Noida",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "201309",
+      "addressCountry": "IN"
+    },
+    "founder": { "@type": "Person", "name": "Satyam Sharma", "jobTitle": "CEO" },
+    "employee": { "@type": "Person", "name": "Shivam Sharma", "jobTitle": "Sales Manager" }
+  }
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <style>
-    @keyframes floatSlow {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.35; transform: scale(1); }
-      50% { opacity: 0.65; transform: scale(1.08); }
-    }
-    @keyframes scrollTicker {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+    @keyframes floatSlow { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-7px); } }
+    @keyframes pulseGlow { 0%, 100% { opacity: 0.35; transform: scale(1); } 50% { opacity: 0.65; transform: scale(1.06); } }
+    @keyframes scrollTicker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    
     .page-section { display: none; }
     .page-section.active { display: block; }
     .hero-glow { animation: pulseGlow 6s infinite ease-in-out; }
     .floating-card { animation: floatSlow 4s ease-in-out infinite; }
-    .ticker-wrapper { display: flex; width: 200%; animation: scrollTicker 30s linear infinite; }
+    .ticker-wrapper { display: flex; width: 200%; animation: scrollTicker 32s linear infinite; }
     .ticker-wrapper:hover { animation-play-state: paused; }
     
-    #networkCanvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
+    #networkCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+    #globeCanvas { width: 100%; height: 420px; outline: none; cursor: grab; }
+    #globeCanvas:active { cursor: grabbing; }
+
+    .brand-glow { text-shadow: 0 0 20px rgba(52, 211, 153, 0.45), 0 0 40px rgba(16, 185, 129, 0.25); }
+    .brand-logo-card {
+      background: #ffffff;
+      padding: 4px 8px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
-    .brand-glow {
-      text-shadow: 0 0 25px rgba(52, 211, 153, 0.45), 0 0 50px rgba(16, 185, 129, 0.25);
+    .service-box {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(51, 65, 85, 0.7);
+      transition: all 0.3s ease;
     }
-    #globeCanvas {
-      width: 100%;
-      height: 480px;
-      outline: none;
-      cursor: grab;
-    }
-    #globeCanvas:active {
-      cursor: grabbing;
+    .service-box:hover {
+      transform: translateY(-4px);
+      border-color: #10b981;
+      box-shadow: 0 15px 30px -10px rgba(16, 185, 129, 0.25);
     }
   </style>
 </head>
 <body class="font-sans text-slate-800 bg-[#040810] flex flex-col min-h-screen relative selection:bg-emerald-500 selection:text-slate-950">
 
-  <!-- Floating Right Quick Action Dock -->
   <aside class="fixed right-4 bottom-6 md:bottom-auto md:top-1/3 z-50 flex flex-col gap-3">
-    <a href="tel:+919012574505" title="Call Us: +91 9012574505" class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900/90 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 shadow-xl backdrop-blur transition-all duration-300">
+    <a href="tel:+919012574505" title="Call Us" class="flex items-center justify-center w-12 h-12 rounded-full bg-slate-900/95 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 shadow-2xl backdrop-blur transition">
       <i class="fa-solid fa-phone text-lg"></i>
-      <span class="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg border border-slate-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
-        +91 9012574505 / 7678519164
-      </span>
     </a>
-
-    <a href="mailto:telecorcelitsolutionshelp@gmail.com" title="Email Us" class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900/90 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 shadow-xl backdrop-blur transition-all duration-300">
+    <a href="mailto:telecorcelitsolutionshelp@gmail.com" title="Email Us" class="flex items-center justify-center w-12 h-12 rounded-full bg-slate-900/95 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 shadow-2xl backdrop-blur transition">
       <i class="fa-solid fa-envelope text-lg"></i>
-      <span class="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg border border-slate-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
-        telecorcelitsolutionshelp@gmail.com
-      </span>
     </a>
-
-    <a href="https://wa.me/919012574505" target="_blank" title="WhatsApp Chat" class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900/90 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 shadow-xl backdrop-blur transition-all duration-300">
-      <i class="fa-brands fa-whatsapp text-xl"></i>
-      <span class="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg border border-slate-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
-        Direct WhatsApp Desk
-      </span>
+    <a href="https://wa.me/919012574505" target="_blank" title="WhatsApp" class="flex items-center justify-center w-12 h-12 rounded-full bg-slate-900/95 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 shadow-2xl backdrop-blur transition">
+      <i class="fa-brands fa-whatsapp text-2xl"></i>
     </a>
-
-    <button onclick="showPage('contact')" title="Direct Inquiries" class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 text-slate-950 hover:bg-emerald-400 shadow-xl transition-all duration-300">
-      <i class="fa-solid fa-headset text-lg"></i>
-      <span class="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg border border-slate-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
-        24x7 NOC Support
-      </span>
-    </button>
   </aside>
 
-  <!-- Clean Corporate Header with Selected Logo -->
-  <header class="bg-[#070e1a]/90 backdrop-blur-md sticky top-0 z-40 border-b border-slate-800/80">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-      <div class="flex items-center gap-3.5 cursor-pointer" onclick="showPage('home')">
-        <div class="bg-white p-1 rounded-xl shadow-md flex items-center justify-center border border-emerald-500/30 h-13 w-13 sm:h-14 sm:w-14 overflow-hidden">
-          <img 
-            src="Gemini_Generated_Image_wr9725wr9725wr97.jpg" 
-            alt="Telecorcel IT Solutions Logo" 
-            class="h-full w-full object-contain"
-            onerror="this.onerror=null; this.src='telecorcel logo_2.jpeg';"
-          />
+  <header class="bg-[#070e1a]/95 backdrop-blur-md sticky top-0 z-40 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex justify-between items-center gap-4">
+      
+      <a href="javascript:void(0)" onclick="showPage('home')" class="flex items-center gap-3.5 focus:outline-none" title="Telecorcel IT Solutions Pvt Ltd">
+        <div class="brand-logo-card h-12 sm:h-14 w-auto">
+          <svg viewBox="0 0 420 340" class="h-full w-auto" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 172 40 L 172 75 C 280 75, 385 110, 362 178 C 358 190, 350 202, 340 212 L 374 212 C 382 198, 388 184, 390 170 C 415 85, 290 40, 172 40 Z" fill="#70bd35"/>
+            <path d="M 120 72 C 50 115, 20 180, 52 230 C 88 285, 220 295, 320 230 C 342 215, 358 196, 365 178 L 340 178 C 328 196, 310 212, 292 222 C 200 275, 95 260, 68 215 C 45 175, 70 120, 120 85 Z" fill="#0e7a33"/>
+            <text x="210" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="900" fill="#2d3748" text-anchor="middle" letter-spacing="2.5">TELECORCEL</text>
+            <text x="210" y="195" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="900" fill="#2d3748" text-anchor="middle" letter-spacing="2.5">IT SOLUTIONS</text>
+            <text x="210" y="315" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-weight="900" fill="#2d3748" text-anchor="middle" letter-spacing="3.5">BULK SMS</text>
+          </svg>
         </div>
+
         <div class="flex flex-col">
-          <span class="text-xl sm:text-2xl font-black tracking-tight text-white leading-none brand-glow">
+          <span class="text-xl sm:text-2xl md:text-3xl font-black text-white leading-none tracking-tight brand-glow">
             TELECORCEL
           </span>
-          <span class="text-[11px] sm:text-xs text-emerald-400 font-bold tracking-widest uppercase mt-0.5">
+          <span class="text-[11px] sm:text-xs md:text-sm font-bold text-emerald-400 tracking-wider uppercase mt-1">
             IT SOLUTIONS PVT LTD
           </span>
         </div>
-      </div>
+      </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-300">
         <button onclick="showPage('home')" class="hover:text-emerald-400 transition">Home</button>
         <button onclick="showPage('services')" class="hover:text-emerald-400 transition">Services</button>
         <button onclick="showPage('pricing')" class="hover:text-emerald-400 transition">Pricing</button>
@@ -113,75 +117,61 @@
         <button onclick="showPage('contact')" class="hover:text-emerald-400 transition">Contact Us</button>
       </nav>
 
-      <button onclick="showPage('contact')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs sm:text-sm font-black px-5 py-2.5 rounded-lg shadow-lg shadow-emerald-500/25 transition transform hover:-translate-y-0.5">
+      <button onclick="showPage('contact')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs sm:text-sm font-black px-5 py-2.5 rounded-lg shadow-lg shadow-emerald-500/25 transition">
         Get Started
       </button>
     </div>
   </header>
 
-  <!-- Live Enterprise Capabilities Scrolling Ticker -->
   <div class="bg-emerald-950/40 border-y border-emerald-500/20 text-emerald-300 text-xs py-2 overflow-hidden select-none">
     <div class="ticker-wrapper font-medium tracking-wide">
       <div class="flex gap-8 items-center px-4">
         <span><i class="fa-solid fa-bolt text-emerald-400 mr-2"></i>Bulk SMS</span>
-        <span>•</span>
-        <span>Transactional & OTP SMS</span>
-        <span>•</span>
-        <span>WhatsApp Business Cloud API</span>
-        <span>•</span>
-        <span>RCS Messaging</span>
-        <span>•</span>
-        <span>Voice / IVR & Missed Call</span>
-        <span>•</span>
-        <span>DLT Support & Templates</span>
-        <span>•</span>
-        <span>Full-Stack Web Development</span>
-        <span>•</span>
-        <span>Android & iOS Apps</span>
-        <span>•</span>
-        <span>Custom CRM & ERP Software</span>
-        <span>•</span>
-        <span>Performance Marketing & SEO</span>
+        <span>•</span><span>Transactional & OTP SMS</span>
+        <span>•</span><span>Promotional & Flash SMS</span>
+        <span>•</span><span>Unicode Regional SMS</span>
+        <span>•</span><span>WhatsApp Business Cloud API</span>
+        <span>•</span><span>RCS Messaging</span>
+        <span>•</span><span>Voice SMS & IVR</span>
+        <span>•</span><span>Missed Call Services</span>
+        <span>•</span><span>DLT Support & Templates</span>
+        <span>•</span><span>Full-Stack Web Development</span>
+        <span>•</span><span>Android & iOS Apps</span>
+        <span>•</span><span>Custom CRM & ERP Software</span>
+        <span>•</span><span>Performance Marketing & SEO</span>
       </div>
       <div class="flex gap-8 items-center px-4">
         <span><i class="fa-solid fa-bolt text-emerald-400 mr-2"></i>Bulk SMS</span>
-        <span>•</span>
-        <span>Transactional & OTP SMS</span>
-        <span>•</span>
-        <span>WhatsApp Business Cloud API</span>
-        <span>•</span>
-        <span>RCS Messaging</span>
-        <span>•</span>
-        <span>Voice / IVR & Missed Call</span>
-        <span>•</span>
-        <span>DLT Support & Templates</span>
-        <span>•</span>
-        <span>Full-Stack Web Development</span>
-        <span>•</span>
-        <span>Android & iOS Apps</span>
-        <span>•</span>
-        <span>Custom CRM & ERP Software</span>
-        <span>•</span>
-        <span>Performance Marketing & SEO</span>
+        <span>•</span><span>Transactional & OTP SMS</span>
+        <span>•</span><span>Promotional & Flash SMS</span>
+        <span>•</span><span>Unicode Regional SMS</span>
+        <span>•</span><span>WhatsApp Business Cloud API</span>
+        <span>•</span><span>RCS Messaging</span>
+        <span>•</span><span>Voice SMS & IVR</span>
+        <span>•</span><span>Missed Call Services</span>
+        <span>•</span><span>DLT Support & Templates</span>
+        <span>•</span><span>Full-Stack Web Development</span>
+        <span>•</span><span>Android & iOS Apps</span>
+        <span>•</span><span>Custom CRM & ERP Software</span>
+        <span>•</span><span>Performance Marketing & SEO</span>
       </div>
     </div>
   </div>
 
-  <!-- PAGE 1: HOME -->
   <main id="home" class="page-section active flex-grow">
-    <!-- Hero Banner with Network Canvas Background -->
-    <section class="relative min-h-[580px] sm:min-h-[660px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#050b14] via-[#071120] to-[#040810] text-white">
+    
+    <section class="relative min-h-[540px] sm:min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#050b14] via-[#071120] to-[#040810] text-white">
       <canvas id="networkCanvas"></canvas>
       <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-500/15 rounded-full blur-3xl hero-glow pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 relative z-10 grid md:grid-cols-12 gap-10 items-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20 relative z-10 grid md:grid-cols-12 gap-10 items-center">
         <div class="md:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase">
-            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> Omnichannel Telecom & IT Stack
+          <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-wider">
+            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> Complete Telecom, Cloud & IT Ecosystem
           </div>
 
           <div class="space-y-2">
-            <h2 class="text-xs uppercase tracking-[0.3em] font-extrabold text-slate-400">Next-Gen Communication & Custom Tech</h2>
+            <h2 class="text-xs uppercase tracking-[0.3em] font-extrabold text-slate-400">Enterprise High Delivery Communication</h2>
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-none tracking-tight text-white">
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-200 to-white brand-glow">
                 TELECORCEL IT SOLUTIONS
@@ -197,7 +187,7 @@
           </p>
 
           <div class="flex flex-wrap gap-4 pt-2">
-            <button onclick="showPage('services')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-7 py-3 rounded-lg shadow-xl shadow-emerald-500/25 transition transform hover:-translate-y-0.5">
+            <button onclick="showPage('services')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-7 py-3 rounded-lg shadow-xl shadow-emerald-500/25 transition">
               Explore All Services
             </button>
             <button onclick="showPage('pricing')" class="border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-200 px-7 py-3 rounded-lg font-semibold transition">
@@ -208,188 +198,146 @@
 
         <div class="md:col-span-5 grid grid-cols-2 gap-4">
           <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur overflow-hidden">
-            <img 
-              src="telecorcel8.jpeg" 
-              alt="Bulk SMS Service" 
-              class="rounded-lg h-36 sm:h-44 w-full object-cover"
-              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&auto=format&fit=crop&q=80';"
-            />
+            <img src="telecorcel8.jpeg" alt="Bulk SMS Service" class="rounded-lg h-36 sm:h-44 w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&auto=format&fit=crop&q=80';" />
           </div>
           <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur overflow-hidden" style="animation-delay: 1.2s;">
-            <img 
-              src="telecorcel9.jpeg" 
-              alt="Telecorcel Team" 
-              class="rounded-lg h-36 sm:h-44 w-full object-cover"
-              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=80';"
-            />
+            <img src="telecorcel9.jpeg" alt="Telecorcel Team" class="rounded-lg h-36 sm:h-44 w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=80';" />
           </div>
           <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur overflow-hidden" style="animation-delay: 0.6s;">
-            <img 
-              src="telecorcel4.jpeg" 
-              alt="OTP Route" 
-              class="rounded-lg h-36 sm:h-44 w-full object-cover"
-              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80';"
-            />
+            <img src="telecorcel4.jpeg" alt="OTP Route" class="rounded-lg h-36 sm:h-44 w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&auto=format&fit=crop&q=80';" />
           </div>
           <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur overflow-hidden" style="animation-delay: 1.8s;">
-            <img 
-              src="telecorcel11.jpeg" 
-              alt="SMS Campaign" 
-              class="rounded-lg h-36 sm:h-44 w-full object-cover"
-              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80';"
-            />
+            <img src="telecorcel11.jpeg" alt="SMS Campaign" class="rounded-lg h-36 sm:h-44 w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80';" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Solutions Matrix (6 Core Pillars) -->
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 text-white">
-      <div class="text-center mb-12">
-        <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">Everything Under One Roof</span>
-        <h2 class="text-2xl sm:text-4xl font-extrabold mt-1">Our Comprehensive Services Portfolio</h2>
-        <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-2xl mx-auto">
-          High-throughput telecom infrastructure se lekar modern cloud web applications aur automated marketing funnels tak complete technology delivery.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Pillar 1: Bulk SMS & Telecom Routes -->
-        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
-          <div>
-            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
-              <i class="fa-solid fa-message"></i>
-            </div>
-            <h3 class="text-lg font-bold text-slate-100 mb-2">Bulk SMS & Telecom Routing</h3>
-            <p class="text-xs text-slate-400 mb-4">Dedicated carrier routes for zero-latency OTP, Transactional and high-volume Promotional SMS.</p>
-            <div class="flex flex-wrap gap-1.5 mb-6">
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Promotional</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Transactional</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">OTP SMS</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Flash SMS</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Unicode/Regional</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">International SMS</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">SMS API</span>
-            </div>
-          </div>
-          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
-            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
-          </button>
+    <section class="py-16 bg-[#060c18] border-t border-slate-800 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">Everything We Deliver</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold mt-1">Services We Provide</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2">
+            Telecom routing, conversational messaging APIs, custom web & mobile software architecture, aur growth marketing.
+          </p>
         </div>
 
-        <!-- Pillar 2: Omnichannel Messaging & IVR -->
-        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
-          <div>
-            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
-              <i class="fa-brands fa-whatsapp"></i>
-            </div>
-            <h3 class="text-lg font-bold text-slate-100 mb-2">WhatsApp, RCS & Voice/IVR</h3>
-            <p class="text-xs text-slate-400 mb-4">Official WhatsApp Business Cloud APIs, interactive RCS Rich Messaging, aur intelligent Voice IVR flows.</p>
-            <div class="flex flex-wrap gap-1.5 mb-6">
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">WhatsApp API</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">RCS Messaging</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Voice SMS</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">IVR Systems</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Missed Call</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Email API</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Short/Long Code</span>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="service-box p-6 rounded-2xl flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl mb-4">
+                <i class="fa-solid fa-comment-sms"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">1. Bulk SMS & Gateway Routes</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Sub-second priority latency with direct carrier interconnects aur real-time DLR analytics.
+              </p>
+              <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+                <li>✔ Transactional SMS (OTP, Alerts, Order Updates)</li>
+                <li>✔ Promotional SMS (Mass Offers & Campaigns)</li>
+                <li>✔ OTP Priority Pipe (Sub-3s Banking Latency)</li>
+                <li>✔ Flash SMS, Unicode Hindi & International SMS</li>
+              </ul>
             </div>
           </div>
-          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
-            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
-          </button>
-        </div>
 
-        <!-- Pillar 3: DLT & Carrier Compliance -->
-        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
-          <div>
-            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <h3 class="text-lg font-bold text-slate-100 mb-2">DLT & Telecom Compliance</h3>
-            <p class="text-xs text-slate-400 mb-4">Complete regulatory onboarding, Sender ID registration, and instant template approvals across Indian telcos.</p>
-            <div class="flex flex-wrap gap-1.5 mb-6">
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">DLT Registration</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Sender ID</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">SMS Templates</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">PE Onboarding</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Consent Support</span>
+          <div class="service-box p-6 rounded-2xl flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl mb-4">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">2. WhatsApp Business & RCS</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Meta Verified Cloud API integration, verified sender ID and automated rich interactive messaging.
+              </p>
+              <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+                <li>✔ WhatsApp Cloud API & Verified Green Badge</li>
+                <li>✔ Automated Notifications & Booking Chatbots</li>
+                <li>✔ RCS Messaging with Carousels & Buttons</li>
+                <li>✔ Multi-Agent Shared Customer Support Desk</li>
+              </ul>
             </div>
           </div>
-          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
-            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
-          </button>
-        </div>
 
-        <!-- Pillar 4: Website Development -->
-        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
-          <div>
-            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
-              <i class="fa-solid fa-globe"></i>
-            </div>
-            <h3 class="text-lg font-bold text-slate-100 mb-2">Website & Portal Development</h3>
-            <p class="text-xs text-slate-400 mb-4">Responsive, high-converting business websites, custom web apps, and enterprise marketplace portals.</p>
-            <div class="flex flex-wrap gap-1.5 mb-6">
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Corporate Websites</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">E-Commerce</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Landing Pages</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">CMS Portals</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">UI/UX Design</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">SSL & Hosting</span>
+          <div class="service-box p-6 rounded-2xl flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl mb-4">
+                <i class="fa-solid fa-stamp"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">3. DLT Registration & Compliance</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                TRAI-mandated entity onboarding, brand header registration aur instant content template approval.
+              </p>
+              <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+                <li>✔ DLT Entity Registration on Jio/Airtel/VI/BSNL</li>
+                <li>✔ 6-Character Sender ID / Header Approvals</li>
+                <li>✔ SMS Content Template Submission & Audit</li>
+                <li>✔ Ongoing Compliance & Consent Management</li>
+              </ul>
             </div>
           </div>
-          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
-            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
-          </button>
-        </div>
 
-        <!-- Pillar 5: App Development -->
-        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
-          <div>
-            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
-              <i class="fa-solid fa-mobile-screen-button"></i>
-            </div>
-            <h3 class="text-lg font-bold text-slate-100 mb-2">Mobile App Engineering</h3>
-            <p class="text-xs text-slate-400 mb-4">Native and cross-platform mobile apps for iOS and Android with custom admin panels and push pipelines.</p>
-            <div class="flex flex-wrap gap-1.5 mb-6">
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Android & iOS</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Flutter</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">React Native</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Fintech Apps</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Booking & Delivery</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Admin Panels</span>
+          <div class="service-box p-6 rounded-2xl flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl mb-4">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">4. Voice SMS, IVR & Telephony</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Automated cloud telephony, pre-recorded voice broadcasting aur dynamic keypad response routing.
+              </p>
+              <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+                <li>✔ Voice SMS (OBD) Mass Voice Call Broadcasting</li>
+                <li>✔ Multi-Level Cloud IVR with Keypad Responses</li>
+                <li>✔ Zero-Cost Missed Call Lead Generation</li>
+                <li>✔ Virtual Numbers, Short Codes & Long Codes</li>
+              </ul>
             </div>
           </div>
-          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
-            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
-          </button>
-        </div>
 
-        <!-- Pillar 6: Software, SaaS & Marketing -->
-        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
-          <div>
-            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
-              <i class="fa-solid fa-cubes"></i>
-            </div>
-            <h3 class="text-lg font-bold text-slate-100 mb-2">Custom Software & Digital Ads</h3>
-            <p class="text-xs text-slate-400 mb-4">Enterprise Billing, Inventory, ERP/CRM suites with result-driven SEO and Performance Marketing.</p>
-            <div class="flex flex-wrap gap-1.5 mb-6">
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Custom SaaS</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">CRM / ERP</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Billing Software</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">HRMS / POS</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Google Ads</span>
-              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">SEO & Lead Gen</span>
+          <div class="service-box p-6 rounded-2xl flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl mb-4">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">5. Web, App & Software Dev</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                Custom corporate portals, e-commerce, mobile apps aur automated enterprise CRM/ERP suites.
+              </p>
+              <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+                <li>✔ Corporate & E-Commerce Website Development</li>
+                <li>✔ Android & iOS Mobile Apps (Flutter / React Native)</li>
+                <li>✔ Custom Business CRM, ERP & GST Billing Software</li>
+                <li>✔ Domain, Cloud Hosting, SSL & 24x7 Maintenance</li>
+              </ul>
             </div>
           </div>
-          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
-            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
-          </button>
+
+          <div class="service-box p-6 rounded-2xl flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl mb-4">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">6. Digital Marketing & APIs</h3>
+              <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                High-converting paid advertising, SEO rankings, B2B lead funnels aur developer messaging APIs.
+              </p>
+              <ul class="text-xs text-slate-300 space-y-1.5 border-t border-slate-800 pt-3">
+                <li>✔ Google Ads (PPC) & Performance Max Campaigns</li>
+                <li>✔ Social Media Marketing (Meta / LinkedIn Ads)</li>
+                <li>✔ Technical On-Page & Off-Page SEO Rankings</li>
+                <li>✔ RESTful APIs for SMS, WhatsApp, Email & Voice</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- SECTION: 3D Global Interactive Customer Network (iEnergizer Style) -->
     <section class="py-16 bg-[#03070f] border-t border-slate-800 relative overflow-hidden text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-10">
@@ -401,9 +349,8 @@
         </div>
 
         <div class="grid lg:grid-cols-12 gap-8 items-center bg-slate-900/50 border border-slate-800/90 rounded-2xl p-6 backdrop-blur shadow-2xl">
-          <!-- 3D ThreeJS Interactive Globe -->
           <div class="lg:col-span-7 relative flex items-center justify-center">
-            <div id="globeCanvasContainer" class="w-full h-[460px] flex items-center justify-center relative">
+            <div id="globeCanvasContainer" class="w-full h-[420px] flex items-center justify-center relative">
               <canvas id="globeCanvas"></canvas>
               <div class="absolute bottom-3 left-4 bg-slate-950/80 border border-slate-800 text-[11px] text-emerald-400 px-3 py-1.5 rounded-full pointer-events-none">
                 <i class="fa-solid fa-arrows-spin mr-1"></i> Drag to rotate globe view
@@ -411,62 +358,45 @@
             </div>
           </div>
 
-          <!-- Customer Network Distribution Details -->
-          <div class="lg:col-span-5 space-y-4">
+          <div class="lg:col-span-5 space-y-3.5">
             <div class="p-4 bg-slate-950/80 border border-emerald-500/30 rounded-xl">
               <div class="flex items-center justify-between">
-                <span class="text-sm font-bold text-white"><i class="fa-solid fa-location-dot text-emerald-400 mr-2"></i>Noida HQ (India Hub)</span>
+                <span class="text-sm font-bold text-white"><i class="fa-solid fa-location-dot text-emerald-400 mr-2"></i>Noida HQ (India Switch)</span>
                 <span class="text-[10px] bg-emerald-500/20 text-emerald-300 font-bold px-2 py-0.5 rounded">Origin Node</span>
               </div>
-              <p class="text-xs text-slate-400 mt-1">Sector 62, Noida Carrier Switch & Primary Datacenter</p>
+              <p class="text-xs text-slate-400 mt-1">Sector 62, Noida Carrier Switch & Primary NOC Datacenter</p>
             </div>
-
-            <div class="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl">
-              <div class="flex justify-between items-center text-xs text-slate-300 font-semibold">
-                <span><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>Americas (US East / West)</span>
-                <span class="text-emerald-400 font-bold">2,400+ Enterprise Users</span>
-              </div>
+            <div class="p-3 bg-slate-950/60 border border-slate-800 rounded-xl flex justify-between items-center text-xs">
+              <span class="text-slate-300"><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>Americas (US East / West)</span>
+              <span class="text-emerald-400 font-bold">2,400+ Enterprise Users</span>
             </div>
-
-            <div class="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl">
-              <div class="flex justify-between items-center text-xs text-slate-300 font-semibold">
-                <span><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>Europe & UK</span>
-                <span class="text-emerald-400 font-bold">3,800+ Clients</span>
-              </div>
+            <div class="p-3 bg-slate-950/60 border border-slate-800 rounded-xl flex justify-between items-center text-xs">
+              <span class="text-slate-300"><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>Europe & UK</span>
+              <span class="text-emerald-400 font-bold">3,800+ Clients</span>
             </div>
-
-            <div class="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl">
-              <div class="flex justify-between items-center text-xs text-slate-300 font-semibold">
-                <span><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>Middle East (UAE / Saudi)</span>
-                <span class="text-emerald-400 font-bold">4,200+ Retail & Gaming</span>
-              </div>
+            <div class="p-3 bg-slate-950/60 border border-slate-800 rounded-xl flex justify-between items-center text-xs">
+              <span class="text-slate-300"><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>Middle East (UAE / Saudi)</span>
+              <span class="text-emerald-400 font-bold">4,200+ Retail & Gaming</span>
             </div>
-
-            <div class="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl">
-              <div class="flex justify-between items-center text-xs text-slate-300 font-semibold">
-                <span><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>APAC (Singapore / Australia)</span>
-                <span class="text-emerald-400 font-bold">5,000+ Active Nodes</span>
-              </div>
+            <div class="p-3 bg-slate-950/60 border border-slate-800 rounded-xl flex justify-between items-center text-xs">
+              <span class="text-slate-300"><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>APAC (Singapore / Australia)</span>
+              <span class="text-emerald-400 font-bold">5,000+ Active Nodes</span>
             </div>
-
-            <div class="pt-2 text-center sm:text-left">
-              <button onclick="showPage('contact')" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs py-3 rounded-lg uppercase tracking-wider transition">
-                Start Route Onboarding
-              </button>
-            </div>
+            <button onclick="showPage('contact')" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs py-3 rounded-lg uppercase tracking-wider transition">
+              Start Route Onboarding
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION: Embedded Google Map for Noida HQ -->
     <section class="py-14 bg-[#040810] border-t border-slate-800 text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8">
           <div>
             <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">Official Location Map</span>
             <h2 class="text-2xl sm:text-3xl font-black mt-1">Visit Telecorcel IT Solutions On Google Maps</h2>
-            <p class="text-xs text-slate-400 mt-1">Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309</p>
+            <p class="text-xs text-slate-400 mt-1">Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309 (with local presence listings around Sector 44 / Wazidpur in Noida)</p>
           </div>
           <a href="https://maps.google.com/?q=Block+A,+Sector+62,+Noida,+Uttar+Pradesh+201309" target="_blank" class="mt-4 sm:mt-0 inline-flex items-center gap-2 text-xs font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 px-4 py-2.5 rounded-lg transition">
             <i class="fa-solid fa-map-location-dot"></i> Open Full Google Maps
@@ -486,188 +416,161 @@
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- PAGE 2: SERVICES (DETAILED ENTERPRISE DIRECTORY) -->
-  <main id="services" class="page-section flex-grow py-14 max-w-7xl mx-auto px-4 sm:px-6 text-white">
-    <div class="text-center mb-12">
-      <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">All Vertical Capabilities</span>
-      <h2 class="text-3xl sm:text-4xl font-black mt-1">Complete Services & Solutions Directory</h2>
-      <p class="text-slate-400 text-xs sm:text-sm mt-2">Enterprise Communication, Software Architecture, Mobile Apps & Digital Growth</p>
+  <main id="services" class="page-section flex-grow py-16 max-w-7xl mx-auto px-4 sm:px-6 text-white">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">Full-Stack Capabilities</span>
+      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white mt-1">
+        All Capabilities & Technical Solutions
+      </h2>
+      <p class="text-slate-400 text-xs sm:text-sm mt-3">
+        Telecorcel IT Solutions provide karta hai direct carrier connectivity, cutting-edge software architecture aur ROI-driven performance marketing infrastructure.
+      </p>
     </div>
 
-    <div class="space-y-10">
-      <!-- 1. Bulk SMS & Messaging Infrastructure -->
+    <div class="space-y-8">
       <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
-        <div class="flex items-center gap-3 border-b border-slate-800 pb-4 mb-6">
-          <i class="fa-solid fa-comment-sms text-2xl text-emerald-400"></i>
-          <div>
-            <h3 class="text-xl font-bold text-white">1. Bulk SMS & Telecom Gateway Infrastructure</h3>
-            <p class="text-xs text-slate-400">Direct carrier routing with real-time DLR and ultra-low latency</p>
+        <h3 class="text-xl font-bold text-emerald-400 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-comment-sms"></i> 1. Bulk SMS & Carrier Routes
+        </h3>
+        <p class="text-xs text-slate-400 mb-5">Sub-second latency with 99.98% delivery SLA</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+          <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl">
+            <span class="text-white font-bold block mb-1">Transactional SMS</span>
+            <p class="text-slate-400">OTP, critical banking alerts, order updates, booking receipts.</p>
           </div>
-        </div>
-        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">Transactional SMS</h4>
-            <p class="text-slate-400">24x7 instant OTP, banking alerts, booking confirmations, order delivery tracking.</p>
+          <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl">
+            <span class="text-white font-bold block mb-1">Promotional SMS</span>
+            <p class="text-slate-400">Mass sales offers, announcements, customer outreach campaigns.</p>
           </div>
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">Promotional SMS</h4>
-            <p class="text-slate-400">High-volume sales offers, marketing discounts, event broadcasts with scheduling.</p>
+          <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl">
+            <span class="text-white font-bold block mb-1">OTP Priority Pipe</span>
+            <p class="text-slate-400">2-5 seconds delivery route, banking & fintech standard latency.</p>
           </div>
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">OTP & Flash SMS</h4>
-            <p class="text-slate-400">Sub-3-second priority delivery routes and direct screen popup Flash messaging.</p>
-          </div>
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">Unicode & International</h4>
-            <p class="text-slate-400">Hindi and all regional Indian languages, along with global worldwide SMS termination.</p>
+          <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl">
+            <span class="text-white font-bold block mb-1">Unicode & International</span>
+            <p class="text-slate-400">Hindi/Regional language fonts, Flash SMS aur global coverage.</p>
           </div>
         </div>
       </div>
 
-      <!-- 2. Omnichannel Communication & Voice -->
       <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
-        <div class="flex items-center gap-3 border-b border-slate-800 pb-4 mb-6">
-          <i class="fa-solid fa-headset text-2xl text-emerald-400"></i>
-          <div>
-            <h3 class="text-xl font-bold text-white">2. WhatsApp, RCS, Voice/IVR & Cloud Communication</h3>
-            <p class="text-xs text-slate-400">Interactive modern messaging channels and automated calling</p>
+        <h3 class="text-xl font-bold text-emerald-400 mb-2 flex items-center gap-2">
+          <i class="fa-brands fa-whatsapp"></i> 2. WhatsApp Business API & RCS
+        </h3>
+        <p class="text-xs text-slate-400 mb-5">Verified messaging channels with interactive rich media</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+          <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl">
+            <span class="text-white font-bold block mb-1">Meta Cloud API</span>
+            <p class="text-slate-400">Official verified WhatsApp Cloud API setup aur green tick guidance.</p>
           </div>
-        </div>
-        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">WhatsApp Business API</h4>
-            <p class="text-slate-400">Official Meta verified API, dynamic catalog sync, automated customer chatbots.</p>
+          <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl">
+            <span class="text-white font-bold block mb-1">Customer Notifications</span>
+            <p class="text-slate-400">Automated invoices, shipping status, booking confirmations.</p>
           </div>
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">RCS Messaging</h4>
-            <p class="text-slate-400">Rich Communication Services with brand verification, carousels, and action buttons.</p>
+          <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl">
+            <span class="text-white font-bold block mb-1">RCS Messaging</span>
+            <p class="text-slate-400">Interactive verified SMS with carousels, action buttons & videos.</p>
           </div>
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">Voice SMS & IVR Flows</h4>
-            <p class="text-slate-400">Automated bulk voice broadcasting, dynamic DTMF multi-level keypad IVR logic.</p>
-          </div>
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">Missed Call & Numbers</h4>
-            <p class="text-slate-400">Automated missed call lead capture, Virtual Numbers, Short Code & Long Code APIs.</p>
+          <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl">
+            <span class="text-white font-bold block mb-1">Multi-Agent Chatbox</span>
+            <p class="text-slate-400">Shared inbox dashboard for customer support teams.</p>
           </div>
         </div>
       </div>
 
-      <!-- 3. Web & Application Development -->
       <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
-        <div class="flex items-center gap-3 border-b border-slate-800 pb-4 mb-6">
-          <i class="fa-solid fa-laptop-code text-2xl text-emerald-400"></i>
-          <div>
-            <h3 class="text-xl font-bold text-white">3. Web, Mobile App & Portal Engineering</h3>
-            <p class="text-xs text-slate-400">Modern reactive frameworks, cloud deployments, and intuitive UI/UX</p>
+        <h3 class="text-xl font-bold text-emerald-400 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-laptop-code"></i> 3. Web & Custom Software Architecture
+        </h3>
+        <p class="text-xs text-slate-400 mb-5">Scalable web applications and enterprise business software</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+          <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl">
+            <span class="text-white font-bold block mb-1">Website Development</span>
+            <p class="text-slate-400">Corporate websites, E-commerce, landing pages, CMS portals, SSL & Cloud Hosting.</p>
           </div>
-        </div>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs">
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">Website Development</h4>
-            <p class="text-slate-400">Business Websites, Corporate Portals, E-Commerce, Custom Landing Pages, CMS systems, Booking Platforms, Marketplace architectures, UI/UX design, Domain, Hosting & SSL security.</p>
+          <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl">
+            <span class="text-white font-bold block mb-1">Mobile App Development</span>
+            <p class="text-slate-400">Android & iOS apps (Flutter / React Native) with custom admin panels & push alerts.</p>
           </div>
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">Mobile App Development</h4>
-            <p class="text-slate-400">Native Android & iOS Apps, Flutter & React Native cross-platform apps, Fintech apps, Booking & Delivery applications, Admin Control panels, Push notifications, and continuous store maintenance.</p>
-          </div>
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">API Integrations</h4>
-            <p class="text-slate-400">RESTful APIs, SMPP connections, Webhook callbacks, Delivery-status monitoring, and developer SDKs for Node, Python, PHP, and Java.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. Enterprise Software & Digital Marketing -->
-      <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
-        <div class="flex items-center gap-3 border-b border-slate-800 pb-4 mb-6">
-          <i class="fa-solid fa-chart-line text-2xl text-emerald-400"></i>
-          <div>
-            <h3 class="text-xl font-bold text-white">4. Enterprise Software, DLT & Digital Marketing</h3>
-            <p class="text-xs text-slate-400">Automation platforms, compliance support, and growth marketing</p>
-          </div>
-        </div>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs">
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">Custom Software & SaaS</h4>
-            <p class="text-slate-400">Custom Business CRM, ERP Systems, Billing Software, Inventory Management, POS, HRMS, School Management Suites, and centralized analytics dashboards.</p>
-          </div>
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">DLT Regulatory Services</h4>
-            <p class="text-slate-400">DLT Principal Entity registration handholding, Sender ID / Header registration, SMS Template submission, compliance audits, and renewal management.</p>
-          </div>
-          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
-            <h4 class="font-bold text-emerald-400 mb-1">Digital Marketing & Ads</h4>
-            <p class="text-slate-400">Search Engine Optimization (SEO), Google Ads, Social Media Marketing (Facebook/Instagram), B2B Lead Generation, Performance Marketing, Graphic Design & Branding.</p>
+          <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl">
+            <span class="text-white font-bold block mb-1">ERP, CRM & Billing</span>
+            <p class="text-slate-400">Custom CRM, automated GST billing software, POS, inventory, HRMS & school management suites.</p>
           </div>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- PAGE 3: PRICING -->
   <main id="pricing" class="page-section flex-grow py-14 max-w-7xl mx-auto px-4 sm:px-6 text-white">
     <div class="text-center mb-12">
-      <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">Transparent Pricing</span>
-      <h2 class="text-3xl sm:text-4xl font-black mt-1">Flexible Enterprise Pricing Plans</h2>
-      <p class="text-slate-400 text-xs sm:text-sm mt-2">Direct carrier interconnects with no hidden setup charges</p>
+      <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">Transparent Packages</span>
+      <h2 class="text-3xl sm:text-4xl font-black mt-1">Dedicated Pricing Cards</h2>
+      <p class="text-slate-400 text-xs sm:text-sm mt-2">Direct carrier interconnects with flexible volume-based pricing</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
-        <h3 class="font-bold text-base text-slate-200">Promotional SMS</h3>
-        <p class="text-xs text-slate-400 mt-1 mb-4">Marketing & Mass Outreach</p>
-        <div class="text-2xl font-black text-emerald-400 mb-3">Bulk Tier Rates</div>
-        <p class="text-xs text-slate-400 mb-6">Clean routes, direct dynamic routing, real-time portal access included.</p>
-        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl text-center flex flex-col justify-between">
+        <div>
+          <h3 class="font-bold text-base text-slate-100">1. Promotional SMS</h3>
+          <p class="text-[11px] text-slate-400 my-1">Offers, Announcements & Outreach</p>
+          <div class="text-2xl font-black text-emerald-400 my-3">Bulk Tier Rates</div>
+          <ul class="text-xs text-slate-400 space-y-1.5 text-left mb-6">
+            <li>• High-volume campaign scheduling</li>
+            <li>• Smart DND filtration</li>
+            <li>• Real-time delivery reports (DLR)</li>
+          </ul>
+        </div>
+        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">Inquire Plan</button>
       </div>
 
-      <div class="bg-slate-900/90 border-2 border-emerald-500 p-6 rounded-xl text-center relative shadow-xl shadow-emerald-500/10">
-        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 font-black text-[10px] uppercase px-2.5 py-0.5 rounded-full">Top Choice</span>
-        <h3 class="font-bold text-base text-slate-200 mt-1">Transactional & OTP</h3>
-        <p class="text-xs text-slate-400 mt-1 mb-4">High Priority Delivery</p>
-        <div class="text-2xl font-black text-emerald-400 mb-3">Sub-Second Delivery</div>
-        <p class="text-xs text-slate-400 mb-6">99.98% delivery success, dedicated carrier pipes with failover routing.</p>
-        <button onclick="showPage('contact')" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
+      <div class="bg-slate-900/90 border-2 border-emerald-500 p-6 rounded-2xl text-center flex flex-col justify-between relative shadow-xl shadow-emerald-500/10">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 font-black text-[10px] uppercase px-2.5 py-0.5 rounded-full">Top Route</span>
+        <div>
+          <h3 class="font-bold text-base text-slate-100 mt-1">2. Transactional & OTP</h3>
+          <p class="text-[11px] text-slate-400 my-1">Sub-Second Priority Latency</p>
+          <div class="text-2xl font-black text-emerald-400 my-3">2-5 Sec Delivery</div>
+          <ul class="text-xs text-slate-400 space-y-1.5 text-left mb-6">
+            <li>• Dedicated high-priority carrier pipe</li>
+            <li>• DND & Non-DND 24x7 open delivery</li>
+            <li>• Banking & Fintech SLA grade</li>
+          </ul>
+        </div>
+        <button onclick="showPage('contact')" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 py-2.5 rounded-lg text-xs font-black uppercase tracking-wider transition">Inquire Plan</button>
       </div>
 
-      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
-        <h3 class="font-bold text-base text-slate-200">WhatsApp & RCS</h3>
-        <p class="text-xs text-slate-400 mt-1 mb-4">Official Meta & Telco APIs</p>
-        <div class="text-2xl font-black text-emerald-400 mb-3">Pay Per Session</div>
-        <p class="text-xs text-slate-400 mb-6">Rich multimedia templates, green tick assistance, chatbot support.</p>
-        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
+      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl text-center flex flex-col justify-between">
+        <div>
+          <h3 class="font-bold text-base text-slate-100">3. WhatsApp & Voice IVR</h3>
+          <p class="text-[11px] text-slate-400 my-1">Official Meta Business API</p>
+          <div class="text-2xl font-black text-emerald-400 my-3">Custom Usage</div>
+          <ul class="text-xs text-slate-400 space-y-1.5 text-left mb-6">
+            <li>• Automated chatbot triggers</li>
+            <li>• Per 30-sec pulse voice broadcasting</li>
+            <li>• Multi-agent inbox support</li>
+          </ul>
+        </div>
+        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">Inquire Plan</button>
       </div>
 
-      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
-        <h3 class="font-bold text-base text-slate-200">Email & Voice/IVR</h3>
-        <p class="text-xs text-slate-400 mt-1 mb-4">Outbound Automation</p>
-        <div class="text-2xl font-black text-emerald-400 mb-3">Custom Plans</div>
-        <p class="text-xs text-slate-400 mb-6">Smart retry mechanisms, high reputation SMTP IPs, detailed logs.</p>
-        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
-      </div>
-
-      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
-        <h3 class="font-bold text-base text-slate-200">Web, App & Custom SaaS</h3>
-        <p class="text-xs text-slate-400 mt-1 mb-4">Tailor-Made Development</p>
-        <div class="text-2xl font-black text-emerald-400 mb-3">Milestone Based</div>
-        <p class="text-xs text-slate-400 mb-6">Full code ownership, free maintenance period, enterprise UI/UX.</p>
-        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
-      </div>
-
-      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
-        <h3 class="font-bold text-base text-slate-200">Carrier APIs & DLT</h3>
-        <p class="text-xs text-slate-400 mt-1 mb-4">REST & SMPP Endpoints</p>
-        <div class="text-2xl font-black text-emerald-400 mb-3">Developer Ready</div>
-        <p class="text-xs text-slate-400 mb-6">SDKs for Python, Node, PHP, Java with instant callback webhooks.</p>
-        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
+      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl text-center flex flex-col justify-between">
+        <div>
+          <h3 class="font-bold text-base text-slate-100">4. Web, App & CRM Dev</h3>
+          <p class="text-[11px] text-slate-400 my-1">Custom Built Architectures</p>
+          <div class="text-2xl font-black text-emerald-400 my-3">Milestone Scope</div>
+          <ul class="text-xs text-slate-400 space-y-1.5 text-left mb-6">
+            <li>• 100% source code ownership</li>
+            <li>• Free maintenance & support period</li>
+            <li>• Cloud server deployment & SSL</li>
+          </ul>
+        </div>
+        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition">Inquire Plan</button>
       </div>
     </div>
   </main>
 
-  <!-- PAGE 4: ABOUT US -->
   <main id="about" class="page-section flex-grow py-14 max-w-7xl mx-auto px-4 sm:px-6 text-white">
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div>
@@ -678,42 +581,37 @@
         </p>
 
         <div class="grid sm:grid-cols-2 gap-4 mb-6">
-          <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-lg">
+          <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl">
             <span class="text-[11px] text-emerald-400 uppercase font-bold block">Chief Executive Officer</span>
             <span class="text-base font-bold text-slate-100">Satyam Sharma</span>
           </div>
-          <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-lg">
+          <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl">
             <span class="text-[11px] text-emerald-400 uppercase font-bold block">Sales Manager</span>
             <span class="text-base font-bold text-slate-100">Shivam Sharma</span>
           </div>
         </div>
       </div>
 
-      <div class="border border-slate-800 rounded-xl overflow-hidden p-2 bg-slate-900/60 shadow-2xl">
-        <img 
-          src="telecorcel9.jpeg" 
-          alt="Team at Work" 
-          class="rounded-lg w-full object-cover"
-          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&auto=format&fit=crop&q=80';"
-        />
+      <div class="border border-slate-800 rounded-2xl overflow-hidden p-2 bg-slate-900/60 shadow-2xl">
+        <img src="telecorcel9.jpeg" alt="Telecorcel Team at Work" class="rounded-xl w-full object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&auto=format&fit=crop&q=80';" />
       </div>
     </div>
   </main>
 
-  <!-- PAGE 5: CONTACT US -->
   <main id="contact" class="page-section flex-grow py-14 max-w-7xl mx-auto px-4 sm:px-6 text-white">
     <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-black">Direct Inquiry & NOC Desk</h2>
-      <p class="text-slate-400 text-sm mt-2">Sector 62, Noida Headquarters & Carrier Route Operations</p>
+      <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">Direct Inquiry & NOC Desk</span>
+      <h2 class="text-3xl sm:text-4xl font-black mt-1">Get In Touch With Telecorcel</h2>
+      <p class="text-slate-400 text-sm mt-2">Sector 62, Noida Corporate Facility & Carrier Operations</p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-10">
       <div class="space-y-6">
-        <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl">
+        <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl">
           <h3 class="text-base font-bold text-white mb-4 border-b border-slate-800 pb-2">Registered Corporate Facility</h3>
           <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
             <strong>Headquarters:</strong> Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309.<br/>
-            <span class="text-xs text-slate-400">(Additional presence listings around Sector 44 / Wazidpur in Noida)</span>
+            <span class="text-xs text-slate-400">(Additional local presence listings around Sector 44 / Wazidpur in Noida)</span>
           </p>
           <div class="space-y-3 text-xs sm:text-sm text-slate-300">
             <p><i class="fa-solid fa-phone text-emerald-400 mr-2"></i> +91 9012574505</p>
@@ -723,257 +621,205 @@
         </div>
       </div>
 
-      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl">
-        <h3 class="text-base font-bold text-white mb-4">Request Live Pipeline / Pricing</h3>
-        <form onsubmit="event.preventDefault(); alert('Message send ho gaya hai! Team turant contact karegi.');" class="space-y-4 text-xs sm:text-sm">
+      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl">
+        <h3 class="text-base font-bold text-white mb-4">Request Live Route Pipeline / Pricing</h3>
+        <form onsubmit="event.preventDefault(); alert('Request submit ho gayi hai! Team turant connect karegi.');" class="space-y-4 text-xs sm:text-sm">
           <div>
-            <label class="block text-slate-300 mb-1">Aapka Naam / Company</label>
-            <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded p-2.5 text-white focus:border-emerald-500 outline-none" placeholder="Enter name" />
+            <label class="block text-slate-300 mb-1">Your Name / Company Name</label>
+            <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white focus:border-emerald-500 outline-none" placeholder="Enter full name" />
           </div>
           <div>
-            <label class="block text-slate-300 mb-1">Contact Number</label>
-            <input type="tel" required class="w-full bg-slate-950 border border-slate-800 rounded p-2.5 text-white focus:border-emerald-500 outline-none" placeholder="+91 XXXXXXXXXX" />
+            <label class="block text-slate-300 mb-1">Phone Number</label>
+            <input type="tel" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white focus:border-emerald-500 outline-none" placeholder="+91 XXXXXXXXXX" />
           </div>
           <div>
             <label class="block text-slate-300 mb-1">Service Required</label>
-            <select class="w-full bg-slate-950 border border-slate-800 rounded p-2.5 text-white focus:border-emerald-500 outline-none">
+            <select class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white focus:border-emerald-500 outline-none">
               <option>Bulk SMS (Transactional / OTP / Promotional)</option>
               <option>WhatsApp API & RCS Messaging</option>
-              <option>Voice SMS, IVR & Missed Call Solutions</option>
-              <option>Website & Custom Web Applications</option>
-              <option>Mobile App Development (Android / iOS)</option>
+              <option>Voice SMS, IVR & Missed Call</option>
+              <option>Website & Mobile App Development</option>
               <option>Enterprise CRM, ERP & Billing Software</option>
               <option>DLT Registration & Template Support</option>
-              <option>Digital Marketing, SEO & Google Ads</option>
             </select>
           </div>
-          <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded uppercase tracking-wider text-xs transition">Submit Inquiry</button>
+          <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded-lg uppercase tracking-wider text-xs transition">Submit Inquiry</button>
         </form>
       </div>
     </div>
   </main>
 
-  <!-- Clean Minimalist Footer -->
   <footer class="bg-[#02050a] text-slate-400 py-8 border-t border-slate-900 text-xs mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
       <div>
         <span class="text-white font-extrabold tracking-wider">TELECORCEL IT SOLUTIONS PVT LTD</span>
         <p class="text-[11px] text-slate-500 mt-1">Sector 62, Noida, UP 201309 | CEO: Satyam Sharma | Sales Manager: Shivam Sharma</p>
       </div>
-      <p class="text-[11px] text-slate-500">&copy; 2026 Telecorcel IT Solutions Pvt Ltd. All rights reserved.</p>
+      <p class="text-[11px] text-slate-500">© 2026 Telecorcel IT Solutions Pvt Ltd. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
     function showPage(pageId) {
-      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
-      const target = document.getElementById(pageId);
-      if (target) {
-        target.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      try {
+        const sections = document.querySelectorAll('.page-section');
+        sections.forEach(sec => sec.classList.remove('active'));
+        const target = document.getElementById(pageId);
+        if (target) {
+          target.classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      } catch (e) {
+        console.error("Navigation error:", e);
       }
     }
 
-    // Dynamic Network Canvas Hero Animation
-    const canvas = document.getElementById('networkCanvas');
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    let particles = [];
+    // Hero Canvas Network Animation (Safe Run)
+    try {
+      const canvas = document.getElementById('networkCanvas');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = canvas.parentElement.offsetWidth || window.innerWidth;
+        let height = canvas.height = canvas.parentElement.offsetHeight || 600;
+        let particles = [];
 
-    function resizeCanvas() {
-      width = canvas.width = canvas.parentElement.offsetWidth;
-      height = canvas.height = canvas.parentElement.offsetHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+        window.addEventListener('resize', () => {
+          if (canvas.parentElement) {
+            width = canvas.width = canvas.parentElement.offsetWidth;
+            height = canvas.height = canvas.parentElement.offsetHeight;
+          }
+        });
 
-    class Particle {
-      constructor() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.9;
-        this.vy = (Math.random() - 0.5) * 0.9;
-        this.radius = Math.random() * 2 + 1;
-      }
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.x < 0 || this.x > width) this.vx *= -1;
-        if (this.y < 0 || this.y > height) this.vy *= -1;
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(52, 211, 153, 0.7)';
-        ctx.fill();
-      }
-    }
-
-    const particleCount = Math.min(width > 768 ? 60 : 25, 70);
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
-
-    function animateNetwork() {
-      ctx.clearRect(0, 0, width, height);
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 125) {
+        class Particle {
+          constructor() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.8;
+            this.vy = (Math.random() - 0.5) * 0.8;
+            this.radius = Math.random() * 2 + 1;
+          }
+          update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            if (this.x < 0 || this.x > width) this.vx *= -1;
+            if (this.y < 0 || this.y > height) this.vy *= -1;
+          }
+          draw() {
             ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(16, 185, 129, ${0.22 * (1 - dist / 125)})`;
-            ctx.lineWidth = 0.8;
-            ctx.stroke();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(52, 211, 153, 0.6)';
+            ctx.fill();
           }
         }
+
+        const count = Math.min(width > 768 ? 50 : 20, 60);
+        for (let i = 0; i < count; i++) particles.push(new Particle());
+
+        function animateNet() {
+          ctx.clearRect(0, 0, width, height);
+          for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+            for (let j = i + 1; j < particles.length; j++) {
+              const dx = particles[i].x - particles[j].x;
+              const dy = particles[i].y - particles[j].y;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+              if (dist < 120) {
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = `rgba(16, 185, 129, ${0.2 * (1 - dist / 120)})`;
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(animateNet);
+        }
+        animateNet();
       }
-      requestAnimationFrame(animateNetwork);
-    }
-    animateNetwork();
-
-    // -------------------------------------------------------------
-    // THREE.JS 3D INTERACTIVE GLOBE
-    // -------------------------------------------------------------
-    const globeContainer = document.getElementById('globeCanvasContainer');
-    const globeCanvas = document.getElementById('globeCanvas');
-    const scene = new THREE.Scene();
-
-    const camera = new THREE.PerspectiveCamera(45, globeContainer.offsetWidth / globeContainer.offsetHeight, 0.1, 1000);
-    camera.position.z = 210;
-
-    const renderer = new THREE.WebGLRenderer({ canvas: globeCanvas, alpha: true, antialias: true });
-    renderer.setSize(globeContainer.offsetWidth, globeContainer.offsetHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
-
-    const globeRadius = 68;
-    const globeGroup = new THREE.Group();
-    scene.add(globeGroup);
-
-    const sphereGeo = new THREE.SphereGeometry(globeRadius, 36, 36);
-    const sphereMat = new THREE.MeshBasicMaterial({
-      color: 0x064e3b,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.18
-    });
-    const globeMesh = new THREE.Mesh(sphereGeo, sphereMat);
-    globeGroup.add(globeMesh);
-
-    const innerGeo = new THREE.SphereGeometry(globeRadius - 0.8, 32, 32);
-    const innerMat = new THREE.MeshBasicMaterial({
-      color: 0x02161e,
-      transparent: true,
-      opacity: 0.75
-    });
-    globeGroup.add(new THREE.Mesh(innerGeo, innerMat));
-
-    function latLonToVector3(lat, lon, radius) {
-      const phi = (90 - lat) * (Math.PI / 180);
-      const theta = (lon + 180) * (Math.PI / 180);
-      const x = -(radius * Math.sin(phi) * Math.cos(theta));
-      const z = radius * Math.sin(phi) * Math.sin(theta);
-      const y = radius * Math.cos(phi);
-      return new THREE.Vector3(x, y, z);
+    } catch (err) {
+      console.warn("Canvas animation skipped:", err);
     }
 
-    const locations = {
-      noida: { lat: 28.62, lon: 77.36, name: "India HQ" },
-      usEast: { lat: 40.71, lon: -74.00, name: "US East" },
-      uk: { lat: 51.50, lon: -0.12, name: "London UK" },
-      dubai: { lat: 25.20, lon: 55.27, name: "UAE" },
-      singapore: { lat: 1.35, lon: 103.81, name: "Singapore" },
-      sydney: { lat: -33.86, lon: 151.20, name: "Australia" }
-    };
+    // Three.js 3D Globe Animation (Safe Run)
+    try {
+      if (typeof THREE !== 'undefined') {
+        const container = document.getElementById('globeCanvasContainer');
+        const canvas = document.getElementById('globeCanvas');
+        if (container && canvas) {
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+          camera.position.z = 210;
 
-    Object.keys(locations).forEach(key => {
-      const loc = locations[key];
-      const pos = latLonToVector3(loc.lat, loc.lon, globeRadius + 0.5);
-      const markerGeo = new THREE.SphereGeometry(key === 'noida' ? 2.5 : 1.6, 16, 16);
-      const markerMat = new THREE.MeshBasicMaterial({ 
-        color: key === 'noida' ? 0x10b981 : 0x34d399 
-      });
-      const marker = new THREE.Mesh(markerGeo, markerMat);
-      marker.position.copy(pos);
-      globeGroup.add(marker);
-    });
+          const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+          renderer.setSize(container.offsetWidth, container.offsetHeight);
+          renderer.setPixelRatio(window.devicePixelRatio || 1);
 
-    function createArc(p1, p2) {
-      const distance = p1.distanceTo(p2);
-      const mid = p1.clone().lerp(p2, 0.5);
-      const midLength = mid.length();
-      mid.normalize();
-      mid.multiplyScalar(midLength + distance * 0.28);
+          const globeRadius = 68;
+          const globeGroup = new THREE.Group();
+          scene.add(globeGroup);
 
-      const curve = new THREE.QuadraticBezierCurve3(p1, mid, p2);
-      const points = curve.getPoints(45);
-      const geometry = new THREE.BufferGeometry().setFromPoints(points);
-      const material = new THREE.LineBasicMaterial({
-        color: 0x34d399,
-        transparent: true,
-        opacity: 0.55
-      });
-      return new THREE.Line(geometry, material);
+          const sphereGeo = new THREE.SphereGeometry(globeRadius, 32, 32);
+          const sphereMat = new THREE.MeshBasicMaterial({ color: 0x064e3b, wireframe: true, transparent: true, opacity: 0.2 });
+          globeGroup.add(new THREE.Mesh(sphereGeo, sphereMat));
+
+          const innerGeo = new THREE.SphereGeometry(globeRadius - 0.8, 28, 28);
+          const innerMat = new THREE.MeshBasicMaterial({ color: 0x02161e, transparent: true, opacity: 0.8 });
+          globeGroup.add(new THREE.Mesh(innerGeo, innerMat));
+
+          function latLonToVector3(lat, lon, radius) {
+            const phi = (90 - lat) * (Math.PI / 180);
+            const theta = (lon + 180) * (Math.PI / 180);
+            return new THREE.Vector3(
+              -(radius * Math.sin(phi) * Math.cos(theta)),
+              radius * Math.cos(phi),
+              radius * Math.sin(phi) * Math.sin(theta)
+            );
+          }
+
+          const hubs = [
+            { lat: 28.62, lon: 77.36 }, // Noida
+            { lat: 40.71, lon: -74.00 }, // US
+            { lat: 51.50, lon: -0.12 }, // UK
+            { lat: 25.20, lon: 55.27 }, // UAE
+            { lat: 1.35, lon: 103.81 }, // Singapore
+            { lat: -33.86, lon: 151.20 } // Sydney
+          ];
+
+          hubs.forEach((h, idx) => {
+            const pos = latLonToVector3(h.lat, h.lon, globeRadius + 0.5);
+            const marker = new THREE.Mesh(
+              new THREE.SphereGeometry(idx === 0 ? 2.5 : 1.6, 16, 16),
+              new THREE.MeshBasicMaterial({ color: idx === 0 ? 0x10b981 : 0x34d399 })
+            );
+            marker.position.copy(pos);
+            globeGroup.add(marker);
+          });
+
+          let isDragging = false;
+          let prevPos = { x: 0, y: 0 };
+          canvas.addEventListener('mousedown', () => isDragging = true);
+          window.addEventListener('mouseup', () => isDragging = false);
+          canvas.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+              globeGroup.rotation.y += (e.clientX - prevPos.x) * 0.006;
+              globeGroup.rotation.x += (e.clientY - prevPos.y) * 0.006;
+            }
+            prevPos = { x: e.clientX, y: e.clientY };
+          });
+
+          function renderGlobe() {
+            requestAnimationFrame(renderGlobe);
+            if (!isDragging) globeGroup.rotation.y += 0.003;
+            renderer.render(scene, camera);
+          }
+          renderGlobe();
+        }
+      }
+    } catch (err) {
+      console.warn("Globe animation skipped:", err);
     }
-
-    const noidaPos = latLonToVector3(locations.noida.lat, locations.noida.lon, globeRadius);
-    ['usEast', 'uk', 'dubai', 'singapore', 'sydney'].forEach(key => {
-      const destPos = latLonToVector3(locations[key].lat, locations[key].lon, globeRadius);
-      globeGroup.add(createArc(noidaPos, destPos));
-    });
-
-    let isDragging = false;
-    let previousMousePosition = { x: 0, y: 0 };
-
-    globeCanvas.addEventListener('mousedown', () => isDragging = true);
-    window.addEventListener('mouseup', () => isDragging = false);
-
-    globeCanvas.addEventListener('mousemove', (e) => {
-      if (isDragging) {
-        const deltaX = e.clientX - previousMousePosition.x;
-        const deltaY = e.clientY - previousMousePosition.y;
-        globeGroup.rotation.y += deltaX * 0.007;
-        globeGroup.rotation.x += deltaY * 0.007;
-      }
-      previousMousePosition = { x: e.clientX, y: e.clientY };
-    });
-
-    globeCanvas.addEventListener('touchstart', (e) => {
-      isDragging = true;
-      previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-    });
-    window.addEventListener('touchend', () => isDragging = false);
-    globeCanvas.addEventListener('touchmove', (e) => {
-      if (isDragging && e.touches.length > 0) {
-        const deltaX = e.touches[0].clientX - previousMousePosition.x;
-        const deltaY = e.touches[0].clientY - previousMousePosition.y;
-        globeGroup.rotation.y += deltaX * 0.007;
-        globeGroup.rotation.x += deltaY * 0.007;
-        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-      }
-    });
-
-    window.addEventListener('resize', () => {
-      if (!globeContainer) return;
-      camera.aspect = globeContainer.offsetWidth / globeContainer.offsetHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(globeContainer.offsetWidth, globeContainer.offsetHeight);
-    });
-
-    function renderGlobe() {
-      requestAnimationFrame(renderGlobe);
-      if (!isDragging) {
-        globeGroup.rotation.y += 0.0035;
-      }
-      renderer.render(scene, camera);
-    }
-    renderGlobe();
   </script>
 </body>
 </html>
