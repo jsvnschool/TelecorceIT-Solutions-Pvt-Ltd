@@ -1,1900 +1,727 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telecorcel IT Solutions Pvt Ltd | Global IT & Telecom Enterprise</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telecorcel IT Solutions Pvt Ltd | Enterprise Telecom & IT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Three.js Library 3D Global Canvas ke liye -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(1.08); }
+    }
+    .page-section { display: none; }
+    .page-section.active { display: block; }
+    .hero-glow { animation: pulseGlow 6s infinite ease-in-out; }
+    .floating-card { animation: floatSlow 4s ease-in-out infinite; }
     
-    <!-- Google Fonts & Font Awesome 6 Pro Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --brand-green: #56ba2a;
-            --brand-green-dark: #378018;
-            --brand-green-glow: rgba(86, 186, 42, 0.4);
-            --ienergizer-dark: #050b07;
-            --ienergizer-surface: #0a140d;
-            --secondary: #0f172a;
-            --bg-light: #f8fafc;
-            --border: #e2e8f0;
-            --border-dark: rgba(255, 255, 255, 0.12);
-            --text-dark: #0f172a;
-            --text-muted: #64748b;
-            --white: #ffffff;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-        }
-
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--white);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-            width: 100%;
-        }
-
-        /* Top Announcement Header */
-        .top-banner {
-            background: #020503;
-            color: #d1e7dd;
-            padding: 9px 5%;
-            font-size: 0.82rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--brand-green);
-            position: relative;
-            z-index: 20;
-        }
-
-        .top-banner .contact-links a {
-            color: #ffffff;
-            text-decoration: none;
-            margin-left: 18px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            transition: color 0.2s;
-        }
-
-        .top-banner .contact-links a:hover {
-            color: var(--brand-green);
-        }
-
-        /* iEnergizer Signature Dark Glassmorphism Header */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1100;
-            background: rgba(4, 10, 6, 0.92);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid var(--border-dark);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 5%;
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-img-wrapper {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 4px 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 48px;
-            box-shadow: 0 0 15px rgba(86, 186, 42, 0.3);
-        }
-
-        .brand-logo-img {
-            height: 40px;
-            width: auto;
-            display: block;
-            object-fit: contain;
-        }
-
-        .brand-text-block {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .company-name-bold {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: #ffffff;
-            text-transform: uppercase;
-            line-height: 1.15;
-            letter-spacing: -0.01em;
-        }
-
-        .company-name-bold span {
-            color: var(--brand-green);
-        }
-
-        .brand-subtitle {
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #94a3b8;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #e2e8f0;
-            font-weight: 600;
-            font-size: 0.9rem;
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            transition: color 0.25s;
-        }
-
-        .nav-links a:hover {
-            color: var(--brand-green);
-        }
-
-        .btn-cta {
-            background: var(--brand-green);
-            color: var(--white) !important;
-            padding: 10px 22px;
-            border-radius: 6px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 14px var(--brand-green-glow);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .btn-cta:hover {
-            background: var(--brand-green-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Floating Right Social Bar (Exact iEnergizer Style) */
-        .ienergizer-social-floating {
-            position: fixed;
-            right: 25px;
-            top: 45%;
-            transform: translateY(-50%);
-            z-index: 1050;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .social-pill {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: #991b1b; /* iEnergizer signature red badge */
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .social-pill:hover {
-            transform: scale(1.15);
-            background: var(--brand-green);
-        }
-
-        /* Marquee Ticker */
-        .marquee-bar {
-            background: #020704;
-            color: #86efac;
-            padding: 10px 0;
-            overflow: hidden;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            white-space: nowrap;
-            border-bottom: 1px solid rgba(86, 186, 42, 0.2);
-        }
-
-        .marquee-content {
-            display: inline-block;
-            white-space: nowrap;
-            animation: smoothScroll 35s linear infinite;
-        }
-
-        @keyframes smoothScroll {
-            from { transform: translate3d(0, 0, 0); }
-            to { transform: translate3d(-50%, 0, 0); }
-        }
-
-        /* ============================================================
-           iEnergizer Exact Earth Globe Stage
-           ============================================================ */
-        .ienergizer-stage {
-            position: relative;
-            background: radial-gradient(circle at 50% 25%, #0d2615 0%, #030805 100%);
-            color: var(--white);
-            min-height: 820px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            padding: 70px 5%;
-        }
-
-        #ienergizer-globe-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: auto;
-        }
-
-        .hero-stage-content {
-            position: relative;
-            z-index: 5;
-            max-width: 1350px;
-            margin: 0 auto;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 50px;
-            align-items: center;
-            pointer-events: none;
-        }
-
-        .hero-stage-content a, .hero-stage-content button {
-            pointer-events: auto;
-        }
-
-        .coverage-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(86, 186, 42, 0.15);
-            border: 1px solid rgba(86, 186, 42, 0.4);
-            color: #86efac;
-            padding: 7px 22px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 800;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            margin-bottom: 22px;
-            backdrop-filter: blur(8px);
-        }
-
-        .coverage-badge .pulse-dot {
-            width: 9px;
-            height: 9px;
-            background: #22c55e;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #22c55e;
-            animation: radarPing 1.8s infinite;
-        }
-
-        @keyframes radarPing {
-            0% { transform: scale(0.9); opacity: 1; }
-            50% { transform: scale(1.4); opacity: 0.5; }
-            100% { transform: scale(0.9); opacity: 1; }
-        }
-
-        .hero-stage-text h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3.6rem;
-            line-height: 1.15;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 22px;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-stage-text h1 span {
-            background: linear-gradient(120deg, #56ba2a, #86efac);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-stage-text p {
-            font-size: 1.18rem;
-            color: #cbd5e1;
-            max-width: 660px;
-            margin-bottom: 35px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .btn-outline-glow {
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            padding: 11px 26px;
-            border-radius: 6px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 700;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(8px);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.25s;
-        }
-
-        .btn-outline-glow:hover {
-            border-color: var(--brand-green);
-            color: #86efac;
-            background: rgba(86, 186, 42, 0.15);
-        }
-
-        /* People Thumbs Up Floating Success Widget */
-        .thumbs-up-visual-card {
-            background: rgba(8, 20, 13, 0.88);
-            border: 1px solid rgba(86, 186, 42, 0.45);
-            border-radius: var(--radius-lg);
-            padding: 35px 30px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(16px);
-            position: relative;
-            animation: cardFloat 6s ease-in-out infinite alternate;
-            pointer-events: auto;
-        }
-
-        @keyframes cardFloat {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-15px); }
-        }
-
-        .thumbs-up-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 22px;
-        }
-
-        .thumbs-avatar-bubble {
-            width: 76px;
-            height: 76px;
-            background: linear-gradient(135deg, #56ba2a, #22c55e);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.3rem;
-            color: #ffffff;
-            box-shadow: 0 0 25px rgba(86, 186, 42, 0.6);
-            animation: pulseGlow 2.5s infinite;
-        }
-
-        @keyframes pulseGlow {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-        }
-
-        .thumbs-up-header h3 {
-            font-size: 1.35rem;
-            color: #ffffff;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .thumbs-up-header p {
-            font-size: 0.88rem;
-            color: #a7f3d0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .success-metrics-pill {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 16px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 14px;
-        }
-
-        .success-metrics-pill .pill-val {
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: #86efac;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .success-metrics-pill .pill-lbl {
-            font-size: 0.85rem;
-            color: #cbd5e1;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .stats-strip-global {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .stat-mini-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: center;
-        }
-
-        .stat-mini-box i {
-            color: var(--brand-green);
-            font-size: 1.1rem;
-            margin-bottom: 4px;
-            display: block;
-        }
-
-        .stat-mini-box strong {
-            display: block;
-            font-size: 1.22rem;
-            color: #ffffff;
-            font-weight: 900;
-        }
-
-        .stat-mini-box span {
-            font-size: 0.72rem;
-            color: #94a3b8;
-            text-transform: uppercase;
-        }
-
-        /* Standard Section Elements */
-        section {
-            padding: 85px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 820px;
-            margin: 0 auto 55px;
-        }
-
-        .section-header h4 {
-            color: var(--brand-green-dark);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            margin-bottom: 8px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .section-header h2 {
-            font-size: 2.3rem;
-            color: var(--secondary);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            margin-top: 10px;
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        /* Cards & Grid */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 28px;
-        }
-
-        .interactive-service-card {
-            background: var(--white);
-            padding: 34px 28px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border);
-            transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .interactive-service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--brand-green), #60cf31);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .interactive-service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(86, 186, 42, 0.4);
-            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
-        }
-
-        .interactive-service-card:hover::before {
-            opacity: 1;
-        }
-
-        .card-icon {
-            width: 58px;
-            height: 58px;
-            background: var(--brand-green-light);
-            color: var(--brand-green-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 14px;
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .interactive-service-card:hover .card-icon {
-            transform: scale(1.08) rotate(3deg);
-            background: var(--brand-green);
-            color: var(--white);
-        }
-
-        .interactive-service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 12px;
-            color: var(--secondary);
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .interactive-service-card p {
-            color: var(--text-muted);
-            font-size: 0.94rem;
-            margin-bottom: 16px;
-        }
-
-        .bullet-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 15px;
-            border-top: 1px solid #f1f5f9;
-            padding-top: 15px;
-        }
-
-        .bullet-list li {
-            font-size: 0.88rem;
-            color: #475569;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .bullet-list li i {
-            color: var(--brand-green);
-            font-size: 0.82rem;
-        }
-
-        /* 11 Photos Grid Showcase Section */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .gallery-card {
-            background: var(--white);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gallery-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--brand-green);
-            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.09);
-        }
-
-        .gallery-img-box {
-            width: 100%;
-            height: 240px;
-            background: #f1f5f9;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gallery-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        .gallery-card:hover .gallery-img-box img {
-            transform: scale(1.08);
-        }
-
-        .gallery-caption {
-            padding: 18px;
-            background: var(--white);
-            flex-grow: 1;
-        }
-
-        .gallery-caption h4 {
-            font-size: 1.05rem;
-            color: var(--secondary);
-            font-weight: 700;
-            margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .gallery-caption p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* Live Workspace Section */
-        .workspace-section {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1.15fr 1fr;
-            margin: 40px auto 60px;
-            max-width: 1400px;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-        }
-
-        .workspace-img-box {
-            height: 400px;
-            background: #e2e8f0;
-            overflow: hidden;
-        }
-
-        .workspace-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.6s ease;
-        }
-
-        .workspace-section:hover .workspace-img-box img {
-            transform: scale(1.04);
-        }
-
-        .workspace-content {
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* Pricing Section */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 22px;
-        }
-
-        .pricing-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 34px 22px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--brand-green);
-            box-shadow: 0 12px 28px rgba(86, 186, 42, 0.12);
-        }
-
-        .pricing-card.featured {
-            border: 2px solid var(--brand-green);
-            background: #fafdf8;
-        }
-
-        .badge-popular {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--brand-green-dark);
-            color: var(--white);
-            padding: 4px 14px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .pricing-card h3 {
-            font-size: 1.25rem;
-            color: var(--secondary);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .pricing-card .price {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--secondary);
-            margin-bottom: 12px;
-        }
-
-        .pricing-card .price span {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        /* Leadership Cards */
-        .leadership-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        .leader-box {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 28px;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .leader-box:hover {
-            transform: translateY(-5px);
-            border-color: var(--brand-green);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
-
-        .leader-avatar {
-            width: 72px;
-            height: 72px;
-            background: var(--brand-green-light);
-            color: var(--brand-green-dark);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.9rem;
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
-        }
-
-        .leader-box:hover .leader-avatar {
-            transform: scale(1.06);
-        }
-
-        .leader-box h3 {
-            font-size: 1.22rem;
-            color: var(--secondary);
-            margin-bottom: 3px;
-        }
-
-        .leader-box .tag {
-            color: var(--brand-green-dark);
-            font-size: 0.82rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* Locations Block */
-        .locations-box {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 22px;
-        }
-
-        .loc-card {
-            background: var(--bg-light);
-            border: 1px solid var(--border);
-            padding: 26px;
-            border-radius: var(--radius-md);
-            border-left: 5px solid var(--brand-green);
-            transition: all 0.25s ease;
-        }
-
-        .loc-card:hover {
-            background: #ffffff;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-        }
-
-        .loc-card h4 {
-            color: var(--secondary);
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Contact Section */
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 50px;
-            background: #f8fafc;
-            border-radius: var(--radius-lg);
-            padding: 50px;
-            border: 1px solid var(--border);
-        }
-
-        .contact-item {
-            margin-bottom: 22px;
-        }
-
-        .contact-item strong {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.84rem;
-            text-transform: uppercase;
-            color: var(--brand-green-dark);
-            margin-bottom: 6px;
-        }
-
-        .contact-item a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-size: 1.15rem;
-            font-weight: 800;
-        }
-
-        .form-row {
-            margin-bottom: 16px;
-        }
-
-        .form-row label {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 6px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--secondary);
-        }
-
-        .form-row input, .form-row select, .form-row textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 8px;
-            border: 1px solid #cbd5e1;
-            font-size: 0.94rem;
-            background: var(--white);
-            transition: all 0.2s ease;
-        }
-
-        .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
-            outline: none;
-            border-color: var(--brand-green);
-            box-shadow: 0 0 0 4px var(--brand-green-glow);
-        }
-
-        /* Scroll Reveal */
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-
-        .reveal-on-scroll.is-revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Footer */
-        footer {
-            background: #040905;
-            color: #94a3b8;
-            padding: 70px 5% 25px;
-            border-top: 2px solid var(--brand-green);
-        }
-
-        .footer-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.8fr 1.1fr 1.1fr 1.4fr;
-            gap: 40px;
-            margin-bottom: 45px;
-        }
-
-        .footer-grid h4 {
-            color: var(--white);
-            margin-bottom: 18px;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer-grid ul {
-            list-style: none;
-        }
-
-        .footer-grid ul li {
-            margin-bottom: 9px;
-            font-size: 0.88rem;
-        }
-
-        .footer-grid ul li a {
-            color: #94a3b8;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: color 0.2s;
-        }
-
-        .footer-grid ul li a:hover {
-            color: var(--brand-green);
-        }
-
-        .copyright {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-top: 25px;
-            border-top: 1px solid #1a2a1e;
-            font-size: 0.85rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        @media (max-width: 950px) {
-            .hero-stage-content { grid-template-columns: 1fr; text-align: center; }
-            .hero-stage-text h1 { font-size: 2.5rem; }
-            .hero-stage-text p { margin: 0 auto 30px; }
-            .hero-buttons { justify-content: center; }
-            .workspace-section { grid-template-columns: 1fr; }
-            .workspace-img-box { height: 260px; }
-            .contact-layout { grid-template-columns: 1fr; padding: 25px; }
-            .nav-links { display: none; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .top-banner { flex-direction: column; gap: 6px; text-align: center; }
-            .top-banner .contact-links a { margin: 0 6px; }
-            .ienergizer-social-floating { display: none; }
-        }
-    </style>
+    #networkCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .brand-glow {
+      text-shadow: 0 0 25px rgba(52, 211, 153, 0.45), 0 0 50px rgba(16, 185, 129, 0.25);
+    }
+    #globeCanvas {
+      width: 100%;
+      height: 480px;
+      outline: none;
+      cursor: grab;
+    }
+    #globeCanvas:active {
+      cursor: grabbing;
+    }
+  </style>
 </head>
-<body>
+<body class="font-sans text-slate-800 bg-[#040810] flex flex-col min-h-screen relative selection:bg-emerald-500 selection:text-slate-950">
 
-    <!-- Top Announcement Bar (With Verified Original Numbers) -->
-    <div class="top-banner">
-        <div>
-            <i class="fa-solid fa-earth-asia" style="color:var(--brand-green);"></i> Enterprise Telecom & Multi-Sector Coverage Infrastructure
+  <!-- Floating Right Quick Action Dock -->
+  <aside class="fixed right-4 bottom-6 md:bottom-auto md:top-1/3 z-50 flex flex-col gap-3">
+    <a href="tel:+919012574505" title="Call Us: +91 9012574505" class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900/90 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 shadow-xl backdrop-blur transition-all duration-300">
+      <i class="fa-solid fa-phone text-lg"></i>
+      <span class="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg border border-slate-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
+        +91 9012574505 / 7678519164
+      </span>
+    </a>
+
+    <a href="mailto:telecorcelitsolutionshelp@gmail.com" title="Email Us" class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900/90 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 shadow-xl backdrop-blur transition-all duration-300">
+      <i class="fa-solid fa-envelope text-lg"></i>
+      <span class="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg border border-slate-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
+        telecorcelitsolutionshelp@gmail.com
+      </span>
+    </a>
+
+    <a href="https://wa.me/919012574505" target="_blank" title="WhatsApp Chat" class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900/90 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 shadow-xl backdrop-blur transition-all duration-300">
+      <i class="fa-brands fa-whatsapp text-xl"></i>
+      <span class="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg border border-slate-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
+        Direct WhatsApp Desk
+      </span>
+    </a>
+
+    <button onclick="showPage('contact')" title="Direct Inquiries" class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 text-slate-950 hover:bg-emerald-400 shadow-xl transition-all duration-300">
+      <i class="fa-solid fa-headset text-lg"></i>
+      <span class="absolute right-14 bg-slate-900 text-white text-xs font-semibold py-1.5 px-3 rounded-lg border border-slate-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
+        24x7 NOC Support
+      </span>
+    </button>
+  </aside>
+
+  <!-- Clean Corporate Header -->
+  <header class="bg-[#070e1a]/90 backdrop-blur-md sticky top-0 z-40 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
+        <div class="bg-white p-1 rounded-lg shadow-md flex items-center justify-center border border-slate-700">
+          <img src="telecorcel logo.jpeg" alt="Telecorcel Logo" class="h-10 w-auto object-contain" />
         </div>
-        <div class="contact-links">
-            <a href="tel:9012574505"><i class="fa-solid fa-phone"></i> +91 9012574505</a>
-            <a href="tel:7678519164"><i class="fa-solid fa-phone-volume"></i> +91 7678519164</a>
-            <a href="#contact"><i class="fa-solid fa-headset"></i> Sales Desk</a>
+        <div class="flex flex-col">
+          <span class="text-xl sm:text-2xl font-black tracking-tight text-white leading-none brand-glow">
+            TELECORCEL
+          </span>
+          <span class="text-[11px] sm:text-xs text-emerald-400 font-bold tracking-widest uppercase mt-0.5">
+            IT SOLUTIONS PVT LTD
+          </span>
         </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <button onclick="showPage('home')" class="hover:text-emerald-400 transition">Home</button>
+        <button onclick="showPage('services')" class="hover:text-emerald-400 transition">Services</button>
+        <button onclick="showPage('pricing')" class="hover:text-emerald-400 transition">Pricing</button>
+        <button onclick="showPage('about')" class="hover:text-emerald-400 transition">About Us</button>
+        <button onclick="showPage('contact')" class="hover:text-emerald-400 transition">Contact Us</button>
+      </nav>
+
+      <button onclick="showPage('contact')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs sm:text-sm font-black px-5 py-2.5 rounded-lg shadow-lg shadow-emerald-500/25 transition transform hover:-translate-y-0.5">
+        Get Started
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE 1: HOME -->
+  <main id="home" class="page-section active flex-grow">
+    <!-- Hero Banner with Canvas Background -->
+    <section class="relative min-h-[580px] sm:min-h-[660px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#050b14] via-[#071120] to-[#040810] text-white">
+      <canvas id="networkCanvas"></canvas>
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-500/15 rounded-full blur-3xl hero-glow pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 relative z-10 grid md:grid-cols-12 gap-10 items-center">
+        <div class="md:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase">
+            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> Direct Route Telecom Infrastructure
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="text-xs uppercase tracking-[0.3em] font-extrabold text-slate-400">Welcome To Enterprise Grade</h2>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-none tracking-tight text-white">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-200 to-white brand-glow">
+                TELECORCEL IT SOLUTIONS
+              </span>
+              <span class="block text-2xl sm:text-4xl text-slate-200 mt-2 font-bold">
+                PVT LTD
+              </span>
+            </h1>
+          </div>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
+            India Direct Clean Route SMS, OTP pipes, WhatsApp Cloud API, and custom Enterprise Software. Powering 20,000+ businesses globally with high-availability infrastructure and instant DLT compliance.
+          </p>
+
+          <div class="flex flex-wrap gap-4 pt-2">
+            <button onclick="showPage('pricing')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-7 py-3 rounded-lg shadow-xl shadow-emerald-500/25 transition transform hover:-translate-y-0.5">
+              View Pricing Cards
+            </button>
+            <button onclick="showPage('contact')" class="border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-200 px-7 py-3 rounded-lg font-semibold transition">
+              Consult Our Engineers
+            </button>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 grid grid-cols-2 gap-4">
+          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur">
+            <img src="telecorcel8.jpeg" alt="Bulk SMS Service" class="rounded-lg h-36 sm:h-44 w-full object-cover" />
+          </div>
+          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur" style="animation-delay: 1.2s;">
+            <img src="telecorcel9.jpeg" alt="Telecorcel Team" class="rounded-lg h-36 sm:h-44 w-full object-cover" />
+          </div>
+          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur" style="animation-delay: 0.6s;">
+            <img src="telecorcel4.jpeg" alt="OTP Route" class="rounded-lg h-36 sm:h-44 w-full object-cover" />
+          </div>
+          <div class="floating-card rounded-xl border border-slate-700/80 bg-slate-900/80 p-2 shadow-2xl backdrop-blur" style="animation-delay: 1.8s;">
+            <img src="telecorcel11.jpeg" alt="SMS Campaign" class="rounded-lg h-36 sm:h-44 w-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: 3D Global Interactive Customer Network (iEnergizer 3D Style) -->
+    <section class="py-16 bg-[#03070f] border-t border-slate-800 relative overflow-hidden text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">Live 3D Customer Footprint</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold mt-1">Telecorcel Global Network & Client Spread</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2">
+            Noida Sector 62 Headquarters se interconnected global high-speed carrier routes. Drag karke 3D Globe rotate karke live client nodes check karein.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-center bg-slate-900/50 border border-slate-800/90 rounded-2xl p-6 backdrop-blur shadow-2xl">
+          <!-- 3D ThreeJS Interactive Globe -->
+          <div class="lg:col-span-7 relative flex items-center justify-center">
+            <div id="globeCanvasContainer" class="w-full h-[460px] flex items-center justify-center relative">
+              <canvas id="globeCanvas"></canvas>
+              <div class="absolute bottom-3 left-4 bg-slate-950/80 border border-slate-800 text-[11px] text-emerald-400 px-3 py-1.5 rounded-full pointer-events-none">
+                <i class="fa-solid fa-arrows-spin mr-1"></i> Drag to rotate globe view
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Network Distribution Details -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="p-4 bg-slate-950/80 border border-emerald-500/30 rounded-xl">
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-bold text-white"><i class="fa-solid fa-location-dot text-emerald-400 mr-2"></i>Noida HQ (India Hub)</span>
+                <span class="text-[10px] bg-emerald-500/20 text-emerald-300 font-bold px-2 py-0.5 rounded">Origin Node</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-1">Sector 62, Noida Carrier Switch & Primary Datacenter</p>
+            </div>
+
+            <div class="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl">
+              <div class="flex justify-between items-center text-xs text-slate-300 font-semibold">
+                <span><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>Americas (US East / West)</span>
+                <span class="text-emerald-400 font-bold">2,400+ Enterprise Users</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl">
+              <div class="flex justify-between items-center text-xs text-slate-300 font-semibold">
+                <span><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>Europe & UK</span>
+                <span class="text-emerald-400 font-bold">3,800+ Clients</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl">
+              <div class="flex justify-between items-center text-xs text-slate-300 font-semibold">
+                <span><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>Middle East (UAE / Saudi)</span>
+                <span class="text-emerald-400 font-bold">4,200+ Retail & Gaming</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl">
+              <div class="flex justify-between items-center text-xs text-slate-300 font-semibold">
+                <span><i class="fa-solid fa-satellite text-emerald-400 mr-2"></i>APAC (Singapore / Australia)</span>
+                <span class="text-emerald-400 font-bold">5,000+ Active Nodes</span>
+              </div>
+            </div>
+
+            <div class="pt-2 text-center sm:text-left">
+              <button onclick="showPage('contact')" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs py-3 rounded-lg uppercase tracking-wider transition">
+                Start Route Onboarding
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Embedded Google Map for Noida HQ -->
+    <section class="py-14 bg-[#040810] border-t border-slate-800 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8">
+          <div>
+            <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">Official Location Map</span>
+            <h2 class="text-2xl sm:text-3xl font-black mt-1">Visit Telecorcel IT Solutions On Google Maps</h2>
+            <p class="text-xs text-slate-400 mt-1">Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309</p>
+          </div>
+          <a href="https://maps.google.com/?q=Block+A,+Sector+62,+Noida,+Uttar+Pradesh+201309" target="_blank" class="mt-4 sm:mt-0 inline-flex items-center gap-2 text-xs font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 px-4 py-2.5 rounded-lg transition">
+            <i class="fa-solid fa-map-location-dot"></i> Open Full Google Maps
+          </a>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-slate-800 shadow-2xl h-80 sm:h-96 w-full">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.260465223035!2d77.36214532695537!3d28.627771749870197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5456ef36d9f%3A0x3b7191b1286136c8!2sSector%2062%2C%20Noida%2C%20Uttar%20Pradesh%20201309!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0; filter: invert(90%) hue-rotate(180deg);" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Cards Overview -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 text-white">
+      <div class="text-center mb-12">
+        <span class="text-emerald-400 text-xs uppercase tracking-wider font-bold">What We Offer</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold mt-1">Integrated Technology & Messaging Stack</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/60 transition group">
+          <div class="h-12 w-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
+            <i class="fa-solid fa-comment-dots"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2 text-slate-100">Direct Bulk SMS & APIs</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">Transactional OTPs, Promotional outreach, Unicode Hindi/Regional SMS, aur sub-second carrier API integration.</p>
+          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider">Explore Route &rarr;</button>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/60 transition group">
+          <div class="h-12 w-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2 text-slate-100">WhatsApp & Cloud Voice/IVR</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">Meta Verified WhatsApp Business API, multi-tier automated IVR workflows aur targeted transactional email campaigns.</p>
+          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider">Explore Voice &rarr;</button>
+        </div>
+
+        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/60 transition group">
+          <div class="h-12 w-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2 text-slate-100">Web, App & Custom Software</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">High-performance corporate portals, custom ERP/CRM software, Android/iOS applications, aur performance marketing.</p>
+          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider">Explore IT &rarr;</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PAGE 2: SERVICES -->
+  <main id="services" class="page-section flex-grow py-14 max-w-7xl mx-auto px-4 sm:px-6 text-white">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-black">All Solutions & Capabilities</h2>
+      <p class="text-slate-400 text-sm mt-2">Scalable Messaging, Custom Software & DLT Infrastructure</p>
     </div>
 
-    <!-- Sticky Header with Official Logo -->
-    <header>
-        <nav>
-            <a href="#home" class="brand-container">
-                <div class="logo-img-wrapper">
-                    <img src="logo.png" alt="Telecorcel Logo" class="brand-logo-img" onerror="this.style.display='none'; document.getElementById('svg-fallback').style.display='block';">
-                    
-                    <svg id="svg-fallback" style="display:none; height:42px; width:56px;" viewBox="0 0 100 80">
-                        <path d="M 40,12 C 75,12 90,26 80,48" stroke="#56ba2a" stroke-width="8" stroke-linecap="round" fill="none" />
-                        <path d="M 78,48 C 65,72 10,72 10,48 C 10,30 25,18 40,14" stroke="#378018" stroke-width="8" stroke-linecap="round" fill="none" />
-                    </svg>
-                </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-slate-900/70 border border-slate-800 p-6 rounded-xl">
+        <h3 class="text-lg font-bold text-emerald-400 mb-3 border-b border-slate-800 pb-2 flex items-center gap-2">
+          <i class="fa-solid fa-paper-plane text-sm"></i> 1. Bulk SMS & Gateway Routes
+        </h3>
+        <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
+          <li>• <strong>Transactional SMS:</strong> Instant OTPs, 2FA, alerts, order confirmations.</li>
+          <li>• <strong>Promotional SMS:</strong> High volume broadcast campaigns with smart scheduling.</li>
+          <li>• <strong>Carrier Routes:</strong> OTP route, clean traffic, gaming and high-delivery pipes.</li>
+          <li>• <strong>Specs:</strong> Unicode regional SMS, Flash SMS, Webhooks, Delivery Analytics.</li>
+        </ul>
+      </div>
 
-                <div class="brand-text-block">
-                    <span class="company-name-bold">TELECORCEL <span>IT SOLUTIONS</span></span>
-                    <span class="brand-subtitle"><i class="fa-solid fa-circle-check" style="color:var(--brand-green);"></i> PVT LTD &bull; NOIDA</span>
-                </div>
-            </a>
+      <div class="bg-slate-900/70 border border-slate-800 p-6 rounded-xl">
+        <h3 class="text-lg font-bold text-emerald-400 mb-3 border-b border-slate-800 pb-2 flex items-center gap-2">
+          <i class="fa-solid fa-shield-halved text-sm"></i> 2. DLT & Regulatory Registration
+        </h3>
+        <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
+          <li>• <strong>DLT Onboarding:</strong> Principal Entity (PE) registration handholding.</li>
+          <li>• <strong>Sender ID/Headers:</strong> Instant verification and header approval assistance.</li>
+          <li>• <strong>Content Templates:</strong> Quick template creation and compliance audits.</li>
+        </ul>
+      </div>
 
-            <ul class="nav-links">
-                <li><a href="#sms-services"><i class="fa-solid fa-comment-sms"></i> Bulk SMS</a></li>
-                <li><a href="#omnichannel"><i class="fa-brands fa-whatsapp"></i> WhatsApp & Voice</a></li>
-                <li><a href="#gallery"><i class="fa-solid fa-images"></i> Media Showcase</a></li>
-                <li><a href="#it-solutions"><i class="fa-solid fa-laptop-code"></i> Software & Web</a></li>
-                <li><a href="#pricing"><i class="fa-solid fa-tags"></i> Pricing</a></li>
-                <li><a href="#leadership"><i class="fa-solid fa-users"></i> Leadership</a></li>
-                <li><a href="#contact" class="btn-cta"><i class="fa-solid fa-paper-plane"></i> Enquire Now</a></li>
-            </ul>
-        </nav>
-    </header>
+      <div class="bg-slate-900/70 border border-slate-800 p-6 rounded-xl">
+        <h3 class="text-lg font-bold text-emerald-400 mb-3 border-b border-slate-800 pb-2 flex items-center gap-2">
+          <i class="fa-solid fa-network-wired text-sm"></i> 3. WhatsApp, Email & Voice/IVR
+        </h3>
+        <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
+          <li>• <strong>WhatsApp Business API:</strong> Automated catalogs, chatbots, support tickets.</li>
+          <li>• <strong>Bulk Email Solutions:</strong> Transactional SMTP, high-inbox marketing delivery.</li>
+          <li>• <strong>Voice/IVR:</strong> Automated voice broadcasting, dynamic keypad responses, call logs.</li>
+        </ul>
+      </div>
 
-    <!-- Floating Social Actions (iEnergizer Exact Style) -->
-    <div class="ienergizer-social-floating">
-        <a href="#contact" class="social-pill" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#contact" class="social-pill" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#contact" class="social-pill" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <div class="bg-slate-900/70 border border-slate-800 p-6 rounded-xl">
+        <h3 class="text-lg font-bold text-emerald-400 mb-3 border-b border-slate-800 pb-2 flex items-center gap-2">
+          <i class="fa-solid fa-code text-sm"></i> 4. Software, Web & App Development
+        </h3>
+        <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
+          <li>• <strong>Web Development:</strong> Corporate, E-Commerce, high-speed landing pages.</li>
+          <li>• <strong>Mobile Apps:</strong> Native Android, iOS and cross-platform Flutter/React Native.</li>
+          <li>• <strong>Enterprise Software:</strong> Custom CRM, Admin Dashboards, Billing & Inventory ERPs.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- PAGE 3: PRICING -->
+  <main id="pricing" class="page-section flex-grow py-14 max-w-7xl mx-auto px-4 sm:px-6 text-white">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-black">Flexible Enterprise Pricing</h2>
+      <p class="text-slate-400 text-sm mt-2">Direct carrier interconnects with no hidden setup fees</p>
     </div>
 
-    <!-- Marquee Ticker -->
-    <div class="marquee-bar">
-        <div class="marquee-content">
-            &bull; TELECORCEL IT SOLUTIONS PVT LTD &bull; Bulk SMS &bull; OTP SMS &bull; Transactional SMS &bull; Promotional SMS &bull; WhatsApp API &bull; Voice SMS &bull; IVR Solutions &bull; Website Development &bull; Mobile Apps &bull; Sector 62 Noida &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
-            &bull; TELECORCEL IT SOLUTIONS PVT LTD &bull; Bulk SMS &bull; OTP SMS &bull; Transactional SMS &bull; Promotional SMS &bull; WhatsApp API &bull; Voice SMS &bull; IVR Solutions &bull; Website Development &bull; Mobile Apps &bull; Sector 62 Noida &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
+        <h3 class="font-bold text-base text-slate-200">Promotional SMS</h3>
+        <p class="text-xs text-slate-400 mt-1 mb-4">Marketing & Mass Outreach</p>
+        <div class="text-2xl font-black text-emerald-400 mb-3">Bulk Tier Rates</div>
+        <p class="text-xs text-slate-400 mb-6">Clean routes, direct dynamic routing, real-time portal access included.</p>
+        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
+      </div>
+
+      <div class="bg-slate-900/90 border-2 border-emerald-500 p-6 rounded-xl text-center relative shadow-xl shadow-emerald-500/10">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-slate-950 font-black text-[10px] uppercase px-2.5 py-0.5 rounded-full">Top Choice</span>
+        <h3 class="font-bold text-base text-slate-200 mt-1">Transactional & OTP</h3>
+        <p class="text-xs text-slate-400 mt-1 mb-4">High Priority Delivery</p>
+        <div class="text-2xl font-black text-emerald-400 mb-3">Sub-Second Delivery</div>
+        <p class="text-xs text-slate-400 mb-6">99.98% delivery success, dedicated carrier pipes with failover routing.</p>
+        <button onclick="showPage('contact')" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
+        <h3 class="font-bold text-base text-slate-200">WhatsApp Marketing</h3>
+        <p class="text-xs text-slate-400 mt-1 mb-4">Official Meta Cloud API</p>
+        <div class="text-2xl font-black text-emerald-400 mb-3">Pay Per Session</div>
+        <p class="text-xs text-slate-400 mb-6">Rich multimedia templates, green tick assistance, chatbot support.</p>
+        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
+        <h3 class="font-bold text-base text-slate-200">Email & Voice/IVR</h3>
+        <p class="text-xs text-slate-400 mt-1 mb-4">Outbound Automation</p>
+        <div class="text-2xl font-black text-emerald-400 mb-3">Custom Plans</div>
+        <p class="text-xs text-slate-400 mb-6">Smart retry mechanisms, high reputation SMTP IPs, detailed logs.</p>
+        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
+        <h3 class="font-bold text-base text-slate-200">Software & Web Apps</h3>
+        <p class="text-xs text-slate-400 mt-1 mb-4">Tailor-Made Development</p>
+        <div class="text-2xl font-black text-emerald-400 mb-3">Milestone Based</div>
+        <p class="text-xs text-slate-400 mb-6">Full code ownership, free maintenance period, enterprise UI/UX.</p>
+        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
+        <h3 class="font-bold text-base text-slate-200">Messaging APIs</h3>
+        <p class="text-xs text-slate-400 mt-1 mb-4">REST & SMPP Endpoints</p>
+        <div class="text-2xl font-black text-emerald-400 mb-3">Developer Ready</div>
+        <p class="text-xs text-slate-400 mb-6">SDKs for Python, Node, PHP, Java with instant callback webhooks.</p>
+        <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- PAGE 4: ABOUT US -->
+  <main id="about" class="page-section flex-grow py-14 max-w-7xl mx-auto px-4 sm:px-6 text-white">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="text-emerald-400 text-xs uppercase tracking-wider font-bold">About Us</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mt-1 mb-4">Pioneering High-Quality Telecom & Enterprise IT</h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          Telecorcel IT Solutions Pvt Ltd provides high-throughput telecom routing, automated messaging gateways, and bespoke web/software solutions. Operating since 2013, we serve over 20,000+ satisfied clients across multiple verticals.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-lg">
+            <span class="text-[11px] text-emerald-400 uppercase font-bold block">Chief Executive Officer</span>
+            <span class="text-base font-bold text-slate-100">Satyam Sharma</span>
+          </div>
+          <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-lg">
+            <span class="text-[11px] text-emerald-400 uppercase font-bold block">Sales Manager</span>
+            <span class="text-base font-bold text-slate-100">Shivam Sharma</span>
+          </div>
         </div>
+      </div>
+
+      <div class="border border-slate-800 rounded-xl overflow-hidden p-2 bg-slate-900/60 shadow-2xl">
+        <img src="telecorcel9.jpeg" alt="Team at Work" class="rounded-lg w-full object-cover" />
+      </div>
+    </div>
+  </main>
+
+  <!-- PAGE 5: CONTACT US -->
+  <main id="contact" class="page-section flex-grow py-14 max-w-7xl mx-auto px-4 sm:px-6 text-white">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-black">Direct Inquiry & NOC Desk</h2>
+      <p class="text-slate-400 text-sm mt-2">Sector 62, Noida Headquarters & Carrier Route Operations</p>
     </div>
 
-    <!-- ============================================================
-         iEnergizer Exact Earth Globe Stage with Glowing Cyber Arcs
-         ============================================================ -->
-    <div class="ienergizer-stage" id="home">
-        <!-- Interactive 3D Earth Mesh Canvas -->
-        <canvas id="ienergizer-globe-canvas"></canvas>
-
-        <div class="hero-stage-content">
-            <!-- Left: Hero Statements -->
-            <div class="hero-stage-text reveal-on-scroll">
-                <div class="coverage-badge">
-                    <span class="pulse-dot"></span>
-                    <span><i class="fa-solid fa-tower-broadcast"></i> Global Telecom & Business Process Excellence</span>
-                </div>
-                <h1>Leveraging Telecom & IT Excellence for Enterprises <span>Across the Globe</span></h1>
-                <p><i class="fa-solid fa-network-wired" style="color:var(--brand-green); margin-right:6px;"></i> High-throughput telecom routing connecting businesses across all sectors. Real-time carrier balancing, instant OTP pipelines, WhatsApp Business API, and scalable web & software engineering.</p>
-                
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn-cta" style="padding: 13px 34px; font-size: 1.05rem;"><i class="fa-solid fa-satellite-dish"></i> Connect With Sales</a>
-                    <a href="#pricing" class="btn-outline-glow"><i class="fa-solid fa-table-list"></i> Explore Wholesale Plans</a>
-                </div>
-
-                <div class="stats-strip-global">
-                    <div class="stat-mini-box">
-                        <i class="fa-solid fa-globe"></i>
-                        <strong>100%</strong>
-                        <span>Area Coverage</span>
-                    </div>
-                    <div class="stat-mini-box">
-                        <i class="fa-solid fa-stopwatch"></i>
-                        <strong>&lt; 5s</strong>
-                        <span>Fast OTP</span>
-                    </div>
-                    <div class="stat-mini-box">
-                        <i class="fa-solid fa-stamp"></i>
-                        <strong>TRAI</strong>
-                        <span>DLT Verified</span>
-                    </div>
-                    <div class="stat-mini-box">
-                        <i class="fa-solid fa-headset"></i>
-                        <strong>24/7</strong>
-                        <span>Live NOC</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right: People Thumbs Up Floating Success Widget -->
-            <div class="thumbs-up-visual-card reveal-on-scroll">
-                <div class="thumbs-up-header">
-                    <div class="thumbs-avatar-bubble">
-                        <i class="fa-solid fa-thumbs-up"></i>
-                    </div>
-                    <div>
-                        <h3><i class="fa-solid fa-star" style="color:#facc15; font-size:1.1rem;"></i> Client Satisfaction</h3>
-                        <p><i class="fa-solid fa-circle-check" style="color:#22c55e;"></i> Verified Happy Customers</p>
-                    </div>
-                </div>
-
-                <div class="success-metrics-pill">
-                    <div>
-                        <div class="pill-lbl"><i class="fa-solid fa-bolt" style="color:var(--brand-green);"></i> Delivery Success Rate</div>
-                        <div class="pill-val"><i class="fa-solid fa-arrow-up-right-dots"></i> 99.98%</div>
-                    </div>
-                    <i class="fa-solid fa-chart-line" style="font-size: 1.8rem; color: #86efac;"></i>
-                </div>
-
-                <div class="success-metrics-pill">
-                    <div>
-                        <div class="pill-lbl"><i class="fa-solid fa-users-gear" style="color:var(--brand-green);"></i> Enterprise Support Team</div>
-                        <div class="pill-val"><i class="fa-solid fa-clock-rotate-left"></i> 24*7 Ready</div>
-                    </div>
-                    <i class="fa-solid fa-headset" style="font-size: 1.8rem; color: #86efac;"></i>
-                </div>
-
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:space-between;">
-                    <span style="font-size:0.85rem; color:#cbd5e1;"><i class="fa-solid fa-location-dot" style="color:var(--brand-green);"></i> Noida Central NOC Station</span>
-                    <span style="background:rgba(86,186,42,0.2); color:#86efac; padding:4px 12px; border-radius:50px; font-size:0.75rem; font-weight:800; display:flex; align-items:center; gap:5px;"><i class="fa-solid fa-signal"></i> ACTIVE NOW</span>
-                </div>
-            </div>
+    <div class="grid md:grid-cols-2 gap-10">
+      <div class="space-y-6">
+        <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl">
+          <h3 class="text-base font-bold text-white mb-4 border-b border-slate-800 pb-2">Registered Corporate Facility</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+            <strong>Headquarters:</strong> Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309.<br/>
+            <span class="text-xs text-slate-400">(Additional presence listings around Sector 44 / Wazidpur in Noida)</span>
+          </p>
+          <div class="space-y-3 text-xs sm:text-sm text-slate-300">
+            <p><i class="fa-solid fa-phone text-emerald-400 mr-2"></i> +91 9012574505</p>
+            <p><i class="fa-solid fa-phone text-emerald-400 mr-2"></i> +91 7678519164</p>
+            <p><i class="fa-solid fa-envelope text-emerald-400 mr-2"></i> telecorcelitsolutionshelp@gmail.com</p>
+          </div>
         </div>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl">
+        <h3 class="text-base font-bold text-white mb-4">Request Live Pipeline / Pricing</h3>
+        <form onsubmit="event.preventDefault(); alert('Message send ho gaya hai! Team turant contact karegi.');" class="space-y-4 text-xs sm:text-sm">
+          <div>
+            <label class="block text-slate-300 mb-1">Aapka Naam / Company</label>
+            <input type="text" required class="w-full bg-slate-950 border border-slate-800 rounded p-2.5 text-white focus:border-emerald-500 outline-none" placeholder="Enter name" />
+          </div>
+          <div>
+            <label class="block text-slate-300 mb-1">Contact Number</label>
+            <input type="tel" required class="w-full bg-slate-950 border border-slate-800 rounded p-2.5 text-white focus:border-emerald-500 outline-none" placeholder="+91 XXXXXXXXXX" />
+          </div>
+          <div>
+            <label class="block text-slate-300 mb-1">Service Required</label>
+            <select class="w-full bg-slate-950 border border-slate-800 rounded p-2.5 text-white focus:border-emerald-500 outline-none">
+              <option>Bulk SMS (Transactional / OTP / Promotional)</option>
+              <option>WhatsApp API & Voice IVR</option>
+              <option>Website / Mobile App Development</option>
+              <option>CRM / ERP Software Solutions</option>
+              <option>Digital Marketing & Lead Generation</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded uppercase tracking-wider text-xs transition">Submit Inquiry</button>
+        </form>
+      </div>
     </div>
+  </main>
 
-    <!-- Live Workspace Section (telecorcel9.jpeg) -->
-    <div class="workspace-section reveal-on-scroll" id="workspace">
-        <div class="workspace-img-box">
-            <img src="telecorcel9.jpeg" alt="Telecorcel Operations Floor">
-        </div>
-        <div class="workspace-content">
-            <span class="coverage-badge" style="background: var(--brand-green-light); color: var(--brand-green-dark); border-color: rgba(86,186,42,0.3); max-width: fit-content;">
-                <span class="pulse-dot" style="background:var(--brand-green-dark); box-shadow:none;"></span>
-                <span><i class="fa-solid fa-building-circle-check"></i> Live Technical NOC Desk</span>
-            </span>
-            <h2 style="font-size: 2.1rem; color: var(--secondary); margin-bottom: 16px; display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-people-roof" style="color:var(--brand-green-dark);"></i> Dedicated Floor Support & Operations</h2>
-            <p style="color: var(--text-muted); margin-bottom: 22px;"><i class="fa-solid fa-circle-info" style="color:var(--brand-green); margin-right:6px;"></i> Hamara central operations hub Noida Sector 62 se pure regional client accounts, active delivery logs, aur operator latency ko 24/7 monitor karta hai.</p>
-            <ul class="bullet-list" style="border:none; padding:0; margin-bottom:24px;">
-                <li><i class="fa-solid fa-check-double"></i> Real-time carrier route balancing and automatic failover</li>
-                <li><i class="fa-solid fa-check-double"></i> Multi-sector regional field support across NCR</li>
-                <li><i class="fa-solid fa-check-double"></i> Corporate Office: Block A, Industrial Area, Sector 62, Noida</li>
-            </ul>
-            <div>
-                <a href="#contact" class="btn-cta"><i class="fa-solid fa-calendar-check"></i> Schedule Consultation</a>
-            </div>
-        </div>
+  <!-- Clean Minimalist Footer -->
+  <footer class="bg-[#02050a] text-slate-400 py-8 border-t border-slate-900 text-xs mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+      <div>
+        <span class="text-white font-extrabold tracking-wider">TELECORCEL IT SOLUTIONS PVT LTD</span>
+        <p class="text-[11px] text-slate-500 mt-1">Sector 62, Noida, UP 201309 | CEO: Satyam Sharma | Sales Manager: Shivam Sharma</p>
+      </div>
+      <p class="text-[11px] text-slate-500">&copy; 2026 Telecorcel IT Solutions Pvt Ltd. All rights reserved.</p>
     </div>
-
-    <!-- All Remaining 9 Campaign Images (Photos 3 to 11) in Gallery -->
-    <section id="gallery" style="background: var(--bg-light); border-radius: var(--radius-lg);">
-        <div class="section-header reveal-on-scroll">
-            <h4><i class="fa-solid fa-photo-film"></i> Campaign Media & Operations</h4>
-            <h2><i class="fa-solid fa-panorama" style="color:var(--brand-green-dark);"></i> Verified Campaign Portals & Formats</h2>
-            <p><i class="fa-solid fa-sparkles" style="color:var(--brand-green);"></i> Explore our active campaign creatives, operator routing artworks, and promotional graphics.</p>
-        </div>
-
-        <div class="gallery-grid">
-            <!-- PHOTO 3: telecorcel11.jpeg -->
-            <div class="gallery-card reveal-on-scroll">
-                <div class="gallery-img-box">
-                    <img src="telecorcel11.jpeg" alt="Campaign Graphic 11">
-                </div>
-                <div class="gallery-caption">
-                    <h4><i class="fa-solid fa-layer-group" style="color:var(--brand-green);"></i> Multi-Traffic Campaign Portal</h4>
-                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> High delivery rates supporting Gaming, Casino, Spa, and Clinic messaging.</p>
-                </div>
-            </div>
-
-            <!-- PHOTO 4: telecorcel0.jpeg -->
-            <div class="gallery-card reveal-on-scroll">
-                <div class="gallery-img-box">
-                    <img src="telecorcel0.jpeg" alt="Campaign Graphic 0">
-                </div>
-                <div class="gallery-caption">
-                    <h4><i class="fa-solid fa-sliders" style="color:var(--brand-green);"></i> Versatile Traffic Solutions</h4>
-                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> Clean OTP, gaming, and local business promotional broadcasts.</p>
-                </div>
-            </div>
-
-            <!-- PHOTO 5: telecorcel8.jpeg -->
-            <div class="gallery-card reveal-on-scroll">
-                <div class="gallery-img-box">
-                    <img src="telecorcel8.jpeg" alt="Campaign Graphic 8">
-                </div>
-                <div class="gallery-caption">
-                    <h4><i class="fa-solid fa-route" style="color:var(--brand-green);"></i> India Stable SMS Route</h4>
-                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> MKT/OTP routes with high delivery rates and click analytics[cite: 1].</p>
-                </div>
-            </div>
-
-            <!-- PHOTO 6: telecorcel7.jpeg -->
-            <div class="gallery-card reveal-on-scroll">
-                <div class="gallery-img-box">
-                    <img src="telecorcel7.jpeg" alt="Campaign Graphic 7">
-                </div>
-                <div class="gallery-caption">
-                    <h4><i class="fa-solid fa-mobile-screen-button" style="color:var(--brand-green);"></i> Instant Smartphone Reach</h4>
-                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> Direct inbox message delivery with zero screen distortion.</p>
-                </div>
-            </div>
-
-            <!-- PHOTO 7: telecorcel6.jpeg -->
-            <div class="gallery-card reveal-on-scroll">
-                <div class="gallery-img-box">
-                    <img src="telecorcel6.jpeg" alt="Campaign Graphic 6">
-                </div>
-                <div class="gallery-caption">
-                    <h4><i class="fa-solid fa-network-wired" style="color:var(--brand-green);"></i> Operator-Grade Gateway</h4>
-                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> High-concurrency carrier connectivity for fast delivery.</p>
-                </div>
-            </div>
-
-            <!-- PHOTO 8: telecorcel5.jpeg -->
-            <div class="gallery-card reveal-on-scroll">
-                <div class="gallery-img-box">
-                    <img src="telecorcel5.jpeg" alt="Campaign Graphic 5">
-                </div>
-                <div class="gallery-caption">
-                    <h4><i class="fa-solid fa-chart-line" style="color:var(--brand-green);"></i> SMS Marketing Made Easy</h4>
-                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> Instant delivery with DND and Non-DND sender ID support.</p>
-                </div>
-            </div>
-
-            <!-- PHOTO 9: telecorcel4.jpeg -->
-            <div class="gallery-card reveal-on-scroll">
-                <div class="gallery-img-box">
-                    <img src="telecorcel4.jpeg" alt="Campaign Graphic 4">
-                </div>
-                <div class="gallery-caption">
-                    <h4><i class="fa-solid fa-key" style="color:var(--brand-green);"></i> India OTP Clean Route</h4>
-                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> Stable dynamic 2FA authentication for apps and banking portals.</p>
-                </div>
-            </div>
-
-            <!-- PHOTO 10: telecorcel3.jpeg -->
-            <div class="gallery-card reveal-on-scroll">
-                <div class="gallery-img-box">
-                    <img src="telecorcel3.jpeg" alt="Campaign Graphic 3">
-                </div>
-                <div class="gallery-caption">
-                    <h4><i class="fa-solid fa-arrow-trend-up" style="color:var(--brand-green);"></i> Sales Conversion Engine</h4>
-                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> Direct SMS routes designed to accelerate customer response rates[cite: 1].</p>
-                </div>
-            </div>
-
-            <!-- PHOTO 11: telecorcel2.jpeg -->
-            <div class="gallery-card reveal-on-scroll">
-                <div class="gallery-img-box">
-                    <img src="telecorcel2.jpeg" alt="Campaign Graphic 2">
-                </div>
-                <div class="gallery-caption">
-                    <h4><i class="fa-solid fa-cloud" style="color:var(--brand-green);"></i> Enterprise Gateway Network</h4>
-                    <p><i class="fa-solid fa-check" style="color:var(--brand-green);"></i> High-throughput architecture for scalable enterprise communications.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bulk SMS & Communication Routing -->
-    <section id="sms-services">
-        <div class="section-header reveal-on-scroll">
-            <h4><i class="fa-solid fa-tower-broadcast"></i> Direct Telecom Gateway</h4>
-            <h2><i class="fa-solid fa-envelopes-bulk" style="color:var(--brand-green-dark);"></i> Enterprise Bulk SMS & DLT Solutions</h2>
-            <p><i class="fa-solid fa-circle-check" style="color:var(--brand-green);"></i> Engineered for high-volume deliverability across transactional, promotional, and automated notifications.</p>
-        </div>
-
-        <div class="grid-3">
-            <div class="interactive-service-card reveal-on-scroll">
-                <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3><i class="fa-solid fa-lock" style="font-size:1rem; color:var(--brand-green);"></i> Transactional & OTP SMS</h3>
-                <p>Prioritized carrier band for critical OTPs, two-factor authentication, security alerts, and order updates.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Round-the-clock 24/7 Open Bandwidth</li>
-                    <li><i class="fa-solid fa-check"></i> Automated Carrier Failover & Retries</li>
-                    <li><i class="fa-solid fa-check"></i> Sub-5 Second Delivery Latency</li>
-                </ul>
-            </div>
-
-            <div class="interactive-service-card reveal-on-scroll">
-                <div class="card-icon"><i class="fa-solid fa-bullhorn"></i></div>
-                <h3><i class="fa-solid fa-bullseye" style="font-size:1rem; color:var(--brand-green);"></i> Promotional & Flash SMS</h3>
-                <p>Scalable customer outreach for sales offers, announcements, and immediate pop-up Flash SMS alerts on phone screens.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Standard Delivery Window (10 AM - 9 PM)</li>
-                    <li><i class="fa-solid fa-check"></i> Direct Screen Popup Flash SMS</li>
-                    <li><i class="fa-solid fa-check"></i> Smart DND Scrubbing & Reporting</li>
-                </ul>
-            </div>
-
-            <div class="interactive-service-card reveal-on-scroll">
-                <div class="card-icon"><i class="fa-solid fa-file-signature"></i></div>
-                <h3><i class="fa-solid fa-stamp" style="font-size:1rem; color:var(--brand-green);"></i> DLT Registration Support</h3>
-                <p>Complete entity registration, header whitelisting, and content template approvals across Jio, Airtel, VI, and BSNL.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Entity & Sender ID (Header) Approval</li>
-                    <li><i class="fa-solid fa-check"></i> Content Template Submissions</li>
-                    <li><i class="fa-solid fa-check"></i> TRAI Regulatory Compliance</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Omnichannel: WhatsApp, Voice IVR & Email -->
-    <section id="omnichannel" style="background: var(--bg-light); border-radius: var(--radius-lg);">
-        <div class="section-header reveal-on-scroll">
-            <h4><i class="fa-solid fa-arrows-split-up-and-left"></i> Omnichannel Communication</h4>
-            <h2><i class="fa-solid fa-comments" style="color:var(--brand-green-dark);"></i> WhatsApp Business, Cloud Voice IVR & Email</h2>
-            <p><i class="fa-solid fa-share-nodes" style="color:var(--brand-green);"></i> Reach your customers on high-engagement touchpoints with automated workflows.</p>
-        </div>
-
-        <div class="grid-3">
-            <div class="interactive-service-card reveal-on-scroll">
-                <div class="card-icon" style="color: #25d366; background: #e8fbee;"><i class="fa-brands fa-whatsapp"></i></div>
-                <h3><i class="fa-solid fa-message" style="font-size:1rem; color:#25d366;"></i> WhatsApp Business API</h3>
-                <p>Official Meta Cloud API integration, verified badge assistance, chatbot flows, and broadcast marketing.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Automated Chatbot Workflows</li>
-                    <li><i class="fa-solid fa-check"></i> Interactive Quick Reply Buttons</li>
-                    <li><i class="fa-solid fa-check"></i> Dynamic PDF Invoice Alerts</li>
-                </ul>
-            </div>
-
-            <div class="interactive-service-card reveal-on-scroll">
-                <div class="card-icon" style="color: #8b5cf6; background: #f3f0ff;"><i class="fa-solid fa-headset"></i></div>
-                <h3><i class="fa-solid fa-phone-volume" style="font-size:1rem; color:#8b5cf6;"></i> Voice Calls & IVR</h3>
-                <p>Automate outbound voice broadcasts (OBD), customer reminders, and intelligent multi-level IVR inbound calling trees.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> High Concurrency Voice Channels</li>
-                    <li><i class="fa-solid fa-check"></i> User Keypad (DTMF) Capture</li>
-                    <li><i class="fa-solid fa-check"></i> Exact Duration Analytics</li>
-                </ul>
-            </div>
-
-            <div class="interactive-service-card reveal-on-scroll">
-                <div class="card-icon" style="color: #ea4335; background: #fdf2f2;"><i class="fa-solid fa-envelope-open-text"></i></div>
-                <h3><i class="fa-solid fa-envelope" style="font-size:1rem; color:#ea4335;"></i> Bulk Email Marketing</h3>
-                <p>High inbox placement rates through dedicated IP pools, drip automations, and transactional email gateways.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Real-time Open & Click Tracking</li>
-                    <li><i class="fa-solid fa-check"></i> Automated Drip Schedules</li>
-                    <li><i class="fa-solid fa-check"></i> SPF, DKIM & DMARC Setup</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- IT Engineering, Web & Mobile App Development -->
-    <section id="it-solutions">
-        <div class="section-header reveal-on-scroll">
-            <h4><i class="fa-solid fa-microchip"></i> Full-Stack Software Architecture</h4>
-            <h2><i class="fa-solid fa-code" style="color:var(--brand-green-dark);"></i> Custom Web, Mobile App & SaaS Engineering</h2>
-            <p><i class="fa-solid fa-shield-halved" style="color:var(--brand-green);"></i> Engineered with modern cloud frameworks to deliver fast, secure, and conversion-optimized digital platforms.</p>
-        </div>
-
-        <div class="grid-3">
-            <div class="interactive-service-card reveal-on-scroll">
-                <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <h3><i class="fa-solid fa-globe" style="font-size:1rem; color:var(--brand-green);"></i> Corporate Web & Portals</h3>
-                <p>Performance-driven, responsive, and SEO-optimized business websites, landing pages, and e-commerce web applications.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Corporate Websites & Landing Pages</li>
-                    <li><i class="fa-solid fa-check"></i> E-commerce Gateways & Shopping Carts</li>
-                    <li><i class="fa-solid fa-check"></i> SSL Security & Cloud Hosting</li>
-                </ul>
-            </div>
-
-            <div class="interactive-service-card reveal-on-scroll">
-                <div class="card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-                <h3><i class="fa-brands fa-android" style="font-size:1rem; color:var(--brand-green);"></i> Mobile App Development</h3>
-                <p>High-speed, feature-packed mobile applications developed for Android and iOS devices using native and cross-platform frameworks.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Android & iOS Mobile Applications</li>
-                    <li><i class="fa-solid fa-check"></i> Service Booking & Delivery Apps</li>
-                    <li><i class="fa-solid fa-check"></i> Play Store & App Store Deployment</li>
-                </ul>
-            </div>
-
-            <div class="interactive-service-card reveal-on-scroll">
-                <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
-                <h3><i class="fa-solid fa-gears" style="font-size:1rem; color:var(--brand-green);"></i> Custom CRM, ERP & SaaS</h3>
-                <p>Automate internal administration with custom dashboards, CRM pipelines, inventory managers, and billing systems.</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Custom Admin Panels & CRM Suites</li>
-                    <li><i class="fa-solid fa-check"></i> Automated Billing & Invoicing Systems</li>
-                    <li><i class="fa-solid fa-check"></i> REST API Engineering & Integrations</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" style="background: var(--bg-light); border-radius: var(--radius-lg);">
-        <div class="section-header reveal-on-scroll">
-            <h4><i class="fa-solid fa-circle-dollar-to-slot"></i> Transparent Wholesale Rates</h4>
-            <h2><i class="fa-solid fa-tags" style="color:var(--brand-green-dark);"></i> Competitive Pricing Cards</h2>
-            <p><i class="fa-solid fa-badge-percent" style="color:var(--brand-green);"></i> Wholesale volume pricing with zero hidden maintenance charges. Contact sales for custom slab discounts.</p>
-        </div>
-
-        <div class="pricing-grid">
-            <div class="pricing-card reveal-on-scroll">
-                <h3><i class="fa-solid fa-paper-plane" style="color:var(--brand-green);"></i> Promotional SMS</h3>
-                <div class="price">₹0.15<span> / SMS</span></div>
-                <p style="color: var(--text-muted); font-size: 0.85rem;"><i class="fa-solid fa-cubes-stacked"></i> Volume: Min 50k Credits</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Standard Hours (10 AM - 9 PM)</li>
-                    <li><i class="fa-solid fa-check"></i> 100% Delivery Reports</li>
-                    <li><i class="fa-solid fa-check"></i> Free DLT Template Setup</li>
-                </ul>
-                <a href="#contact" class="btn-outline-glow" style="display:inline-flex; justify-content:center; width:100%; color:var(--secondary); border-color:#cbd5e1; margin-top:20px;"><i class="fa-solid fa-cart-plus"></i> Book Plan</a>
-            </div>
-
-            <div class="pricing-card featured reveal-on-scroll">
-                <span class="badge-popular"><i class="fa-solid fa-fire"></i> Highest Demand</span>
-                <h3><i class="fa-solid fa-key" style="color:var(--brand-green);"></i> Transactional / OTP</h3>
-                <div class="price">₹0.18<span> / SMS</span></div>
-                <p style="color: var(--text-muted); font-size: 0.85rem;"><i class="fa-solid fa-cubes-stacked"></i> Volume: Min 25k Credits</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Direct Carrier Priority Band[cite: 1]</li>
-                    <li><i class="fa-solid fa-check"></i> 24/7 Delivery Under 5 Sec</li>
-                    <li><i class="fa-solid fa-check"></i> 99.9% Delivery Guarantee[cite: 1]</li>
-                </ul>
-                <a href="#contact" class="btn-cta" style="display:inline-flex; justify-content:center; width:100%; margin-top:20px;"><i class="fa-solid fa-bolt"></i> Get Started</a>
-            </div>
-
-            <div class="pricing-card reveal-on-scroll">
-                <h3><i class="fa-brands fa-whatsapp" style="color:#25d366;"></i> WhatsApp Marketing</h3>
-                <div class="price">₹0.65<span> / Msg</span></div>
-                <p style="color: var(--text-muted); font-size: 0.85rem;"><i class="fa-solid fa-cloud"></i> Meta Cloud API Access</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Official Meta Cloud API</li>
-                    <li><i class="fa-solid fa-check"></i> Verified Blue/Green Tick Help</li>
-                    <li><i class="fa-solid fa-check"></i> Multimedia & Buttons</li>
-                </ul>
-                <a href="#contact" class="btn-outline-glow" style="display:inline-flex; justify-content:center; width:100%; color:var(--secondary); border-color:#cbd5e1; margin-top:20px;"><i class="fa-solid fa-cart-plus"></i> Book Plan</a>
-            </div>
-
-            <div class="pricing-card reveal-on-scroll">
-                <h3><i class="fa-solid fa-phone-volume" style="color:#8b5cf6;"></i> Voice Calls & IVR</h3>
-                <div class="price">₹0.28<span> / 30 Sec</span></div>
-                <p style="color: var(--text-muted); font-size: 0.85rem;"><i class="fa-solid fa-tower-cell"></i> High Concurrency Channels</p>
-                <ul class="bullet-list">
-                    <li><i class="fa-solid fa-check"></i> Automatic Dialing Engine</li>
-                    <li><i class="fa-solid fa-check"></i> Keypad (DTMF) Response</li>
-                    <li><i class="fa-solid fa-check"></i> Exact Duration Stats</li>
-                </ul>
-                <a href="#contact" class="btn-outline-glow" style="display:inline-flex; justify-content:center; width:100%; color:var(--secondary); border-color:#cbd5e1; margin-top:20px;"><i class="fa-solid fa-cart-plus"></i> Book Plan</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership Section -->
-    <section id="leadership">
-        <div class="section-header reveal-on-scroll">
-            <h4><i class="fa-solid fa-user-shield"></i> Corporate Leadership</h4>
-            <h2><i class="fa-solid fa-users" style="color:var(--brand-green-dark);"></i> Executive Leadership Team</h2>
-            <p><i class="fa-solid fa-handshake" style="color:var(--brand-green);"></i> Guiding operations, enterprise sales, and technical excellence at Telecorcel IT Solutions Pvt Ltd[cite: 1].</p>
-        </div>
-
-        <div class="leadership-wrapper">
-            <div class="leader-box reveal-on-scroll">
-                <div class="leader-avatar"><i class="fa-solid fa-user-tie"></i></div>
-                <div>
-                    <div class="tag"><i class="fa-solid fa-award"></i> Chief Executive Officer</div>
-                    <h3>Satyam Sharma</h3>
-                    <p style="font-size: 0.88rem; color: var(--text-muted);"><i class="fa-solid fa-compass"></i> Spearheading company strategy, carrier partnerships, and technical innovation at Telecorcel IT Solutions Pvt Ltd[cite: 1].</p>
-                </div>
-            </div>
-
-            <div class="leader-box reveal-on-scroll">
-                <div class="leader-avatar"><i class="fa-solid fa-user-gear"></i></div>
-                <div>
-                    <div class="tag"><i class="fa-solid fa-briefcase"></i> Sales Manager</div>
-                    <h3>Shivam Sharma</h3>
-                    <p style="font-size: 0.88rem; color: var(--text-muted);"><i class="fa-solid fa-chart-pie"></i> Overseeing bulk messaging volume contracts, enterprise client onboarding, and software proposals.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Physical Presence & Local Listings -->
-    <section style="padding-top: 0;">
-        <div class="section-header reveal-on-scroll">
-            <h4><i class="fa-solid fa-location-dot"></i> Infrastructure & Locations</h4>
-            <h2><i class="fa-solid fa-city" style="color:var(--brand-green-dark);"></i> Registered Office & Regional Support</h2>
-            <p><i class="fa-solid fa-map"></i> Headquartered in Noida's central IT corridor with localized support coverage.</p>
-        </div>
-
-        <div class="locations-box">
-            <div class="loc-card reveal-on-scroll">
-                <h4><i class="fa-solid fa-building" style="color: var(--brand-green-dark);"></i> Registered Corporate Office</h4>
-                <p><strong>Telecorcel IT Solutions Pvt Ltd[cite: 1]</strong></p>
-                <p><i class="fa-solid fa-map-pin" style="color:var(--brand-green);"></i> Block A, Industrial Area, Sector 62</p>
-                <p><i class="fa-solid fa-location-arrow" style="color:var(--brand-green);"></i> Noida, Uttar Pradesh – 201309, India</p>
-            </div>
-
-            <div class="loc-card reveal-on-scroll">
-                <h4><i class="fa-solid fa-map-location-dot" style="color: var(--brand-green-dark);"></i> Regional Hub: Sector 44</h4>
-                <p><strong>Dedicated Enterprise Support</strong></p>
-                <p><i class="fa-solid fa-city" style="color:var(--brand-green);"></i> Client onboarding, quick issue resolution, and consultation unit catering to corporate clusters around <strong>Sector 44, Noida</strong>.</p>
-            </div>
-
-            <div class="loc-card reveal-on-scroll">
-                <h4><i class="fa-solid fa-network-wired" style="color: var(--brand-green-dark);"></i> Local Field Unit: Wazidpur</h4>
-                <p><strong>Service & Network Operations</strong></p>
-                <p><i class="fa-solid fa-tower-cell" style="color:var(--brand-green);"></i> Regional team stationed to coordinate direct accounts and merchant activations near <strong>Wazidpur, Noida</strong>.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Consultation Form (With Exact Original Verified Numbers) -->
-    <section id="contact" style="padding-top: 0;">
-        <div class="contact-layout reveal-on-scroll">
-            <div>
-                <h4 style="color: var(--brand-green-dark); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;"><i class="fa-solid fa-address-book"></i> Direct Access</h4>
-                <h2 style="font-size: 2.1rem; color: var(--secondary); margin-bottom: 20px; display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-envelope-circle-check" style="color:var(--brand-green-dark);"></i> Connect With Sales</h2>
-                <p style="color: var(--text-muted); margin-bottom: 30px;"><i class="fa-solid fa-circle-question" style="color:var(--brand-green); margin-right:6px;"></i> Reach out directly to our sales leadership to discuss volume rate cards, custom software proposals, or DLT template compliance.</p>
-
-                <div class="contact-item">
-                    <strong><i class="fa-solid fa-phone" style="color:var(--brand-green);"></i> Direct Helplines:</strong>
-                    <a href="tel:9012574505"><i class="fa-solid fa-phone-flip"></i> +91 9012574505[cite: 1]</a> &nbsp;|&nbsp; 
-                    <a href="tel:7678519164"><i class="fa-solid fa-phone-volume"></i> +91 7678519164</a>
-                </div>
-
-                <div class="contact-item">
-                    <strong><i class="fa-solid fa-map-location" style="color:var(--brand-green);"></i> Corporate Registered Address:</strong>
-                    <p style="color: var(--text-dark); font-weight: 600;"><i class="fa-solid fa-building-flag" style="color:var(--brand-green); margin-right:6px;"></i> Block A, Industrial Area, Sector 62, Noida, Uttar Pradesh 201309</p>
-                </div>
-
-                <div class="contact-item">
-                    <strong><i class="fa-solid fa-compass" style="color:var(--brand-green);"></i> Regional Coverage Network:</strong>
-                    <p style="color: var(--text-muted);"><i class="fa-solid fa-location-crosshairs" style="color:var(--brand-green); margin-right:6px;"></i> Active field service units serving Sector 44, Wazidpur, Noida and NCR Region.</p>
-                </div>
-
-                <div class="contact-item">
-                    <strong><i class="fa-solid fa-clock" style="color:var(--brand-green);"></i> Operating Hours:</strong>
-                    <p style="color: var(--text-muted);"><i class="fa-solid fa-calendar-check" style="color:var(--brand-green); margin-right:6px;"></i> Monday – Saturday: 9:30 AM to 6:30 PM (Telecom Gateway: 24/7)</p>
-                </div>
-            </div>
-
-            <!-- Form -->
-            <div>
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Dhanyawad! Telecorcel team will connect with you shortly.');">
-                    <div class="form-row">
-                        <label><i class="fa-solid fa-user"></i> Your Name / Company Name *</label>
-                        <input type="text" required placeholder="Enter full name or firm name">
-                    </div>
-
-                    <div class="form-row">
-                        <label><i class="fa-solid fa-phone"></i> Phone Number *</label>
-                        <input type="tel" required placeholder="+91 XXXXXXXXXX">
-                    </div>
-
-                    <div class="form-row">
-                        <label><i class="fa-solid fa-list-check"></i> Service Needed *</label>
-                        <select required>
-                            <option value="">-- Choose Solution --</option>
-                            <option value="bulk-sms">Bulk SMS (Transactional / Promotional / OTP)</option>
-                            <option value="dlt">DLT Registration & Templates</option>
-                            <option value="whatsapp">WhatsApp Business API</option>
-                            <option value="voice">Voice Calls & Cloud IVR</option>
-                            <option value="website">Website / Web App Development</option>
-                            <option value="app">Mobile App (Android & iOS)</option>
-                            <option value="software">Custom ERP / CRM Software</option>
-                        </select>
-                    </div>
-
-                    <div class="form-row">
-                        <label><i class="fa-solid fa-message"></i> Requirements or Estimated Volume</label>
-                        <textarea rows="3" placeholder="Tell us your monthly message volume or project details..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-cta" style="width: 100%; border: none; cursor: pointer; padding: 14px; font-size: 1rem; justify-content:center;"><i class="fa-solid fa-paper-plane"></i> Submit Request to Sales Desk</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-grid">
-            <div>
-                <div style="display:flex; align-items:center; gap:10px; margin-bottom:15px;">
-                    <div style="background:#fff; padding:4px 8px; border-radius:6px; display:flex; align-items:center;">
-                        <img src="logo.png" alt="Telecorcel Logo" style="height:32px;">
-                    </div>
-                    <h3 style="color: var(--white); font-size: 1.15rem; font-weight:800; display:flex; align-items:center; gap:6px;"><i class="fa-solid fa-shield-halved" style="color:var(--brand-green);"></i> TELECORCEL IT SOLUTIONS[cite: 1]</h3>
-                </div>
-                <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 15px;"><i class="fa-solid fa-circle-check" style="color:var(--brand-green); margin-right:6px;"></i> Official enterprise provider of Bulk SMS, WhatsApp Business API, Cloud IVR, and custom full-stack software development.</p>
-                <p style="font-size: 0.85rem;"><i class="fa-solid fa-phone" style="color:var(--brand-green);"></i> +91 9012574505 / +91 7678519164[cite: 1]</p>
-            </div>
-
-            <div>
-                <h4><i class="fa-solid fa-comments"></i> Telecom Solutions</h4>
-                <ul>
-                    <li><a href="#sms-services"><i class="fa-solid fa-angle-right"></i> Transactional SMS</a></li>
-                    <li><a href="#sms-services"><i class="fa-solid fa-angle-right"></i> Promotional SMS</a></li>
-                    <li><a href="#sms-services"><i class="fa-solid fa-angle-right"></i> OTP & Flash SMS</a></li>
-                    <li><a href="#sms-services"><i class="fa-solid fa-angle-right"></i> DLT Registration</a></li>
-                    <li><a href="#omnichannel"><i class="fa-solid fa-angle-right"></i> WhatsApp API</a></li>
-                    <li><a href="#omnichannel"><i class="fa-solid fa-angle-right"></i> Voice & IVR</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4><i class="fa-solid fa-code"></i> IT Engineering</h4>
-                <ul>
-                    <li><a href="#it-solutions"><i class="fa-solid fa-angle-right"></i> Corporate Websites</a></li>
-                    <li><a href="#it-solutions"><i class="fa-solid fa-angle-right"></i> Android & iOS Apps</a></li>
-                    <li><a href="#it-solutions"><i class="fa-solid fa-angle-right"></i> Custom CRM & ERP</a></li>
-                    <li><a href="#it-solutions"><i class="fa-solid fa-angle-right"></i> Landing Pages</a></li>
-                    <li><a href="#it-solutions"><i class="fa-solid fa-angle-right"></i> Billing Software</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4><i class="fa-solid fa-building-flag"></i> Corporate Presence</h4>
-                <p style="font-size: 0.85rem; margin-bottom: 8px;"><strong>Head Office:</strong><br><i class="fa-solid fa-location-dot" style="color:var(--brand-green);"></i> Block A, Industrial Area, Sector 62, Noida, UP 201309</p>
-                <p style="font-size: 0.85rem;"><strong>Regional Presence:</strong><br><i class="fa-solid fa-map-pin" style="color:var(--brand-green);"></i> Sector 44 & Wazidpur, Noida</p>
-            </div>
-        </div>
-
-        <div class="copyright">
-            <div>&copy; 2026 <strong>Telecorcel IT Solutions Pvt Ltd</strong>. All rights reserved.[cite: 1]</div>
-            <div style="color: var(--brand-green); font-weight: 600;"><i class="fa-solid fa-circle-check"></i> Sector 62, Noida, Uttar Pradesh 201309</div>
-        </div>
-    </footer>
-
-    <!-- ============================================================
-         iEnergizer Realistic Earth Sphere + Constellation Network Engine
-         ============================================================ -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const canvas = document.getElementById('ienergizer-globe-canvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let width, height;
-
-            let globeRadius = 310;
-            let rotationY = 0;
-            let rotationX = 0.28;
-            let targetRotY = 0;
-            let targetRotX = 0.28;
-
-            function resize() {
-                width = canvas.width = canvas.parentElement.offsetWidth;
-                height = canvas.height = canvas.parentElement.offsetHeight;
-                globeRadius = Math.min(width * 0.38, 330);
-            }
-
-            const dotCount = 280;
-            let sphereDots = [];
-            for (let i = 0; i < dotCount; i++) {
-                const phi = Math.acos(-1 + (2 * i) / dotCount);
-                const theta = Math.sqrt(dotCount * Math.PI) * phi;
-                sphereDots.push({
-                    x: Math.cos(theta) * Math.sin(phi),
-                    y: Math.sin(theta) * Math.sin(phi),
-                    z: Math.cos(phi),
-                    isContinent: Math.sin(theta * 2.5) * Math.cos(phi * 2.5) > -0.15
-                });
-            }
-
-            const arcBeams = [
-                { angleOffset: 0, speed: 0.012, radiusScale: 1.05 },
-                { angleOffset: 2.1, speed: 0.016, radiusScale: 1.12 },
-                { angleOffset: 4.2, speed: 0.009, radiusScale: 1.08 }
-            ];
-
-            window.addEventListener('mousemove', (e) => {
-                const rect = canvas.getBoundingClientRect();
-                const mouseX = e.clientX - rect.left - width / 2;
-                const mouseY = e.clientY - rect.top - height / 2;
-                targetRotY = (mouseX / width) * 1.2;
-                targetRotX = 0.28 - (mouseY / height) * 0.4;
-            });
-
-            function render() {
-                ctx.clearRect(0, 0, width, height);
-
-                const centerX = width > 950 ? width * 0.72 : width * 0.5;
-                const centerY = height * 0.52;
-
-                rotationX += (targetRotX - rotationX) * 0.04;
-                rotationY += 0.0018;
-
-                // 1. Atmosphere Rim Light (Video Style Glow)
-                const glowGrad = ctx.createRadialGradient(
-                    centerX - globeRadius * 0.2, centerY - globeRadius * 0.2, globeRadius * 0.2,
-                    centerX, centerY, globeRadius * 1.3
-                );
-                glowGrad.addColorStop(0, 'rgba(16, 185, 129, 0.22)');
-                glowGrad.addColorStop(0.65, 'rgba(86, 186, 42, 0.12)');
-                glowGrad.addColorStop(0.85, 'rgba(86, 186, 42, 0.04)');
-                glowGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
-
-                ctx.beginPath();
-                ctx.arc(centerX, centerY, globeRadius * 1.3, 0, Math.PI * 2);
-                ctx.fillStyle = glowGrad;
-                ctx.fill();
-
-                // 2. Earth Globe Disc
-                const planetGrad = ctx.createRadialGradient(
-                    centerX - globeRadius * 0.4, centerY - globeRadius * 0.4, globeRadius * 0.1,
-                    centerX, centerY, globeRadius
-                );
-                planetGrad.addColorStop(0, '#102e1b');
-                planetGrad.addColorStop(0.55, '#07150c');
-                planetGrad.addColorStop(0.92, '#030805');
-                planetGrad.addColorStop(1, 'rgba(86, 186, 42, 0.5)');
-
-                ctx.beginPath();
-                ctx.arc(centerX, centerY, globeRadius, 0, Math.PI * 2);
-                ctx.fillStyle = planetGrad;
-                ctx.fill();
-                ctx.strokeStyle = 'rgba(86, 186, 42, 0.35)';
-                ctx.lineWidth = 1.5;
-                ctx.stroke();
-
-                // 3. Project 3D Nodes
-                let projectedNodes = [];
-                for (let i = 0; i < sphereDots.length; i++) {
-                    const dot = sphereDots[i];
-
-                    let x1 = dot.x * Math.cos(rotationY) - dot.z * Math.sin(rotationY);
-                    let z1 = dot.z * Math.cos(rotationY) + dot.x * Math.sin(rotationY);
-
-                    let y2 = dot.y * Math.cos(rotationX) - z1 * Math.sin(rotationX);
-                    let z2 = z1 * Math.cos(rotationX) + dot.y * Math.sin(rotationX);
-
-                    if (z2 < 0) {
-                        const screenX = centerX + x1 * globeRadius;
-                        const screenY = centerY + y2 * globeRadius;
-                        const depthAlpha = Math.max(0.1, Math.min(1, -z2));
-
-                        projectedNodes.push({
-                            x: screenX,
-                            y: screenY,
-                            z: z2,
-                            alpha: depthAlpha,
-                            isContinent: dot.isContinent
-                        });
-                    }
-                }
-
-                // 4. Mesh Triangulation Arcs
-                for (let i = 0; i < projectedNodes.length; i++) {
-                    for (let j = i + 1; j < projectedNodes.length; j++) {
-                        const n1 = projectedNodes[i];
-                        const n2 = projectedNodes[j];
-                        const dx = n1.x - n2.x;
-                        const dy = n1.y - n2.y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-
-                        if (dist < 46) {
-                            const lineAlpha = (1 - dist / 46) * 0.35 * Math.min(n1.alpha, n2.alpha);
-                            ctx.beginPath();
-                            ctx.moveTo(n1.x, n1.y);
-                            ctx.lineTo(n2.x, n2.y);
-                            ctx.strokeStyle = `rgba(134, 239, 172, ${lineAlpha})`;
-                            ctx.lineWidth = 0.85;
-                            ctx.stroke();
-                        }
-                    }
-                }
-
-                // 5. Glowing City Lights / Nodes
-                projectedNodes.forEach(node => {
-                    ctx.beginPath();
-                    ctx.arc(node.x, node.y, node.isContinent ? 1.8 : 1.2, 0, Math.PI * 2);
-                    ctx.fillStyle = node.isContinent ? `rgba(163, 230, 53, ${node.alpha * 0.95})` : `rgba(86, 186, 42, ${node.alpha * 0.6})`;
-                    ctx.fill();
-                });
-
-                // 6. Orbital Space Beams (Exact Video Style)
-                arcBeams.forEach((arc) => {
-                    arc.angleOffset += arc.speed;
-                    const r = globeRadius * arc.radiusScale;
-                    const pulseX = centerX + r * Math.cos(arc.angleOffset);
-                    const pulseY = centerY + (r * 0.5) * Math.sin(arc.angleOffset);
-
-                    ctx.beginPath();
-                    ctx.ellipse(centerX, centerY, r, r * 0.5, -0.2, 0, Math.PI * 2);
-                    ctx.strokeStyle = 'rgba(86, 186, 42, 0.14)';
-                    ctx.lineWidth = 1;
-                    ctx.stroke();
-
-                    ctx.beginPath();
-                    ctx.arc(pulseX, pulseY, 3.5, 0, Math.PI * 2);
-                    ctx.fillStyle = '#86efac';
-                    ctx.shadowColor = '#56ba2a';
-                    ctx.shadowBlur = 12;
-                    ctx.fill();
-                    ctx.shadowBlur = 0;
-                });
-
-                requestAnimationFrame(render);
-            }
-
-            window.addEventListener('resize', resize);
-            resize();
-            render();
-
-            // Scroll Reveal Handler
-            const revealElements = document.querySelectorAll('.reveal-on-scroll');
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-revealed');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
-
-            revealElements.forEach(el => revealObserver.observe(el));
-        });
-    </script>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+      const target = document.getElementById(pageId);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Dynamic Network Canvas Hero Animation
+    const canvas = document.getElementById('networkCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+      width = canvas.width = canvas.parentElement.offsetWidth;
+      height = canvas.height = canvas.parentElement.offsetHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.9;
+        this.vy = (Math.random() - 0.5) * 0.9;
+        this.radius = Math.random() * 2 + 1;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(52, 211, 153, 0.7)';
+        ctx.fill();
+      }
+    }
+
+    const particleCount = Math.min(width > 768 ? 60 : 25, 70);
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateNetwork() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 125) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(16, 185, 129, ${0.22 * (1 - dist / 125)})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateNetwork);
+    }
+    animateNetwork();
+
+    // -------------------------------------------------------------
+    // THREE.JS 3D INTERACTIVE GLOBE (iEnergizer 3D Style)
+    // -------------------------------------------------------------
+    const globeContainer = document.getElementById('globeCanvasContainer');
+    const globeCanvas = document.getElementById('globeCanvas');
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.PerspectiveCamera(45, globeContainer.offsetWidth / globeContainer.offsetHeight, 0.1, 1000);
+    camera.position.z = 210;
+
+    const renderer = new THREE.WebGLRenderer({ canvas: globeCanvas, alpha: true, antialias: true });
+    renderer.setSize(globeContainer.offsetWidth, globeContainer.offsetHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    const globeRadius = 68;
+    const globeGroup = new THREE.Group();
+    scene.add(globeGroup);
+
+    // Wireframe Outer Sphere
+    const sphereGeo = new THREE.SphereGeometry(globeRadius, 36, 36);
+    const sphereMat = new THREE.MeshBasicMaterial({
+      color: 0x064e3b,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.18
+    });
+    const globeMesh = new THREE.Mesh(sphereGeo, sphereMat);
+    globeGroup.add(globeMesh);
+
+    // Inner Glow Core Sphere
+    const innerGeo = new THREE.SphereGeometry(globeRadius - 0.8, 32, 32);
+    const innerMat = new THREE.MeshBasicMaterial({
+      color: 0x02161e,
+      transparent: true,
+      opacity: 0.75
+    });
+    globeGroup.add(new THREE.Mesh(innerGeo, innerMat));
+
+    // Convert Lat/Lon to 3D Vector
+    function latLonToVector3(lat, lon, radius) {
+      const phi = (90 - lat) * (Math.PI / 180);
+      const theta = (lon + 180) * (Math.PI / 180);
+      const x = -(radius * Math.sin(phi) * Math.cos(theta));
+      const z = radius * Math.sin(phi) * Math.sin(theta);
+      const y = radius * Math.cos(phi);
+      return new THREE.Vector3(x, y, z);
+    }
+
+    // Customer Hubs
+    const locations = {
+      noida: { lat: 28.62, lon: 77.36, name: "India HQ" },
+      usEast: { lat: 40.71, lon: -74.00, name: "US East" },
+      uk: { lat: 51.50, lon: -0.12, name: "London UK" },
+      dubai: { lat: 25.20, lon: 55.27, name: "UAE" },
+      singapore: { lat: 1.35, lon: 103.81, name: "Singapore" },
+      sydney: { lat: -33.86, lon: 151.20, name: "Australia" }
+    };
+
+    // Add Marker Dots
+    Object.keys(locations).forEach(key => {
+      const loc = locations[key];
+      const pos = latLonToVector3(loc.lat, loc.lon, globeRadius + 0.5);
+      const markerGeo = new THREE.SphereGeometry(key === 'noida' ? 2.5 : 1.6, 16, 16);
+      const markerMat = new THREE.MeshBasicMaterial({ 
+        color: key === 'noida' ? 0x10b981 : 0x34d399 
+      });
+      const marker = new THREE.Mesh(markerGeo, markerMat);
+      marker.position.copy(pos);
+      globeGroup.add(marker);
+    });
+
+    // Add 3D Curved Telecom Routing Arcs from Noida to Global Hubs
+    function createArc(p1, p2) {
+      const distance = p1.distanceTo(p2);
+      const mid = p1.clone().lerp(p2, 0.5);
+      const midLength = mid.length();
+      mid.normalize();
+      mid.multiplyScalar(midLength + distance * 0.28);
+
+      const curve = new THREE.QuadraticBezierCurve3(p1, mid, p2);
+      const points = curve.getPoints(45);
+      const geometry = new THREE.BufferGeometry().setFromPoints(points);
+      const material = new THREE.LineBasicMaterial({
+        color: 0x34d399,
+        transparent: true,
+        opacity: 0.55
+      });
+      return new THREE.Line(geometry, material);
+    }
+
+    const noidaPos = latLonToVector3(locations.noida.lat, locations.noida.lon, globeRadius);
+    ['usEast', 'uk', 'dubai', 'singapore', 'sydney'].forEach(key => {
+      const destPos = latLonToVector3(locations[key].lat, locations[key].lon, globeRadius);
+      globeGroup.add(createArc(noidaPos, destPos));
+    });
+
+    // Mouse Drag Rotation
+    let isDragging = false;
+    let previousMousePosition = { x: 0, y: 0 };
+
+    globeCanvas.addEventListener('mousedown', () => isDragging = true);
+    window.addEventListener('mouseup', () => isDragging = false);
+
+    globeCanvas.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        const deltaX = e.clientX - previousMousePosition.x;
+        const deltaY = e.clientY - previousMousePosition.y;
+        globeGroup.rotation.y += deltaX * 0.007;
+        globeGroup.rotation.x += deltaY * 0.007;
+      }
+      previousMousePosition = { x: e.clientX, y: e.clientY };
+    });
+
+    // Touch support for mobile
+    globeCanvas.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    });
+    window.addEventListener('touchend', () => isDragging = false);
+    globeCanvas.addEventListener('touchmove', (e) => {
+      if (isDragging && e.touches.length > 0) {
+        const deltaX = e.touches[0].clientX - previousMousePosition.x;
+        const deltaY = e.touches[0].clientY - previousMousePosition.y;
+        globeGroup.rotation.y += deltaX * 0.007;
+        globeGroup.rotation.x += deltaY * 0.007;
+        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (!globeContainer) return;
+      camera.aspect = globeContainer.offsetWidth / globeContainer.offsetHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(globeContainer.offsetWidth, globeContainer.offsetHeight);
+    });
+
+    // Animate Continuous Slow Rotation
+    function renderGlobe() {
+      requestAnimationFrame(renderGlobe);
+      if (!isDragging) {
+        globeGroup.rotation.y += 0.0035;
+      }
+      renderer.render(scene, camera);
+    }
+    renderGlobe();
+  </script>
 </body>
 </html>
