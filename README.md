@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Telecorcel IT Solutions Pvt Ltd | Enterprise Telecom & IT</title>
+  <title>Telecorcel IT Solutions Pvt Ltd | Enterprise Telecom, Software & Digital Stack</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- Three.js Library 3D Global Canvas -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <style>
     @keyframes floatSlow {
@@ -17,10 +16,16 @@
       0%, 100% { opacity: 0.35; transform: scale(1); }
       50% { opacity: 0.65; transform: scale(1.08); }
     }
+    @keyframes scrollTicker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
     .page-section { display: none; }
     .page-section.active { display: block; }
     .hero-glow { animation: pulseGlow 6s infinite ease-in-out; }
     .floating-card { animation: floatSlow 4s ease-in-out infinite; }
+    .ticker-wrapper { display: flex; width: 200%; animation: scrollTicker 30s linear infinite; }
+    .ticker-wrapper:hover { animation-play-state: paused; }
     
     #networkCanvas {
       position: absolute;
@@ -82,8 +87,6 @@
   <header class="bg-[#070e1a]/90 backdrop-blur-md sticky top-0 z-40 border-b border-slate-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
       <div class="flex items-center gap-3.5 cursor-pointer" onclick="showPage('home')">
-        
-        <!-- Naya Logo Container -->
         <div class="bg-white p-1 rounded-xl shadow-md flex items-center justify-center border border-emerald-500/30 h-13 w-13 sm:h-14 sm:w-14 overflow-hidden">
           <img 
             src="Gemini_Generated_Image_wr9725wr9725wr97.jpg" 
@@ -92,8 +95,6 @@
             onerror="this.onerror=null; this.src='telecorcel logo_2.jpeg';"
           />
         </div>
-
-        <!-- Highlighted Typography Beside Logo -->
         <div class="flex flex-col">
           <span class="text-xl sm:text-2xl font-black tracking-tight text-white leading-none brand-glow">
             TELECORCEL
@@ -118,6 +119,54 @@
     </div>
   </header>
 
+  <!-- Live Enterprise Capabilities Scrolling Ticker -->
+  <div class="bg-emerald-950/40 border-y border-emerald-500/20 text-emerald-300 text-xs py-2 overflow-hidden select-none">
+    <div class="ticker-wrapper font-medium tracking-wide">
+      <div class="flex gap-8 items-center px-4">
+        <span><i class="fa-solid fa-bolt text-emerald-400 mr-2"></i>Bulk SMS</span>
+        <span>•</span>
+        <span>Transactional & OTP SMS</span>
+        <span>•</span>
+        <span>WhatsApp Business Cloud API</span>
+        <span>•</span>
+        <span>RCS Messaging</span>
+        <span>•</span>
+        <span>Voice / IVR & Missed Call</span>
+        <span>•</span>
+        <span>DLT Support & Templates</span>
+        <span>•</span>
+        <span>Full-Stack Web Development</span>
+        <span>•</span>
+        <span>Android & iOS Apps</span>
+        <span>•</span>
+        <span>Custom CRM & ERP Software</span>
+        <span>•</span>
+        <span>Performance Marketing & SEO</span>
+      </div>
+      <div class="flex gap-8 items-center px-4">
+        <span><i class="fa-solid fa-bolt text-emerald-400 mr-2"></i>Bulk SMS</span>
+        <span>•</span>
+        <span>Transactional & OTP SMS</span>
+        <span>•</span>
+        <span>WhatsApp Business Cloud API</span>
+        <span>•</span>
+        <span>RCS Messaging</span>
+        <span>•</span>
+        <span>Voice / IVR & Missed Call</span>
+        <span>•</span>
+        <span>DLT Support & Templates</span>
+        <span>•</span>
+        <span>Full-Stack Web Development</span>
+        <span>•</span>
+        <span>Android & iOS Apps</span>
+        <span>•</span>
+        <span>Custom CRM & ERP Software</span>
+        <span>•</span>
+        <span>Performance Marketing & SEO</span>
+      </div>
+    </div>
+  </div>
+
   <!-- PAGE 1: HOME -->
   <main id="home" class="page-section active flex-grow">
     <!-- Hero Banner with Network Canvas Background -->
@@ -128,11 +177,11 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 relative z-10 grid md:grid-cols-12 gap-10 items-center">
         <div class="md:col-span-7 space-y-6">
           <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase">
-            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> Direct Route Telecom Infrastructure
+            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> Omnichannel Telecom & IT Stack
           </div>
 
           <div class="space-y-2">
-            <h2 class="text-xs uppercase tracking-[0.3em] font-extrabold text-slate-400">Welcome To Enterprise Grade</h2>
+            <h2 class="text-xs uppercase tracking-[0.3em] font-extrabold text-slate-400">Next-Gen Communication & Custom Tech</h2>
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-none tracking-tight text-white">
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-200 to-white brand-glow">
                 TELECORCEL IT SOLUTIONS
@@ -144,15 +193,15 @@
           </div>
 
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
-            India Direct Clean Route SMS, OTP pipes, WhatsApp Cloud API, and custom Enterprise Software. Powering 20,000+ businesses globally with high-availability infrastructure and instant DLT compliance.
+            Clean High-Throughput Bulk SMS, OTP Routes, RCS & WhatsApp Business API, Custom Software Development, Mobile Apps, aur Performance Marketing. Supporting over 20,000+ businesses with SLA guarantee and sub-second carrier delivery.
           </p>
 
           <div class="flex flex-wrap gap-4 pt-2">
-            <button onclick="showPage('pricing')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-7 py-3 rounded-lg shadow-xl shadow-emerald-500/25 transition transform hover:-translate-y-0.5">
-              View Pricing Cards
+            <button onclick="showPage('services')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-7 py-3 rounded-lg shadow-xl shadow-emerald-500/25 transition transform hover:-translate-y-0.5">
+              Explore All Services
             </button>
-            <button onclick="showPage('contact')" class="border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-200 px-7 py-3 rounded-lg font-semibold transition">
-              Consult Our Engineers
+            <button onclick="showPage('pricing')" class="border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-200 px-7 py-3 rounded-lg font-semibold transition">
+              View Pricing Cards
             </button>
           </div>
         </div>
@@ -194,7 +243,153 @@
       </div>
     </section>
 
-    <!-- SECTION: 3D Global Interactive Customer Network (iEnergizer 3D Style) -->
+    <!-- Interactive Solutions Matrix (6 Core Pillars) -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 text-white">
+      <div class="text-center mb-12">
+        <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">Everything Under One Roof</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold mt-1">Our Comprehensive Services Portfolio</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2 max-w-2xl mx-auto">
+          High-throughput telecom infrastructure se lekar modern cloud web applications aur automated marketing funnels tak complete technology delivery.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Pillar 1: Bulk SMS & Telecom Routes -->
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
+              <i class="fa-solid fa-message"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-100 mb-2">Bulk SMS & Telecom Routing</h3>
+            <p class="text-xs text-slate-400 mb-4">Dedicated carrier routes for zero-latency OTP, Transactional and high-volume Promotional SMS.</p>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Promotional</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Transactional</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">OTP SMS</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Flash SMS</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Unicode/Regional</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">International SMS</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">SMS API</span>
+            </div>
+          </div>
+          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
+            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Pillar 2: Omnichannel Messaging & IVR -->
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-100 mb-2">WhatsApp, RCS & Voice/IVR</h3>
+            <p class="text-xs text-slate-400 mb-4">Official WhatsApp Business Cloud APIs, interactive RCS Rich Messaging, aur intelligent Voice IVR flows.</p>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">WhatsApp API</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">RCS Messaging</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Voice SMS</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">IVR Systems</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Missed Call</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Email API</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Short/Long Code</span>
+            </div>
+          </div>
+          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
+            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Pillar 3: DLT & Carrier Compliance -->
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-100 mb-2">DLT & Telecom Compliance</h3>
+            <p class="text-xs text-slate-400 mb-4">Complete regulatory onboarding, Sender ID registration, and instant template approvals across Indian telcos.</p>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">DLT Registration</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Sender ID</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">SMS Templates</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">PE Onboarding</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Consent Support</span>
+            </div>
+          </div>
+          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
+            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Pillar 4: Website Development -->
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-100 mb-2">Website & Portal Development</h3>
+            <p class="text-xs text-slate-400 mb-4">Responsive, high-converting business websites, custom web apps, and enterprise marketplace portals.</p>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Corporate Websites</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">E-Commerce</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Landing Pages</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">CMS Portals</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">UI/UX Design</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">SSL & Hosting</span>
+            </div>
+          </div>
+          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
+            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Pillar 5: App Development -->
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-100 mb-2">Mobile App Engineering</h3>
+            <p class="text-xs text-slate-400 mb-4">Native and cross-platform mobile apps for iOS and Android with custom admin panels and push pipelines.</p>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Android & iOS</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Flutter</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">React Native</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Fintech Apps</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Booking & Delivery</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Admin Panels</span>
+            </div>
+          </div>
+          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
+            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Pillar 6: Software, SaaS & Marketing -->
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-emerald-500/60 transition group flex flex-col justify-between">
+          <div>
+            <div class="h-12 w-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-100 mb-2">Custom Software & Digital Ads</h3>
+            <p class="text-xs text-slate-400 mb-4">Enterprise Billing, Inventory, ERP/CRM suites with result-driven SEO and Performance Marketing.</p>
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Custom SaaS</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">CRM / ERP</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Billing Software</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">HRMS / POS</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">Google Ads</span>
+              <span class="text-[11px] bg-slate-950 border border-slate-800 px-2 py-0.5 rounded text-emerald-300">SEO & Lead Gen</span>
+            </div>
+          </div>
+          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 hover:text-emerald-300">
+            View Details <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: 3D Global Interactive Customer Network (iEnergizer Style) -->
     <section class="py-16 bg-[#03070f] border-t border-slate-800 relative overflow-hidden text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="text-center max-w-3xl mx-auto mb-10">
@@ -291,95 +486,123 @@
         </div>
       </div>
     </section>
-
-    <!-- Services Cards Overview -->
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 text-white">
-      <div class="text-center mb-12">
-        <span class="text-emerald-400 text-xs uppercase tracking-wider font-bold">What We Offer</span>
-        <h2 class="text-2xl sm:text-4xl font-extrabold mt-1">Integrated Technology & Messaging Stack</h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/60 transition group">
-          <div class="h-12 w-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
-            <i class="fa-solid fa-comment-dots"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2 text-slate-100">Direct Bulk SMS & APIs</h3>
-          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">Transactional OTPs, Promotional outreach, Unicode Hindi/Regional SMS, aur sub-second carrier API integration.</p>
-          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider">Explore Route &rarr;</button>
-        </div>
-
-        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/60 transition group">
-          <div class="h-12 w-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
-            <i class="fa-brands fa-whatsapp"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2 text-slate-100">WhatsApp & Cloud Voice/IVR</h3>
-          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">Meta Verified WhatsApp Business API, multi-tier automated IVR workflows aur targeted transactional email campaigns.</p>
-          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider">Explore Voice &rarr;</button>
-        </div>
-
-        <div class="p-6 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-emerald-500/60 transition group">
-          <div class="h-12 w-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-2xl mb-4 group-hover:scale-110 transition">
-            <i class="fa-solid fa-laptop-code"></i>
-          </div>
-          <h3 class="text-lg font-bold mb-2 text-slate-100">Web, App & Custom Software</h3>
-          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">High-performance corporate portals, custom ERP/CRM software, Android/iOS applications, aur performance marketing.</p>
-          <button onclick="showPage('services')" class="text-emerald-400 text-xs font-bold uppercase tracking-wider">Explore IT &rarr;</button>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- PAGE 2: SERVICES -->
+  <!-- PAGE 2: SERVICES (DETAILED ENTERPRISE DIRECTORY) -->
   <main id="services" class="page-section flex-grow py-14 max-w-7xl mx-auto px-4 sm:px-6 text-white">
     <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-black">All Solutions & Capabilities</h2>
-      <p class="text-slate-400 text-sm mt-2">Scalable Messaging, Custom Software & DLT Infrastructure</p>
+      <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">All Vertical Capabilities</span>
+      <h2 class="text-3xl sm:text-4xl font-black mt-1">Complete Services & Solutions Directory</h2>
+      <p class="text-slate-400 text-xs sm:text-sm mt-2">Enterprise Communication, Software Architecture, Mobile Apps & Digital Growth</p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-slate-900/70 border border-slate-800 p-6 rounded-xl">
-        <h3 class="text-lg font-bold text-emerald-400 mb-3 border-b border-slate-800 pb-2 flex items-center gap-2">
-          <i class="fa-solid fa-paper-plane text-sm"></i> 1. Bulk SMS & Gateway Routes
-        </h3>
-        <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
-          <li>• <strong>Transactional SMS:</strong> Instant OTPs, 2FA, alerts, order confirmations.</li>
-          <li>• <strong>Promotional SMS:</strong> High volume broadcast campaigns with smart scheduling.</li>
-          <li>• <strong>Carrier Routes:</strong> OTP route, clean traffic, gaming and high-delivery pipes.</li>
-          <li>• <strong>Specs:</strong> Unicode regional SMS, Flash SMS, Webhooks, Delivery Analytics.</li>
-        </ul>
+    <div class="space-y-10">
+      <!-- 1. Bulk SMS & Messaging Infrastructure -->
+      <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
+        <div class="flex items-center gap-3 border-b border-slate-800 pb-4 mb-6">
+          <i class="fa-solid fa-comment-sms text-2xl text-emerald-400"></i>
+          <div>
+            <h3 class="text-xl font-bold text-white">1. Bulk SMS & Telecom Gateway Infrastructure</h3>
+            <p class="text-xs text-slate-400">Direct carrier routing with real-time DLR and ultra-low latency</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">Transactional SMS</h4>
+            <p class="text-slate-400">24x7 instant OTP, banking alerts, booking confirmations, order delivery tracking.</p>
+          </div>
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">Promotional SMS</h4>
+            <p class="text-slate-400">High-volume sales offers, marketing discounts, event broadcasts with scheduling.</p>
+          </div>
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">OTP & Flash SMS</h4>
+            <p class="text-slate-400">Sub-3-second priority delivery routes and direct screen popup Flash messaging.</p>
+          </div>
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">Unicode & International</h4>
+            <p class="text-slate-400">Hindi and all regional Indian languages, along with global worldwide SMS termination.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-slate-900/70 border border-slate-800 p-6 rounded-xl">
-        <h3 class="text-lg font-bold text-emerald-400 mb-3 border-b border-slate-800 pb-2 flex items-center gap-2">
-          <i class="fa-solid fa-shield-halved text-sm"></i> 2. DLT & Regulatory Registration
-        </h3>
-        <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
-          <li>• <strong>DLT Onboarding:</strong> Principal Entity (PE) registration handholding.</li>
-          <li>• <strong>Sender ID/Headers:</strong> Instant verification and header approval assistance.</li>
-          <li>• <strong>Content Templates:</strong> Quick template creation and compliance audits.</li>
-        </ul>
+      <!-- 2. Omnichannel Communication & Voice -->
+      <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
+        <div class="flex items-center gap-3 border-b border-slate-800 pb-4 mb-6">
+          <i class="fa-solid fa-headset text-2xl text-emerald-400"></i>
+          <div>
+            <h3 class="text-xl font-bold text-white">2. WhatsApp, RCS, Voice/IVR & Cloud Communication</h3>
+            <p class="text-xs text-slate-400">Interactive modern messaging channels and automated calling</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">WhatsApp Business API</h4>
+            <p class="text-slate-400">Official Meta verified API, dynamic catalog sync, automated customer chatbots.</p>
+          </div>
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">RCS Messaging</h4>
+            <p class="text-slate-400">Rich Communication Services with brand verification, carousels, and action buttons.</p>
+          </div>
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">Voice SMS & IVR Flows</h4>
+            <p class="text-slate-400">Automated bulk voice broadcasting, dynamic DTMF multi-level keypad IVR logic.</p>
+          </div>
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">Missed Call & Numbers</h4>
+            <p class="text-slate-400">Automated missed call lead capture, Virtual Numbers, Short Code & Long Code APIs.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-slate-900/70 border border-slate-800 p-6 rounded-xl">
-        <h3 class="text-lg font-bold text-emerald-400 mb-3 border-b border-slate-800 pb-2 flex items-center gap-2">
-          <i class="fa-solid fa-network-wired text-sm"></i> 3. WhatsApp, Email & Voice/IVR
-        </h3>
-        <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
-          <li>• <strong>WhatsApp Business API:</strong> Automated catalogs, chatbots, support tickets.</li>
-          <li>• <strong>Bulk Email Solutions:</strong> Transactional SMTP, high-inbox marketing delivery.</li>
-          <li>• <strong>Voice/IVR:</strong> Automated voice broadcasting, dynamic keypad responses, call logs.</li>
-        </ul>
+      <!-- 3. Web & Application Development -->
+      <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
+        <div class="flex items-center gap-3 border-b border-slate-800 pb-4 mb-6">
+          <i class="fa-solid fa-laptop-code text-2xl text-emerald-400"></i>
+          <div>
+            <h3 class="text-xl font-bold text-white">3. Web, Mobile App & Portal Engineering</h3>
+            <p class="text-xs text-slate-400">Modern reactive frameworks, cloud deployments, and intuitive UI/UX</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs">
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">Website Development</h4>
+            <p class="text-slate-400">Business Websites, Corporate Portals, E-Commerce, Custom Landing Pages, CMS systems, Booking Platforms, Marketplace architectures, UI/UX design, Domain, Hosting & SSL security.</p>
+          </div>
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">Mobile App Development</h4>
+            <p class="text-slate-400">Native Android & iOS Apps, Flutter & React Native cross-platform apps, Fintech apps, Booking & Delivery applications, Admin Control panels, Push notifications, and continuous store maintenance.</p>
+          </div>
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">API Integrations</h4>
+            <p class="text-slate-400">RESTful APIs, SMPP connections, Webhook callbacks, Delivery-status monitoring, and developer SDKs for Node, Python, PHP, and Java.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-slate-900/70 border border-slate-800 p-6 rounded-xl">
-        <h3 class="text-lg font-bold text-emerald-400 mb-3 border-b border-slate-800 pb-2 flex items-center gap-2">
-          <i class="fa-solid fa-code text-sm"></i> 4. Software, Web & App Development
-        </h3>
-        <ul class="text-xs sm:text-sm text-slate-300 space-y-2">
-          <li>• <strong>Web Development:</strong> Corporate, E-Commerce, high-speed landing pages.</li>
-          <li>• <strong>Mobile Apps:</strong> Native Android, iOS and cross-platform Flutter/React Native.</li>
-          <li>• <strong>Enterprise Software:</strong> Custom CRM, Admin Dashboards, Billing & Inventory ERPs.</li>
-        </ul>
+      <!-- 4. Enterprise Software & Digital Marketing -->
+      <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-2xl">
+        <div class="flex items-center gap-3 border-b border-slate-800 pb-4 mb-6">
+          <i class="fa-solid fa-chart-line text-2xl text-emerald-400"></i>
+          <div>
+            <h3 class="text-xl font-bold text-white">4. Enterprise Software, DLT & Digital Marketing</h3>
+            <p class="text-xs text-slate-400">Automation platforms, compliance support, and growth marketing</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs">
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">Custom Software & SaaS</h4>
+            <p class="text-slate-400">Custom Business CRM, ERP Systems, Billing Software, Inventory Management, POS, HRMS, School Management Suites, and centralized analytics dashboards.</p>
+          </div>
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">DLT Regulatory Services</h4>
+            <p class="text-slate-400">DLT Principal Entity registration handholding, Sender ID / Header registration, SMS Template submission, compliance audits, and renewal management.</p>
+          </div>
+          <div class="p-3.5 bg-slate-950/70 border border-slate-800/80 rounded-xl">
+            <h4 class="font-bold text-emerald-400 mb-1">Digital Marketing & Ads</h4>
+            <p class="text-slate-400">Search Engine Optimization (SEO), Google Ads, Social Media Marketing (Facebook/Instagram), B2B Lead Generation, Performance Marketing, Graphic Design & Branding.</p>
+          </div>
+        </div>
       </div>
     </div>
   </main>
@@ -387,8 +610,9 @@
   <!-- PAGE 3: PRICING -->
   <main id="pricing" class="page-section flex-grow py-14 max-w-7xl mx-auto px-4 sm:px-6 text-white">
     <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-black">Flexible Enterprise Pricing</h2>
-      <p class="text-slate-400 text-sm mt-2">Direct carrier interconnects with no hidden setup fees</p>
+      <span class="text-emerald-400 text-xs uppercase tracking-widest font-black">Transparent Pricing</span>
+      <h2 class="text-3xl sm:text-4xl font-black mt-1">Flexible Enterprise Pricing Plans</h2>
+      <p class="text-slate-400 text-xs sm:text-sm mt-2">Direct carrier interconnects with no hidden setup charges</p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -410,8 +634,8 @@
       </div>
 
       <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
-        <h3 class="font-bold text-base text-slate-200">WhatsApp Marketing</h3>
-        <p class="text-xs text-slate-400 mt-1 mb-4">Official Meta Cloud API</p>
+        <h3 class="font-bold text-base text-slate-200">WhatsApp & RCS</h3>
+        <p class="text-xs text-slate-400 mt-1 mb-4">Official Meta & Telco APIs</p>
         <div class="text-2xl font-black text-emerald-400 mb-3">Pay Per Session</div>
         <p class="text-xs text-slate-400 mb-6">Rich multimedia templates, green tick assistance, chatbot support.</p>
         <button onclick="showPage('contact')" class="w-full bg-slate-800 hover:bg-slate-700 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition">Inquire Rates</button>
@@ -426,7 +650,7 @@
       </div>
 
       <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
-        <h3 class="font-bold text-base text-slate-200">Software & Web Apps</h3>
+        <h3 class="font-bold text-base text-slate-200">Web, App & Custom SaaS</h3>
         <p class="text-xs text-slate-400 mt-1 mb-4">Tailor-Made Development</p>
         <div class="text-2xl font-black text-emerald-400 mb-3">Milestone Based</div>
         <p class="text-xs text-slate-400 mb-6">Full code ownership, free maintenance period, enterprise UI/UX.</p>
@@ -434,7 +658,7 @@
       </div>
 
       <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-xl text-center">
-        <h3 class="font-bold text-base text-slate-200">Messaging APIs</h3>
+        <h3 class="font-bold text-base text-slate-200">Carrier APIs & DLT</h3>
         <p class="text-xs text-slate-400 mt-1 mb-4">REST & SMPP Endpoints</p>
         <div class="text-2xl font-black text-emerald-400 mb-3">Developer Ready</div>
         <p class="text-xs text-slate-400 mb-6">SDKs for Python, Node, PHP, Java with instant callback webhooks.</p>
@@ -447,7 +671,7 @@
   <main id="about" class="page-section flex-grow py-14 max-w-7xl mx-auto px-4 sm:px-6 text-white">
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div>
-        <span class="text-emerald-400 text-xs uppercase tracking-wider font-bold">About Us</span>
+        <span class="text-emerald-400 text-xs uppercase tracking-wider font-bold">About Telecorcel</span>
         <h2 class="text-3xl sm:text-4xl font-extrabold mt-1 mb-4">Pioneering High-Quality Telecom & Enterprise IT</h2>
         <p class="text-slate-300 text-sm leading-relaxed mb-6">
           Telecorcel IT Solutions Pvt Ltd provides high-throughput telecom routing, automated messaging gateways, and bespoke web/software solutions. Operating since 2013, we serve over 20,000+ satisfied clients across multiple verticals.
@@ -514,10 +738,13 @@
             <label class="block text-slate-300 mb-1">Service Required</label>
             <select class="w-full bg-slate-950 border border-slate-800 rounded p-2.5 text-white focus:border-emerald-500 outline-none">
               <option>Bulk SMS (Transactional / OTP / Promotional)</option>
-              <option>WhatsApp API & Voice IVR</option>
-              <option>Website / Mobile App Development</option>
-              <option>CRM / ERP Software Solutions</option>
-              <option>Digital Marketing & Lead Generation</option>
+              <option>WhatsApp API & RCS Messaging</option>
+              <option>Voice SMS, IVR & Missed Call Solutions</option>
+              <option>Website & Custom Web Applications</option>
+              <option>Mobile App Development (Android / iOS)</option>
+              <option>Enterprise CRM, ERP & Billing Software</option>
+              <option>DLT Registration & Template Support</option>
+              <option>Digital Marketing, SEO & Google Ads</option>
             </select>
           </div>
           <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded uppercase tracking-wider text-xs transition">Submit Inquiry</button>
